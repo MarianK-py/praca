@@ -1,0 +1,56 @@
+% !TeX spellcheck = sk_SK-Slovak
+\chapter{Podobné práce}
+
+Aj napriek moderným nemocničným informacným
+systémom je stále veľké množstvo nemocničných záznamov v
+podobe čistého alebo čiastične štrukturalizovaného 
+textu z ktorého je ručné získavanie dát časovo náročné.
+Preto sa na to využívajú automatizované systémy
+ktoré zväčša fungujú na jednom z dvoch princípov 
+respektíve na kombinácii oboch. Tými prístupmi
+sú regulárne výrazy a metódy strojového učenia
+určené na spracovanie prirodzeného jazyka.
+
+Obe tieto prístupy majú svoje výhody a nevýhody [0]. 
+Výhodou regulárnych výrazov je ich presnosť a 
+transparentnosť čiže možnosť vidieť a upravovať
+vnútorné fungovanie programu ale ich nevýhodov je,
+že hľadané výrazy treba ručne vytvárať a vylepšovať
+čo je často náročné, špecifické pre určitú oblasť
+a v prípade komplikovaných výrazov je aj komplikovaná
+údržba. Na druhej strane 
+
+Získavanie dát z textu pomocou regulárnych výrazov 
+sa v medicínskych aplikáciach často využíva keďže,
+narozdiel on iných spôsobou získavania dát z textu
+akými sú metódy strojového učenia na spracovanie
+prirodzeného jazyka sú často dosť presné a zároveň
+ich fungovanie je transparentné takže v prípade 
+problému so získavanými dátami alebo v prípade 
+potreby pridania alebo odobrania získavanej informácie
+je úprava jednoduchá a spočíva zväčša iba v modifikácii,
+pridaní alebo odstránení regulárneho výrazu. 
+
+Medzi už existujúce systémy využívajúce regulárne
+výrazy patrí napriklad systém HEDEA [1] čiže 
+Healthcare Data Extraction and Analysis ktorého
+autormi sú Anshul Aggarwal, Sunita Garhwal a Ajay Kumar 
+a bol vyvinutý na získavanie Indických medicínskych dát.
+Podobne ako v našom prípade je hlavnou úlohou tohto 
+softvéru získavať medicínske dáta z čiatočne štrukturalizovaných
+vstupných dát čiže lekárskych správ a výsledkou testou.
+Hlavné rozdiely oproti nášmu systému sú, že systém HEDEA
+sa snaží získavať základné dáta o pacientovi ako sú osobné
+údaje, výška, váha, tlak, základné krvné výsledky a tak ďalej 
+zatiaľ čo my získavame okrem týchto dát aj dáta 
+špecifické pre pacientov s ochorením COVID-19 ako
+napríklad typ oxygenoterapie alebo výsledky testov
+na pritolátky proti vírusu SARS-CoV-2, zároveň
+je tento model určený na spracovávanie Indických dát
+takže je vytvorený pre dáta písané v oficialnom jazyku
+Indie v tomto prípade algličtinu zatiaľ čo náš model
+je vytvorený pre dáta v slovenčine.
+
+
+[0] Cascaded Data Mining Methods for Text Understanding, with medical case study
+[1] HEDEA: A Python Tool for Extracting and Analysing Semi-structured Information from Medical Records
