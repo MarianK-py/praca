@@ -1,9 +1,9 @@
 % !TeX spellcheck = sk_SK-Slovak
 \chapter{Podobné práce}
 
-Aj napriek moderným nemocničným informacným
+Aj napriek moderným nemocničným informačným
 systémom je stále veľké množstvo nemocničných záznamov v
-podobe čistého alebo čiastične štrukturalizovaného 
+podobe čistého alebo čiastočne štrukturalizovaného 
 textu z ktorého je ručné získavanie dát časovo náročné.
 Preto sa na to využívajú automatizované systémy
 ktoré zväčša fungujú na jednom z dvoch princípov 
@@ -11,46 +11,97 @@ respektíve na kombinácii oboch. Tými prístupmi
 sú regulárne výrazy a metódy strojového učenia
 určené na spracovanie prirodzeného jazyka.
 
-Obe tieto prístupy majú svoje výhody a nevýhody [0]. 
+Obe tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
 Výhodou regulárnych výrazov je ich presnosť a 
 transparentnosť čiže možnosť vidieť a upravovať
-vnútorné fungovanie programu ale ich nevýhodov je,
+vnútorné fungovanie programu čiže jednotlivé výrazy
+hľadajúce konkrétne informácie ale ich nevýhodou je,
 že hľadané výrazy treba ručne vytvárať a vylepšovať
 čo je často náročné, špecifické pre určitú oblasť
 a v prípade komplikovaných výrazov je aj komplikovaná
-údržba. Na druhej strane 
-
-Získavanie dát z textu pomocou regulárnych výrazov 
-sa v medicínskych aplikáciach často využíva keďže,
-narozdiel on iných spôsobou získavania dát z textu
-akými sú metódy strojového učenia na spracovanie
-prirodzeného jazyka sú často dosť presné a zároveň
-ich fungovanie je transparentné takže v prípade 
-problému so získavanými dátami alebo v prípade 
-potreby pridania alebo odobrania získavanej informácie
-je úprava jednoduchá a spočíva zväčša iba v modifikácii,
-pridaní alebo odstránení regulárneho výrazu. 
+údržba. Na druhej strane v prípade použitia niektorej
+z metód strojového učenia môže často stačiť použiť už 
+existujúcu metódu spracúvajúcu prirodzený jazyk mierne
+ju modifikovať pre konkrétne použitie a natrénovať
+model na predpripravených dátach avšak tieto modely
+často nie sú až tak presné ako regulárne výrazy 
+a zároveň v prípade nájdenia častej chyby alebo 
+nutnosti modifikácie hľadaných dát (pridanie alebo 
+odobranie získavanej informácie) je nutné model 
+upraviť a celý nanovo pretrénovať a validovať aj už
+skôr validované časti.
 
 Medzi už existujúce systémy využívajúce regulárne
-výrazy patrí napriklad systém HEDEA [1] čiže 
+výrazy patrí napríklad systém HEDEA \cite{hedea} čiže 
 Healthcare Data Extraction and Analysis ktorého
 autormi sú Anshul Aggarwal, Sunita Garhwal a Ajay Kumar 
 a bol vyvinutý na získavanie Indických medicínskych dát.
+Systém využitím regulárnych výrazov nájde požadovanú informáciu 
+v texte následne ju spracuje do podoby dvojica získavaný
+údaj, výsledok (napríklad (diabetes, áno) alebo (výška, 170cm))
+a tento údaj je následne zapísaný do databázy 
+k konkrétnemu pacientovi na základe jeho identifikačného
+čísla ktorý sa na každom spracovávanom texte nachádzať. 
 Podobne ako v našom prípade je hlavnou úlohou tohto 
-softvéru získavať medicínske dáta z čiatočne štrukturalizovaných
-vstupných dát čiže lekárskych správ a výsledkou testou.
+softvéru získavať medicínske dáta z čiastočne štrukturalizovaných
+vstupných dát čiže lekárskych správ a výsledkov testov.
 Hlavné rozdiely oproti nášmu systému sú, že systém HEDEA
 sa snaží získavať základné dáta o pacientovi ako sú osobné
 údaje, výška, váha, tlak, základné krvné výsledky a tak ďalej 
 zatiaľ čo my získavame okrem týchto dát aj dáta 
 špecifické pre pacientov s ochorením COVID-19 ako
 napríklad typ oxygenoterapie alebo výsledky testov
-na pritolátky proti vírusu SARS-CoV-2, zároveň
+na protilátky proti vírusu SARS-CoV-2, zároveň
 je tento model určený na spracovávanie Indických dát
-takže je vytvorený pre dáta písané v oficialnom jazyku
-Indie v tomto prípade algličtinu zatiaľ čo náš model
+takže je vytvorený pre dáta písané v oficiálnom jazyku
+Indie v tomto prípade angličtinu zatiaľ čo náš model
 je vytvorený pre dáta v slovenčine.
 
+Systémom využívajúcim metódu strojového učenia na
+spracovávanie prirodzeného jazyka je napríklad 
+systém ktorý vytvorili Fette a spol. na Univerzite
+vo Würzburgu \cite{infExtGer} využívajúci metódu učenia s učiteľom 
+s názvom Conditional random field \cite{CRF} ktorej úlohou
+je označiť jednotlivé slová respektíve viacslovné
+pomenovania a následne pomocou metódy 
+Keyword Matching with Terminology based disambiguation
+prepojiť nájdené slová a viacslovné pomenovania s databázou
+odborných pojmov tak, že ak je prepojenie jednoznačné
+použije ho a ak je nejednoznačné hľadá v okolí slova
+slovo s jednoznačným prepojením ktoré bližšie určí
+prepojenie nejednoznačného slova. Okrem samotného spôsobu
+získavanie dát je v porovnaní s našim systémom rozdiel 
+aj v prioritách pri získavaní dát keďže náš systém 
+je vytvorený na čo najväčšiu presnosť pri získavaní
+dát špecificky z prepúšťacích správ zatiaľ čo ich 
+systém je vytvorený tak aby mohol byť natrénovaný na získavanie
+dát z rôznych typov medicínskych dokumentov či už
+lekárskych správ, výsledkov testov alebo klinických 
+štúdii a takisto platí, že celý systém je vytvorený 
+pre iný jazyk ako náš systém v tomto prípade ide o 
+nemčinu. 
 
-[0] Cascaded Data Mining Methods for Text Understanding, with medical case study
-[1] HEDEA: A Python Tool for Extracting and Analysing Semi-structured Information from Medical Records
+Prístup ktorý kombinuje metódu strojového učenia 
+s regulárnymi výrazmi využili v svojom systéme
+Cui a kol. \cite{CHA} ktorý využili metódu s názvom 
+Constructive heuristic ktorej úlohou nebolo
+priamo hľadanie získavaných informácii v texte ale
+generovanie čo najlepších regulárnych výrazov
+na to určených. Tento algoritmus začína s
+prazdnou množinou regulárnych výrazov a 
+následne iteratívne túto množinu rozširuje
+a upravuje kým nie je splnená ukončovacia
+podmienka. Výhodou tohto prístupu oproti
+bežným metódam strojového učenia je, 
+že na konci trénovania má uživateľ množinu
+regulárnych výrazov kroré môže ďalej upravovať
+a nie "čiernu skrinku" ktorej vnútornému fungovaniu
+nerozumie, oproti len použitiu regulárnych výrazov
+má výhodu, že nie je nutné ich vymýšľať
+od začiatku ale stačí iba výstup mierne upraviť.
+Hlavným rozdielom oproti nášmu systému je to, 
+že hlavnou ulohou ich systém nie je priame získavanie
+dát z medicínskej dokumentácie ale generovanie 
+regulárnych výrazov ktoré je po na takýto problém
+možné použiť.
+
