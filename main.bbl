@@ -2,6 +2,13 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{1}
 
+\bibitem{conHeu}
+{Constructive heuristic}. in wikipedia, the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Constructive\%20heuristic&oldid=1032227019},
+  2022.
+\newblock [Online; accessed 07-December-2022].
+
 \bibitem{hedea}
 Anshul Aggarwal, Sunita Garhwal, and Ajay Kumar.
 \newblock Hedea: a python tool for extracting and analysing semi-structured

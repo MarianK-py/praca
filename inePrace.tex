@@ -14,18 +14,27 @@ určené na spracovanie prirodzeného jazyka.
 Obe tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
 Výhodou regulárnych výrazov je ich presnosť a 
 transparentnosť čiže možnosť vidieť a upravovať
-vnútorné fungovanie programu čiže jednotlivé výrazy
-hľadajúce konkrétne informácie ale ich nevýhodou je,
-že hľadané výrazy treba ručne vytvárať a vylepšovať
-čo je často náročné, špecifické pre určitú oblasť
-a v prípade komplikovaných výrazov je aj komplikovaná
-údržba. Na druhej strane v prípade použitia niektorej
-z metód strojového učenia môže často stačiť použiť už 
-existujúcu metódu spracúvajúcu prirodzený jazyk mierne
-ju modifikovať pre konkrétne použitie a natrénovať
-model na predpripravených dátach avšak tieto modely
-často nie sú až tak presné ako regulárne výrazy 
-a zároveň v prípade nájdenia častej chyby alebo 
+vnútorné fungovanie programu presnejšie možnosť 
+upravovať jednotlivé regulárne výrazy
+hľadajúce konkrétne informácie, ale ich nevýhodami sú,
+že všetky regulárne výrazy ktoré softvér využíva 
+treba ručne vytvárať a vylepšovať
+čo je často náročné, väčšinou sú špecifické pre určitú oblasť
+pre ktorú je softvér vytváraný čo komplikuje využívanie
+regulárnych výrazov ktorých správne fungovanie bolo už 
+otestované v iných softvéroch 
+a v prípade komplikovaných výrazov je aj ich 
+upravovanie a vylepšovanie komplikované. 
+Na druhej strane v prípade použitia niektorej
+z metód strojového učenia je často možné využiť už 
+existujúcu metódu spracúvajúcu prirodzený jazyk a
+modifikovať ju pre konkrétne použitie a natrénovať
+model na predpripravených dátach, avšak aj tento prístup
+má nevýhodu ako napríklad, že natrénovaný model
+často nie sú až tak presný ako dobre nastavené
+regulárne výrazy, pre zvýšenie presnosti je často nutné
+zväčšiť množstvo ručne spracovať dát určených na trénovanie 
+modelu a zároveň v prípade nájdenia častej chyby alebo 
 nutnosti modifikácie hľadaných dát (pridanie alebo 
 odobranie získavanej informácie) je nutné model 
 upraviť a celý nanovo pretrénovať a validovať aj už
@@ -36,39 +45,49 @@ výrazy patrí napríklad systém HEDEA \cite{hedea} čiže
 Healthcare Data Extraction and Analysis ktorého
 autormi sú Anshul Aggarwal, Sunita Garhwal a Ajay Kumar 
 a bol vyvinutý na získavanie Indických medicínskych dát.
-Systém využitím regulárnych výrazov nájde požadovanú informáciu 
-v texte následne ju spracuje do podoby dvojica získavaný
-údaj, výsledok (napríklad (diabetes, áno) alebo (výška, 170cm))
-a tento údaj je následne zapísaný do databázy 
-k konkrétnemu pacientovi na základe jeho identifikačného
-čísla ktorý sa na každom spracovávanom texte nachádzať. 
+Systém využitím regulárnych výrazov hľadá každú jednu
+získavanú informáciu tak, že hľadá v texte kľúčové slovo
+označujúce požadovanú informáciu, následne ak by mala 
+k danej informácií existovať aj konkrétna hodnota
+(či už číselná alebo slovná) tak hľadá túto hodnotu v okolí
+kľúčového slova a následne túto informáciu aj 
+s jej hodnotou zapíše do databázy k konkrétnemu 
+pacientovi na základe jeho identifikačného
+čísla ktorý sa na každom spracovávanom texte musí nachádzať. 
 Podobne ako v našom prípade je hlavnou úlohou tohto 
 softvéru získavať medicínske dáta z čiastočne štrukturalizovaných
 vstupných dát čiže lekárskych správ a výsledkov testov.
 Hlavné rozdiely oproti nášmu systému sú, že systém HEDEA
 sa snaží získavať základné dáta o pacientovi ako sú osobné
-údaje, výška, váha, tlak, základné krvné výsledky a tak ďalej 
+údaje, výška, váha, tlak, základné krvné výsledky a 
+prekonané ochorenia inými slovami jeho účelom je vytvoriť
+databázu obsahujúcu anamnézy jednotlivých pacientov
+ktorú môže využiť lekár pri diagnostike daného pacienta
 zatiaľ čo my získavame okrem týchto dát aj dáta 
 špecifické pre pacientov s ochorením COVID-19 ako
 napríklad typ oxygenoterapie alebo výsledky testov
-na protilátky proti vírusu SARS-CoV-2, zároveň
-je tento model určený na spracovávanie Indických dát
+na protilátky proti vírusu SARS-CoV-2 a našou je 
+vytvoriť tabuľku s dátami ochorení COVID-19 ktorá
+sa dá využiť na analýzu rizikových faktorov a liečby
+tohto ochorenia, zároveň je tento model určený na 
+spracovávanie Indických dát
 takže je vytvorený pre dáta písané v oficiálnom jazyku
 Indie v tomto prípade angličtinu zatiaľ čo náš model
 je vytvorený pre dáta v slovenčine.
 
 Systémom využívajúcim metódu strojového učenia na
 spracovávanie prirodzeného jazyka je napríklad 
-systém ktorý vytvorili Fette a spol. na Univerzite
+systém ktorý vytvorili Fette a kol. na Univerzite
 vo Würzburgu \cite{infExtGer} využívajúci metódu učenia s učiteľom 
 s názvom Conditional random field \cite{CRF} ktorej úlohou
 je označiť jednotlivé slová respektíve viacslovné
 pomenovania a následne pomocou metódy 
 Keyword Matching with Terminology based disambiguation
 prepojiť nájdené slová a viacslovné pomenovania s databázou
-odborných pojmov tak, že ak je prepojenie jednoznačné
-použije ho a ak je nejednoznačné hľadá v okolí slova
-slovo s jednoznačným prepojením ktoré bližšie určí
+odborných pojmov tak, že v prípade jednoznačnosti prepojenie 
+považuje danú informáciu za klasifikovanú a v
+prípade nejednoznačného prepojenia hľadá v okolí označeného slova
+iné označené slovo s jednoznačným prepojením ktoré bližšie určí
 prepojenie nejednoznačného slova. Okrem samotného spôsobu
 získavanie dát je v porovnaní s našim systémom rozdiel 
 aj v prioritách pri získavaní dát keďže náš systém 
@@ -77,7 +96,9 @@ dát špecificky z prepúšťacích správ zatiaľ čo ich
 systém je vytvorený tak aby mohol byť natrénovaný na získavanie
 dát z rôznych typov medicínskych dokumentov či už
 lekárskych správ, výsledkov testov alebo klinických 
-štúdii a takisto platí, že celý systém je vytvorený 
+štúdii pričom jedinou podmienkou je aby sa všetky získavané údaje 
+nachádzali v databáze odborných pojmov a takisto platí, 
+že celý systém je vytvorený 
 pre iný jazyk ako náš systém v tomto prípade ide o 
 nemčinu. 
 
@@ -91,7 +112,7 @@ na to určených. Tento algoritmus začína s
 prázdnou množinou regulárnych výrazov a 
 následne iteratívne túto množinu rozširuje
 a upravuje kým nie je splnená ukončovacia
-podmienka. Výhodou tohto prístupu oproti
+podmienka \cite{conHeu}. Výhodou tohto prístupu oproti
 bežným metódam strojového učenia je, 
 že na konci trénovania má užívateľ množinu
 regulárnych výrazov ktoré môže ďalej upravovať
@@ -99,6 +120,12 @@ a nie "čiernu skrinku" ktorej vnútornému fungovaniu
 nerozumie, oproti len použitiu regulárnych výrazov
 má výhodu, že nie je nutné ich vymýšľať
 od začiatku ale stačí iba výstup mierne upraviť.
+Nevýhodou je, že pochopenie a upravenie regulárnych
+výrazov je síce možné (narozdiel od vnútorné fungovanie
+algoritmu strojového učenia) ale môže to byť pomerne náročné
+keďže ide o počítačom generované regulárne výrazy
+ktoré aj napriek tomu, že fungujú rovnako dobre môžu
+sa výrazne líšiť od toho čo by napísal človek.  
 Hlavným rozdielom oproti nášmu systému je to, 
 že hlavnou úlohou ich systém nie je priame získavanie
 dát z medicínskej dokumentácie ale generovanie 
