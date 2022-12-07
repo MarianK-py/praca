@@ -17,6 +17,8 @@
 \contentsline {subsection}{\numberline {2.3.1}Homogénny text}{8}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Menej väčších blokov}{8}{subsection.2.3.2}%
 \contentsline {chapter}{\numberline {3}Získavanie dát}{11}{chapter.3}%
-\contentsline {chapter}{Záver}{13}{chapter*.8}%
-\contentsline {chapter}{Príloha A}{17}{chapter*.10}%
-\contentsline {chapter}{Príloha B}{19}{chapter*.11}%
+\contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Modifikácia a vylepšenia}{15}{chapter.5}%
+\contentsline {chapter}{Záver}{17}{chapter*.8}%
+\contentsline {chapter}{Príloha A}{21}{chapter*.10}%
+\contentsline {chapter}{Príloha B}{23}{chapter*.11}%
