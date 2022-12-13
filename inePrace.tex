@@ -6,7 +6,7 @@ systémom je stále veľké množstvo nemocničných záznamov v
 podobe čistého alebo čiastočne štrukturalizovaného 
 textu z ktorého je ručné získavanie dát časovo náročné.
 Preto sa na to využívajú automatizované systémy
-ktoré zväčša fungujú na jednom z dvoch princípov 
+ktoré zväčša fungujú na jednom z dvoch princípov, 
 respektíve na kombinácii oboch. Tými prístupmi
 sú regulárne výrazy a metódy strojového učenia
 určené na spracovanie prirodzeného jazyka.
@@ -14,7 +14,7 @@ určené na spracovanie prirodzeného jazyka.
 Obe tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
 Výhodou regulárnych výrazov je ich presnosť a 
 transparentnosť čiže možnosť vidieť a upravovať
-vnútorné fungovanie programu presnejšie možnosť 
+vnútorné fungovanie programu, presnejšie možnosť 
 upravovať jednotlivé regulárne výrazy
 hľadajúce konkrétne informácie, ale ich nevýhodami sú,
 že všetky regulárne výrazy ktoré softvér využíva 
@@ -30,7 +30,7 @@ z metód strojového učenia je často možné využiť už
 existujúcu metódu spracúvajúcu prirodzený jazyk a
 modifikovať ju pre konkrétne použitie a natrénovať
 model na predpripravených dátach, avšak aj tento prístup
-má nevýhodu ako napríklad, že natrénovaný model
+má nevýhody ako napríklad, že natrénovaný model
 často nie sú až tak presný ako dobre nastavené
 regulárne výrazy, pre zvýšenie presnosti je často nutné
 zväčšiť množstvo ručne spracovať dát určených na trénovanie 
@@ -53,12 +53,12 @@ k danej informácií existovať aj konkrétna hodnota
 kľúčového slova a následne túto informáciu aj 
 s jej hodnotou zapíše do databázy k konkrétnemu 
 pacientovi na základe jeho identifikačného
-čísla ktorý sa na každom spracovávanom texte musí nachádzať. 
+čísla ktoré sa na každom spracovávanom texte musí nachádzať. 
 Podobne ako v našom prípade je hlavnou úlohou tohto 
 softvéru získavať medicínske dáta z čiastočne štrukturalizovaných
 vstupných dát čiže lekárskych správ a výsledkov testov.
 Hlavné rozdiely oproti nášmu systému sú, že systém HEDEA
-sa snaží získavať základné dáta o pacientovi ako sú osobné
+sa snaží získavať iba základné dáta o pacientovi ako sú osobné
 údaje, výška, váha, tlak, základné krvné výsledky a 
 prekonané ochorenia inými slovami jeho účelom je vytvoriť
 databázu obsahujúcu anamnézy jednotlivých pacientov
@@ -66,10 +66,10 @@ ktorú môže využiť lekár pri diagnostike daného pacienta
 zatiaľ čo my získavame okrem týchto dát aj dáta 
 špecifické pre pacientov s ochorením COVID-19 ako
 napríklad typ oxygenoterapie alebo výsledky testov
-na protilátky proti vírusu SARS-CoV-2 a našou je 
-vytvoriť tabuľku s dátami ochorení COVID-19 ktorá
+na protilátky proti vírusu SARS-CoV-2 a našou snahou je 
+vytvoriť tabuľku s dátami o ochorení COVID-19 ktorá
 sa dá využiť na analýzu rizikových faktorov a liečby
-tohto ochorenia, zároveň je tento model určený na 
+tohto ochorenia, zároveň systém HEDEA určený na 
 spracovávanie Indických dát
 takže je vytvorený pre dáta písané v oficiálnom jazyku
 Indie v tomto prípade angličtinu zatiaľ čo náš model
@@ -78,23 +78,25 @@ je vytvorený pre dáta v slovenčine.
 Systémom využívajúcim metódu strojového učenia na
 spracovávanie prirodzeného jazyka je napríklad 
 systém ktorý vytvorili Fette a kol. na Univerzite
-vo Würzburgu \cite{infExtGer} využívajúci metódu učenia s učiteľom 
-s názvom Conditional random field \cite{CRF} ktorej úlohou
+vo Würzburgu \cite{infExtGer} ktorý využívajúci metódu učenia s 
+učiteľom s názvom Conditional random field ktorej úlohou
 je označiť jednotlivé slová respektíve viacslovné
-pomenovania a následne pomocou metódy 
+pomenovania \cite{CRF} a následne pomocou metódy 
 Keyword Matching with Terminology based disambiguation
 prepojiť nájdené slová a viacslovné pomenovania s databázou
-odborných pojmov tak, že v prípade jednoznačnosti prepojenie 
+odborných pojmov tak, že v prípade jednoznačného prepojenie 
 považuje danú informáciu za klasifikovanú a v
-prípade nejednoznačného prepojenia hľadá v okolí označeného slova
-iné označené slovo s jednoznačným prepojením ktoré bližšie určí
-prepojenie nejednoznačného slova. Okrem samotného spôsobu
+prípade nejednoznačného prepojenia (dané slovo môže byť časťou
+rôznych informácii napríklad v prípade číselnej hodnoty nevieme
+bez ďalšej informácie určiť k čomu patrí) hľadá v okolí označeného 
+slova iné označené slovo s jednoznačným prepojením ktoré bližšie 
+určí prepojenie nejednoznačného slova. Okrem samotného spôsobu
 získavanie dát je v porovnaní s našim systémom rozdiel 
 aj v prioritách pri získavaní dát keďže náš systém 
 je vytvorený na čo najväčšiu presnosť pri získavaní
 dát špecificky z prepúšťacích správ zatiaľ čo ich 
-systém je vytvorený tak aby mohol byť natrénovaný na získavanie
-dát z rôznych typov medicínskych dokumentov či už
+systém je vytvorený tak aby ho bolo možné byť natrénovaný na 
+získavanie dát z rôznych typov medicínskych dokumentov či už
 lekárskych správ, výsledkov testov alebo klinických 
 štúdii pričom jedinou podmienkou je aby sa všetky získavané údaje 
 nachádzali v databáze odborných pojmov a takisto platí, 
@@ -116,13 +118,13 @@ podmienka \cite{conHeu}. Výhodou tohto prístupu oproti
 bežným metódam strojového učenia je, 
 že na konci trénovania má užívateľ množinu
 regulárnych výrazov ktoré môže ďalej upravovať
-a nie "čiernu skrinku" ktorej vnútornému fungovaniu
-nerozumie, oproti len použitiu regulárnych výrazov
-má výhodu, že nie je nutné ich vymýšľať
+a nie "čiernu skrinku" ako v prípade bežnej metódy strojového
+učenia, ktorej vnútornému fungovaniu je pre človeka
+nepochopiteľné. Oproti len použitiu regulárnych výrazov
+má výhodu, že nie je nutné regulárne výrazy vymýšľať
 od začiatku ale stačí iba výstup mierne upraviť.
 Nevýhodou je, že pochopenie a upravenie regulárnych
-výrazov je síce možné (narozdiel od vnútorné fungovanie
-algoritmu strojového učenia) ale môže to byť pomerne náročné
+výrazov je síce možné ale môže to byť pomerne náročné
 keďže ide o počítačom generované regulárne výrazy
 ktoré aj napriek tomu, že fungujú rovnako dobre môžu
 sa výrazne líšiť od toho čo by napísal človek.  
