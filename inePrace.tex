@@ -3,7 +3,7 @@
 
 Aj napriek moderným nemocničným informačným
 systémom je stále veľké množstvo nemocničných záznamov v
-podobe čistého alebo čiastočne štrukturalizovaného 
+podobe čistého alebo čiastočne štrukturovaného 
 textu z ktorého je ručné získavanie dát časovo náročné.
 Preto sa na to využívajú automatizované systémy
 ktoré zväčša fungujú na jednom z dvoch princípov, 
@@ -11,19 +11,27 @@ respektíve na kombinácii oboch. Tými prístupmi
 sú regulárne výrazy a metódy strojového učenia
 určené na spracovanie prirodzeného jazyka.
 
+% pridat kratke vysvetlenie fungovania danych metod
+Metóda regulárnych výrazov využíva na hľadanie informácii v texte
+špeciálne kódované reťazce znakov ktoré slúžia ako vzor. 
+V texte sa hľadajú miesta, ktoré sa zhodujú so vzorom a z 
+nájdených miest sa následne vyberá získavaná informácia.
+
+Metóda strojového učenia...
+
 Obe tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
 Výhodou regulárnych výrazov je ich presnosť a 
 transparentnosť čiže možnosť vidieť a upravovať
 vnútorné fungovanie programu, presnejšie možnosť 
 upravovať jednotlivé regulárne výrazy
-hľadajúce konkrétne informácie, ale ich nevýhodami sú,
-že všetky regulárne výrazy ktoré softvér využíva 
+hľadajúce konkrétne informácie. Medzi nevýhody tohto prístupu patrí
+napríklad fakt, že všetky regulárne výrazy ktoré softvér využíva 
 treba ručne vytvárať a vylepšovať
 čo je často náročné, väčšinou sú špecifické pre určitú oblasť
 pre ktorú je softvér vytváraný čo komplikuje využívanie
 regulárnych výrazov ktorých správne fungovanie bolo už 
-otestované v iných softvéroch 
-a v prípade komplikovaných výrazov je aj ich 
+otestované v iných softvéroch. 
+Ďalšou nevýhodou je, že v prípade komplikovaných výrazov je aj ich 
 upravovanie a vylepšovanie komplikované. 
 Na druhej strane v prípade použitia niektorej
 z metód strojového učenia je často možné využiť už 
@@ -41,7 +49,7 @@ upraviť a celý nanovo pretrénovať a validovať aj už
 skôr validované časti.
 
 Medzi už existujúce systémy využívajúce regulárne
-výrazy patrí napríklad systém HEDEA \cite{hedea} čiže 
+výrazy patrí napríklad systém HEDEA, \cite{hedea} čiže 
 Healthcare Data Extraction and Analysis ktorého
 autormi sú Anshul Aggarwal, Sunita Garhwal a Ajay Kumar 
 a bol vyvinutý na získavanie Indických medicínskych dát.

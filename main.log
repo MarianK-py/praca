@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  19 JAN 2023 13:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  22 JAN 2023 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./main.tex
 (main.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-07-04>
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
-Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo
-File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: bk12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -20,9 +20,9 @@ File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count191
 \c@figure=\count192
 \c@table=\count193
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -40,14 +40,14 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@cnth=\count194
 \Gm@cntv=\count195
 \c@Gm@tempcnt=\count196
-\Gm@bindingoffset=\dimen139
-\Gm@wd@mp=\dimen140
-\Gm@odd@mp=\dimen141
-\Gm@even@mp=\dimen142
-\Gm@layoutwidth=\dimen143
-\Gm@layoutheight=\dimen144
-\Gm@layouthoffset=\dimen145
-\Gm@layoutvoffset=\dimen146
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
 \Gm@dimlist=\toks17
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
@@ -60,9 +60,9 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2022/06/26 3.77 The Babel package
+Package: babel 2022/12/26 3.84 The Babel package
 \babel@savecnt=\count197
-\U@D=\dimen147
+\U@D=\dimen149
 \l@unhyphenated=\language79
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
@@ -94,14 +94,14 @@ Package babel Info: Importing font and identification data for slovak
 \lst@gtempboxa=\box51
 \lst@token=\toks20
 \lst@length=\count267
-\lst@currlwidth=\dimen148
+\lst@currlwidth=\dimen150
 \lst@column=\count268
 \lst@pos=\count269
-\lst@lostspace=\dimen149
-\lst@width=\dimen150
+\lst@lostspace=\dimen151
+\lst@width=\dimen152
 \lst@newlines=\count270
 \lst@lineno=\count271
-\lst@maxwidth=\dimen151
+\lst@maxwidth=\dimen153
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
@@ -129,13 +129,13 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 107.
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen152
-\Gin@req@width=\dimen153
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
-Package: pdfpages 2022/10/09 v0.5w Insert pages of external PDF documents (AM)
+Package: pdfpages 2022/12/19 v0.5x Insert pages of external PDF documents (AM)
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
@@ -144,19 +144,19 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count274
 \calc@Bcount=\count275
-\calc@Adimen=\dimen154
-\calc@Bdimen=\dimen155
-\calc@Askip=\skip49
-\calc@Bskip=\skip50
+\calc@Adimen=\dimen156
+\calc@Bdimen=\dimen157
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count276
-\calc@Cskip=\skip51
+\calc@Cskip=\skip52
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen156
-\ESO@tempdimb=\dimen157
+\ESO@tempdima=\dimen158
+\ESO@tempdimb=\dimen159
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
@@ -165,9 +165,7 @@ Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
-
-(C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex-dev/graphics\mathcolor.
-ltx)
+(C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
@@ -178,18 +176,19 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 ))
-\AM@pagewidth=\dimen158
-\AM@pageheight=\dimen159
-\AM@fboxrule=\dimen160
+\AM@pagewidth=\dimen160
+\AM@pageheight=\dimen161
+\AM@fboxrule=\dimen162
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
-File: pppdftex.def 2022/10/09 v0.5w Pdfpages driver for pdfTeX (AM)
+File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count277
 \AM@pagebox=\box53
 \AM@global@opts=\toks21
 \AM@pagecnt=\count278
 \AM@toc@title=\toks22
+\AM@lof@heading=\toks23
 \c@AM@survey=\count279
 \AM@templatesizebox=\box54
 ) (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
@@ -197,7 +196,7 @@ File: pppdftex.def 2022/10/09 v0.5w Pdfpages driver for pdfTeX (AM)
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -215,9 +214,8 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
-ty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+(C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
 keys.sty
@@ -251,11 +249,11 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count280
 )
-\@linkdim=\dimen161
+\@linkdim=\dimen163
 \Hy@linkcounter=\count281
 \Hy@pagecounter=\count282
  (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
@@ -266,7 +264,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count283
  (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -277,10 +275,10 @@ Package hyperref Info: Hyper index ON on input line 4170.
 Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4408.
+Package hyperref Info: Bookmarks ON on input line 4410.
 \c@Hy@tempcnt=\count284
-LaTeX Info: Redefining \url on input line 4746.
-\XeTeXLinkMargin=\dimen162
+LaTeX Info: Redefining \url on input line 4748.
+\XeTeXLinkMargin=\dimen164
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -291,15 +289,15 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count285
-\Field@Width=\dimen163
-\Fld@charsize=\dimen164
-Package hyperref Info: Hyper figures OFF on input line 6024.
-Package hyperref Info: Link nesting OFF on input line 6029.
-Package hyperref Info: Hyper index ON on input line 6032.
-Package hyperref Info: backreferencing OFF on input line 6039.
-Package hyperref Info: Link coloring OFF on input line 6044.
-Package hyperref Info: Link coloring with OCG OFF on input line 6049.
-Package hyperref Info: PDF/A mode OFF on input line 6054.
+\Field@Width=\dimen165
+\Fld@charsize=\dimen166
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
@@ -311,7 +309,7 @@ package with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
+File: hpdftex.def 2022-11-13 v7.00u Hyperref driver for pdfTeX
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
@@ -332,34 +330,34 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip52
+\Hy@SectionHShift=\skip53
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
-File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count291
 \l__pdf_internal_box=\box55
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -401,16 +399,16 @@ LaTeX Font Info:    ... okay on input line 71.
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count293
-\scratchdimen=\dimen165
+\scratchdimen=\dimen167
 \scratchbox=\box56
 \nofMPsegments=\count294
 \nofMParguments=\count295
-\everyMPshowfont=\toks23
+\everyMPshowfont=\toks24
 \MPscratchCnt=\count296
-\MPscratchDim=\dimen166
+\MPscratchDim=\dimen168
 \MPnumerator=\count297
 \makeMPintoPDFobject=\count298
-\everyMPtoPDFconversion=\toks24
+\everyMPtoPDFconversion=\toks25
 )
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -423,13 +421,19 @@ fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nom
+etadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
-Package hyperref Info: Link coloring OFF on input line 71.
+))
+Package hyperref Info: Link coloring OFF on input line 70.
 
 (main.out) (main.out)
 \@outlinefile=\write3
@@ -442,68 +446,68 @@ Package hyperref Info: Link coloring OFF on input line 71.
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 122.
+(Font)              <12> on input line 121.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 122.
+(Font)              <8> on input line 121.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 122.
+(Font)              <6> on input line 121.
  [3] [4
 
 ]
-<images/zadanie-zp_172972.pdf, id=119, 597.50731pt x 845.04607pt>
+<images/zadanie-zp_172972.pdf, id=123, 597.50731pt x 845.04607pt>
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf>
-Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 149.
+Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 148.
 (pdftex.def)             Requested size: 597.50584pt x 845.044pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf>
-Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 149.
+Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 148.
 (pdftex.def)             Requested size: 597.50584pt x 845.044pt.
-<images/zadanie-zp_172972.pdf, id=122, page=1, 597.50731pt x 845.04607pt>
+<images/zadanie-zp_172972.pdf, id=126, page=1, 597.50731pt x 845.04607pt>
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 149.
+e 148.
 (pdftex.def)             Requested size: 597.50584pt x 845.044pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 149.
+e 148.
 (pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 149.
+e 148.
 (pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 149.
+e 148.
 (pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.149 \includepdf{images/zadanie-zp_172972.pdf}
+l.148 \includepdf{images/zadanie-zp_172972.pdf}
                                                
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 149.
+e 148.
 (pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
  [2 <./images/zadanie-zp_172972.pdf>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.169 \newpage
+l.168 \newpage
                [3]
 pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.182 \newpage
+l.181 \newpage
                [4] [5] [6
 
 ] (main.toc)
@@ -526,20 +530,20 @@ l.182 \newpage
 ]
 Kapitola 1.
 
-Underfull \vbox (badness 3525) has occurred while \output is active []
+Underfull \vbox (badness 2042) has occurred while \output is active []
 
  [3]
 [4]) (sprava.tex [5] [6
 
 ]
 Kapitola 2.
-<images/vyzor_spravy.jpg, id=271, 398.48875pt x 563.60562pt>
+<images/vyzor_spravy.jpg, id=278, 398.48875pt x 563.60562pt>
 File: images/vyzor_spravy.jpg Graphic file (type jpg)
 <use images/vyzor_spravy.jpg>
 Package pdftex.def Info: images/vyzor_spravy.jpg  used on input line 17.
 (pdftex.def)             Requested size: 176.40439pt x 249.50082pt.
 [7] [8 <./images/vyzor_spravy.jpg>] [9]
-<images/vyzor_spravy_vylepsena.png, id=288, 597.73312pt x 845.40843pt>
+<images/vyzor_spravy_vylepsena.png, id=295, 597.73312pt x 845.40843pt>
 File: images/vyzor_spravy_vylepsena.png Graphic file (type png)
 <use images/vyzor_spravy_vylepsena.png>
 Package pdftex.def Info: images/vyzor_spravy_vylepsena.png  used on input line 
@@ -549,17 +553,23 @@ Package pdftex.def Info: images/vyzor_spravy_vylepsena.png  used on input line
 
 ]
 Kapitola 3.
-<images/hlavicka_a.png, id=306, 642.90187pt x 76.78688pt>
+<images/hlavicka_a.png, id=313, 642.90187pt x 76.78688pt>
 File: images/hlavicka_a.png Graphic file (type png)
 <use images/hlavicka_a.png>
 Package pdftex.def Info: images/hlavicka_a.png  used on input line 15.
 (pdftex.def)             Requested size: 396.91325pt x 47.40817pt.
-<images/hlavicka_b.png, id=307, 738.76pt x 71.76813pt>
+<images/hlavicka_b.png, id=314, 738.76pt x 71.76813pt>
 File: images/hlavicka_b.png Graphic file (type png)
 <use images/hlavicka_b.png>
 Package pdftex.def Info: images/hlavicka_b.png  used on input line 25.
 (pdftex.def)             Requested size: 441.01773pt x 42.84326pt.
-[13 <./images/hlavicka_a.png>]) (analyza.tex [14 <./images/hlavicka_b.png>]
+[13 <./images/hlavicka_a.png>]
+<images/protilatky.png, id=320, 671.00688pt x 268.00125pt>
+File: images/protilatky.png Graphic file (type png)
+<use images/protilatky.png>
+Package pdftex.def Info: images/protilatky.png  used on input line 45.
+(pdftex.def)             Requested size: 441.01773pt x 176.14117pt.
+) (analyza.tex [14 <./images/hlavicka_b.png> <./images/protilatky.png>]
 Kapitola 4.
 ) (modifikacie.tex [15
 
@@ -572,11 +582,11 @@ Kapitola 5.
 ]) [19] [20
 
 ] (main.bbl
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
-.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+9.
 
 (C:\Users\majko\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ))
 (appendixA.tex [21
 
@@ -586,26 +596,20 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ]) (appendixB.tex [23] [24
 
 ]) [25] (main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 98D52DE653512BE3A5606A4AA99064F2;4432
-(rerunfilecheck)             After:  483569C5BDE94E1AF2706F16FCAA8E56;4672.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 483569C5BDE94E1AF2706F16FCAA8E56;4672.
  ) 
 Here is how much of TeX's memory you used:
- 12976 strings out of 478338
- 206879 string characters out of 2836700
- 534401 words of memory out of 3000000
- 31114 multiletter control sequences out of 15000+600000
- 482015 words of font info for 51 fonts, out of 8000000 for 9000
+ 13019 strings out of 476404
+ 208329 string characters out of 2789524
+ 1860324 words of memory out of 3000000
+ 33084 multiletter control sequences out of 15000+600000
+ 525043 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,17n,77p,1115b,573s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti
+ 75i,17n,76p,1115b,573s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 1200.pk> <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ectt1200.pk> <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+0\ecti1200.pk> <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecbx1440.pk> <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\ecsl1200.pk> <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\majko\AppData\Local\MiKTeX\fonts/pk/
@@ -614,9 +618,9 @@ ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\majko\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\majko\AppData\Loca
 l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2074.pk> <C:\Users\majko\AppDat
 a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk>
-Output written on main.pdf (38 pages, 691930 bytes).
+Output written on main.pdf (38 pages, 722074 bytes).
 PDF statistics:
- 878 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

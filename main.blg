@@ -2,49 +2,47 @@ This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: plain.bst
+The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: literatura.bib
-Warning--to sort, need author or key in conHeu
 You've used 6 entries,
-            2118 wiz_defined-function locations,
-            542 strings with 5361 characters,
-and the built_in function-call counts, 2442 in all, are:
-= -- 245
-> -- 110
+            1791 wiz_defined-function locations,
+            490 strings with 4886 characters,
+and the built_in function-call counts, 1756 in all, are:
+= -- 165
+> -- 67
 < -- 3
-+ -- 44
-- -- 38
-* -- 169
-:= -- 377
++ -- 25
+- -- 19
+* -- 111
+:= -- 252
 add.period$ -- 19
 call.type$ -- 6
-change.case$ -- 37
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 93
-empty$ -- 190
-format.name$ -- 38
-if$ -- 529
+cite$ -- 6
+duplicate$ -- 81
+empty$ -- 170
+format.name$ -- 19
+if$ -- 409
 int.to.chr$ -- 0
 int.to.str$ -- 6
 missing$ -- 5
 newline$ -- 34
-num.names$ -- 10
-pop$ -- 45
+num.names$ -- 5
+pop$ -- 25
 preamble$ -- 2
-purify$ -- 31
+purify$ -- 0
 quote$ -- 0
-skip$ -- 72
+skip$ -- 49
 stack$ -- 0
-substring$ -- 174
+substring$ -- 144
 swap$ -- 33
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 21
+type$ -- 0
+warning$ -- 0
+while$ -- 16
 width$ -- 7
 write$ -- 69
-(There was 1 warning)

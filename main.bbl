@@ -2,24 +2,18 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{1}
 
-\bibitem{conHeu}
-{Constructive heuristic}. in wikipedia, the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Constructive\%20heuristic&oldid=1032227019},
-  2022.
-\newblock [Online; accessed 07-December-2022].
+\bibitem{nlpAndRegex}
+Roni Romano, Lior Rokach, and Oded Maimon.
+\newblock Cascaded data mining methods for text understanding, with medical
+  case study.
+\newblock In {\em Sixth IEEE International Conference on Data Mining-Workshops
+  (ICDMW'06)}, pages 458--462. IEEE, 2006.
 
 \bibitem{hedea}
 Anshul Aggarwal, Sunita Garhwal, and Ajay Kumar.
 \newblock Hedea: a python tool for extracting and analysing semi-structured
   information from medical records.
 \newblock {\em Healthcare informatics research}, 24(2):148--153, 2018.
-
-\bibitem{CHA}
-Menglin Cui, Ruibin Bai, Zheng Lu, Xiang Li, Uwe Aickelin, and Peiming Ge.
-\newblock Regular expression based medical text classification using
-  constructive heuristic approach.
-\newblock {\em IEEE Access}, 7:147892--147904, 2019.
 
 \bibitem{infExtGer}
 Georg Fette, Maximilian Ertl, Anja W{\"o}rner, Peter Kluegl, Stefan St{\"o}rk,
@@ -28,16 +22,22 @@ Georg Fette, Maximilian Ertl, Anja W{\"o}rner, Peter Kluegl, Stefan St{\"o}rk,
   and integration into a data warehouse.
 \newblock In {\em GI-Jahrestagung}, pages 1237--1251, 2012.
 
-\bibitem{nlpAndRegex}
-Roni Romano, Lior Rokach, and Oded Maimon.
-\newblock Cascaded data mining methods for text understanding, with medical
-  case study.
-\newblock In {\em Sixth IEEE International Conference on Data Mining-Workshops
-  (ICDMW'06)}, pages 458--462. IEEE, 2006.
-
 \bibitem{CRF}
 Hanna~M Wallach.
 \newblock Conditional random fields: An introduction.
 \newblock {\em Technical Reports (CIS)}, page~22, 2004.
+
+\bibitem{CHA}
+Menglin Cui, Ruibin Bai, Zheng Lu, Xiang Li, Uwe Aickelin, and Peiming Ge.
+\newblock Regular expression based medical text classification using
+  constructive heuristic approach.
+\newblock {\em IEEE Access}, 7:147892--147904, 2019.
+
+\bibitem{conHeu}
+{Constructive heuristic}. in wikipedia, the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Constructive\%20heuristic&oldid=1032227019},
+  2022.
+\newblock [Online; accessed 07-December-2022].
 
 \end{thebibliography}
