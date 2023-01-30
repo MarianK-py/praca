@@ -19,8 +19,8 @@
 \contentsline {chapter}{\numberline {3}Získavanie dát}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Osobné údaje pacienta a obdobie hospitalizácie}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Protilátky proti vírusu SARS-CoV-2}{14}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{15}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Modifikácia a vylepšenia}{17}{chapter.5}%
-\contentsline {chapter}{Záver}{19}{chapter*.8}%
-\contentsline {chapter}{Príloha A}{23}{chapter*.10}%
-\contentsline {chapter}{Príloha B}{25}{chapter*.11}%
+\contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{17}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Modifikácia a vylepšenia}{19}{chapter.5}%
+\contentsline {chapter}{Záver}{21}{chapter*.8}%
+\contentsline {chapter}{Príloha A}{25}{chapter*.10}%
+\contentsline {chapter}{Príloha B}{27}{chapter*.11}%
