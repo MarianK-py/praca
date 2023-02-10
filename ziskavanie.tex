@@ -35,6 +35,33 @@ Dátumy prijatia a prepustenia sú následne pre-typované do podoby časovej zn
 
 Nakoniec v prípade, že dátum prijatia je v poriadku tak softvér určí z rodného čísla dátum narodenia a pomocou dátumu narodenia a dátumu prijatia vypočíta vek pacienta pri prijatí. Tento vek následne kontroluje či je v intervale 0 až 120, v prípade, že do tohto intervalu nepatrí indikuje to chyba buď v dátume prijatia alebo v rodnom čísle pacienta.
 
+\section{JIS a smrť}
+
+Keďže naše dáta sú prepúšťacie správy iba z infekčného oddelenia tak nevieme čo sa s pacientom dialo po opustení oddelenia avšak to čo nás zaujíma je, že dôvod opustenia oddelenia konkrétne to čo nás zaujíma je, že či sa mu stav zhoršil na toľko, že musel byť preložený na jednotku intenzívnej starostlivosti respektíve či dôvodom na opustenie oddelenia nebolo úmrtie pacienta.
+
+V prípade preloženia na JIS je táto informácia v časti ''Epikríza'' (\ref{blokE}) pričom je väčšinou zapísaná ako ''prekladáme na JIS'' respektíve ''prekladnáme na jednotku intenzívnej starostlivosti'' pričom avšak keďže sa táto informácia do epikrízi píše iba v prípade, že preklad uskutočnil tak sa ukázalo, že je vhodnejšie v nej hľadať iba informáciu ''JIS'' respektíve ''jednotka intenzívnej starostlivosti'' keďže pri hľadaní aj informácie ''prekladáme na'' sa vyskytlo viac prípadov keď mal systém problém túto informáciu odhaliť z dôvodu rôzneho skloňovania a gramatických chýb.
+
+V prípade smrti pacienta sa na koniec epikrízi napíše informácia ''exitus lethalis''. Avšak ukázalo sa, že nie vždy sa táto informácia v správe nachádza aj napriek tomu, že smrť nastal čo je spôsobené tým, že smrť nastala na jednotke intenzívnej starostlivosti alebo sa na ňu z nejakého dôvodu zabudlo preto sa po komunikácii s pánom doktorom Sabakom rozhodlo, že v prípade, že bol pacient preložený na jednotku intenzívnej starostlivosti alebo bol pripojený na umelú pľúcnu ventiláciu a v správe sa nenachádza informácia o smrti tak sa táto situácia zaznamená do logovacieho súboru aby to mohol užívateľ správnosti informácie skontrolovať.
+
+\section{Výška a váha}
+
+Ďalšie informácie ktoré sa o pacientovi získavali boli jeho výška a váha, pričom následne bola z týchto hodnôt ešte počítaná hodnota BMI. Ukazuje sa, že existuje viacero spôsobov akými lekári zapisujú túto informáciu do správy pričom našou snahou je aby náš systém zvládal nachádzať túto informáciu pri všetkých možnostiach zápisu. Tieto spôsoby sú následovné:
+
+\begin{itemize}
+	\item {[výška/váha/hmotnosť]} {[hodnota]}{[cm/kg]} (názov a hodnota)
+	\item {[hodnota]}{[cm/kg]},{[hodnota]}{[cm/kg]} (hodnoty oddelene čiarkou)
+	\item {[hodnota]}{[cm/kg]}/{[hodnota]}{[cm/kg]} (hodnoty oddelene medzerou)
+	\item {[hodnota]}{[cm/kg]} {[hodnota]}{[cm/kg]} (hodnoty oddelene lomkou)
+\end{itemize}   
+
+Systém kontroluje prítomnosť každej z týchto možností v texte správy a v prípade nájdenie zhody túto informáciu následne čistí rozdelením v prípade ak sa jedná o dve hodnoty oddelené nejakým deličom a následným odstránením všetkých nepodstatných informácii tak aby nakoniec ostali iba číselné informácie pričom však systém si stále pamätá ktorá hodnota prislúcha ktorej informácii (či ide o výšku alebo váhu). Následne je táto číselná hodnota kontrolovaná či je v ''rozumnom'' intervale pričom pre výšku je využívaný interval 20-250 cm a pre váhu je interval 10-300 kg ak sa nájde hodnota ktorá nepatrí do týchto intervalov je to považované za možnú chybu a informácia o tom je zapísaná do logovacieho súboru, takisto za chybu sa považuje aj prípad ak systém nedokázal nájsť niektorú z týchto informácii v texte.
+
+V prípade nájdenia oboch informácii (aj výšky aj váhy) je z týchto hodnôt počítaná hodnota BMI pričom tak ako predchádzajúce hodnoty aj táto je kontrolovaná či sa nachádza v ''rozumnom'' intervale 10-60, vďaka tejto kontrole vieme zachytiť aj chyby s výškou a váhou ktoré nie su evidentné z jednotlivých informácii, medzi takéto prípady patria napríklad chyby ako vymenenie hodnôt výšky a váhy lekárom (z textu správy ''výška/váha: 75cm/150kg'') alebo možná chyba v niektorom údajov (z textu správy ''výška/váha: 103cm/90kg''), samozrejme ani v jednom prípade si nemôžeme byť istý či chyba naozaj nastala a aká konkrétne je a preto v takýchto prípadoch údaje považujeme za priebežne správne a do logovacieho súboru dávame informáciu užívateľovi aby správnosť údajov skontroloval. 
+
+\section{Saturácia pri prijatí}
+
+TODO
+
 \section{Protilátky proti vírusu SARS-CoV-2}
 
 V prípade hľadania výsledkov testov na protilátky sa ukázalo, že každý lekár ich zapisuje iným spôsobom pričom aj v správach jedného lekára sa nachádzajú rozdiel medzi jednotlivými zápismi. Niekoľko konkrétnych ukážok je na obrázku \ref{obr:proti}. 
@@ -49,5 +76,38 @@ V prípade hľadania výsledkov testov na protilátky sa ukázalo, že každý l
 	\label{obr:proti}
 \end{figure}
 
-Pri hľadaní a následnom získavaní informácie sme využili fakt, že všetky spôsoby zápisu týchto testov obsahujú rovnaké respektíve podobné kľúčové slová a pre nás dôležitú informáciu v rovnakom poradí konkrétne vždy prvým kľúčovým slovom je názov vírusu alebo názov choroby v našom prípade je to vírus SARS-CoV-2 respektíve v niektorých prípadoch ochorenie COVID-19, následne ide kombinácia typov protilátok a samotných výsledkov testov 
+Pri hľadaní a následnom získavaní informácie sme využili fakt, že všetky spôsoby zápisu týchto testov obsahujú rovnaké respektíve podobné kľúčové slová a pre nás dôležitú informáciu v rovnakom poradí konkrétne vždy prvým kľúčovým slovom je názov vírusu alebo názov choroby v našom prípade je to vírus SARS-CoV-2 respektíve v niektorých prípadoch ochorenie COVID-19, následne ide kombinácia typov protilátok, konkrétne IgG a IgM, a samotných výsledkov testov. Ukážka zvýraznenia hľadaných slov je na obrázku \ref{obr:proti_high}.
+
+\begin{figure}
+	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
+	%obrazok je v subore images/cervik.png
+	\centerline{\includegraphics[width=1\textwidth]{images/protilatky_highlight}}
+	%popis obrazku
+	\caption[Protilátky zvýraznené]{Zvýraznené hľadaná informácie v rôznych spôsoboch zápisu testov na protilátky}
+	%id obrazku, pomocou ktoreho sa budeme na obrazok odvolavat
+	\label{obr:proti_high}
+\end{figure}
+
+TODO...
+
+\section{Oxygenoterapia}
+
+V prípade oxygenoterapie sme zo správy získavali dve informácie a to či bola pacientovi podaná oxygenoterapia a ak bola určiť o aký typ oxygenoterapie išlo. Konkrétne rozlišujeme tri základné typy a low-flow, HFNO (high-flow nasal oxygenotherapy) a UPV (umelú pľúcnu ventiláciu). 
+
+V prípade, že systém nenašiel žiadnu informáciu (žiadne kľučové slová) o podaní oxygenoterapie zapísal si k pacientovi informáciu ''bez oxygenoterapie'' v opačnom prípade sa typ určí na základe toho aké kľúčové slová boli v texte nájdené. Konkrétne systém nájdené slová vyhodnocuje následovne:
+
+\begin{itemize}
+	\item ''low flow'', ''low-flow'' a podobne - low-flow
+	\item ''high flow'', high-flow'', ''HFNO'' a podobne - HFNO
+	\item ''umelá pľúcna ventilácia'', ''UPV'' a podobne - UPV
+\end{itemize}
+
+V prípade, ak sa v texte nachádza informácie aj o low-flow aj o HFNO alebo UPV tak je informácia o low-flow zanedbaná keďže ide o menej ''extrémny'' typ. Avšak v prípad ak sa v správe nachádza informácia aj o HFNO aj o UPV sú do výslednej informácie o pacientovi zapísané obe a to v tvare ''HFNO/UPV''. Ak v správe nebol typ oxygenoterapie presne určený ale nachádzala sa tam iba informácie o spôsobe podania ako "maska" alebo "nosová kanyla" je to považované za low-flow oxygenoterapiu pričom do výslednej informácie o pacientovi je to zapísané ako ''low-flow (neupresnené)'' aby bolo jasne označené, že konkrétna informácii o typu nie je v správe prítomná.
+
+\section{Lieky}
+
+Získavanie informácie sa ukázalo ako veľmi priamočiare keďže našou snahou nebolo získať množinu liekov ktorú pacient dostával ale mali sme množinu liekov a zisťovali sme ktoré z nich pacient dostával. Dôvodom pre tento prístup bol fakt, že pacienti často dostávali lieky a vitamíny určené na liečby iných problémov ktorými títo pacienti trpeli a pre nás bola dôležitá len množina liekov ktoré mohli byť použité na liečbu ochorenia COVID-19. Konkrétne išlo o tieto lieky: Dexametazon, Remdesivir, Olumiant, Favipiravir, Ivermectin a Colchicin.
+
+Konkrétne hľadanie týchto liekov bolo zisťovanie či sa názov lieku nachádza v správe, zo začiatku sme skúšali hľadanie iba v časti ''Terapia'' (\ref{blokD}) avšak nakoniec sme sa rozhodli hľadať v celej správe aby sme predišli prípadom keď v správe je informácia o danej liečbe ale táto informácia sa už nedostala do terapie a takisto sme chceli zachytiť prípady kedy išlo o samoliečbu pacienta respektíve lieky predpísané obvodným lekárom ktoré už ale po hospitalizácii neužíval (hlavne v prípade lieku Ivermectin). Keďže sa nenašli prípady kedy by lekár do správy zapísal informáciu o lieku ktorý pacient neužíval tak sa tento spôsob hľadania informácie o týchto liekoch ukázal ako najspoľahlivejší.
  
+Boli aj snahy zistiť okrem samotných liekov aj informáciu o počte dní počas ktorých boli tieto lieky pacient užíval a dávku lieku ktorá mu bola predpísaná avšak sa ukázalo, že vo výraznej väčšine správ buď táto informácia úplne chýba alebo je neúplná a tieto informácie z nej nie je možné získať preto nakoniec padlo rozhodnutie nezískavať tieto informácie.

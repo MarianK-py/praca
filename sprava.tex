@@ -5,6 +5,10 @@
 
 Táto kapitola sa zameriava na pochopenie vstupných dát a približnú lokalizáciu hľadaných informácii v nich.
 
+\section{Zdroj dát}
+
+Prepúšťacie správy a krvné výsledky ktoré náš systém spracováva sú správami pacientov ktorý boli v období od marca roku 2020 do decembra roku 2021 hospitalizovaný na klinike infektológie a geografickej medicíny univerzitnej nemocnice v Bratislave.
+
 \section{Výzor vstupných dát}
 
 Dáta z ktorých sa snažíme získať informácie o pacientovi softvér dostáva v tvare textu obsahujúceho prepúšťaciu správu a krvné výsledky. Väčšina textu v prepúšťacej správe nie je generovaná automaticky nemocničným informačným systémom ale je písaná lekárom čo spôsobuje, že každá správa je do určitej miery originálna.
@@ -36,11 +40,11 @@ Blok C obsahuje informácie o vykonaných vyšetreniach, pre nás sú podstatné
 Zároveň sa tu nachádzajú aj výsledky krvných testov avšak tie sa tu nemusia nachádzať úplné. Preto softvér ktorým to spracovávame ich považuje za kontrolné a samotné informácie o krvných výsledkoch sa získavajú z posledného bloku (\ref{blokG}).
 
 \subsection{Blok D - Terapia}
-
+\label{blokD}
 V tomto bloku sú informácie o terapii odtiaľto získavame informáciu o liekoch ktoré boli pacientovi podané počas hospitalizácie a o tom či pacient potreboval aj oxygenoterapia a v prípade, že áno aj o aký typ oxygenoterapie išlo.
 
 \subsection{Blok E - Epikríza}
-
+\label{blokE}
 Tento blok obsahuje časť správy s názvom epikríza čiže záverečná, súhrnná správa o pacientovi, priebehu jeho choroby a hospitalizácie. Jedinou získavanou informáciou je informácie o smrti pacienta. Táto časť sa však dá zároveň využiť aj na prípadnú kontrolu iných získavaných informácii keďže môže obsahovať informáciu o iných ochoreniach pacienta, jeho liečbe, prípadne o prítomnosti protilátok proti vírusu SARS-CoV-2.
 
 \subsection{Blok F - Záver, odporúčania, špecifické nálezy}
