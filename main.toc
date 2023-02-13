@@ -25,8 +25,9 @@
 \contentsline {section}{\numberline {3.5}Protilátky proti vírusu SARS-CoV-2}{16}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Oxygenoterapia}{16}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Lieky}{17}{section.3.7}%
-\contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{19}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Modifikácia a vylepšenia}{21}{chapter.5}%
-\contentsline {chapter}{Záver}{23}{chapter*.8}%
-\contentsline {chapter}{Príloha A}{27}{chapter*.10}%
-\contentsline {chapter}{Príloha B}{29}{chapter*.11}%
+\contentsline {section}{\numberline {3.8}Choroby pacienta}{18}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{21}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Modifikácia a vylepšenia}{23}{chapter.5}%
+\contentsline {chapter}{Záver}{25}{chapter*.8}%
+\contentsline {chapter}{Príloha A}{29}{chapter*.10}%
+\contentsline {chapter}{Príloha B}{31}{chapter*.11}%
