@@ -4,7 +4,7 @@
 V tejto kapitole si povieme niečo o jednotlivých získavaných dátach o problémoch ktorý sa pri ich získavaní vyskytli a ako sme tieto problémy riešili.
 
 \section{Osobné údaje pacienta a obdobie hospitalizácie}
-
+\label{osobUdaj}
 Ako prvé boli získavané dáta nachádzajúce sa v hlavičke dokumentu konkrétne išlo o meno pacienta, jeho rodné číslo dátumy prijatia a prepustenia. Zároveň sa v tejto časti dopočítavali 2 hodnoty a to vek pacienta a dĺžka hospitalizácie.
 
 Hlavička má výzor tabuľky s dvomi riadkami a štyrmi alebo piatimi stĺpcami v závislosti od toho či bol pacient počas hospitalizácie preložený z infekčného oddelenia na jednotku intenzívnej starostlivosti (JIS) respektíve na iného oddelenie alebo nie. Konkrétne v prípade ak pacient nebol preložený na iné oddelenie počas hospitalizácie hlavička vyzerá ako na obrázku \ref{obr:hlav_a} a v prípade, že preložený bol tak vyzerá takto ako na obrázku \ref{obr:hlav_b}.  
@@ -131,11 +131,20 @@ Hľadanie týchto výsledkov by sa dalo rozdeliť na dve časti a to hlavné hľ
 
 V prípade, že ani hlavné, ani doplnkové hľadanie nenájde nejaké výsledky testov je informácie o ich nenájdený zapísaná do logovacieho súboru avšak keďže táto informácia sa nemusí nutne v správe nachádzať nie je táto informácia zapísaná medzi chyby ktoré sa pri získavaní informácii objavili ale je samostatne označená ako nenájdené výsledky testov. V prípade, že sa pri doplnkovom hľadaní zistí, že sa výsledok testu objavuje v správe viackrát pričom sú pri ňom odlišné hodnoty je to považované za chybu a informácia o tejto chybe je zapísaná do logovacieho súboru.
 
-
 \section{Chýbajúce časti vstupu}
 
-Vo väčšine prípadov je výzor našich presne taký ako je popísaný v kapitole ''Štruktúra prepúšťacej správy'' (\ref{kap:strukSpravy}) avšak občas sa objavil problém neúplnosti dát.
+Vo väčšine prípadov je výzor našich presne taký ako je popísaný v kapitole ''Štruktúra prepúšťacej správy'' (\ref{kap:strukSpravy}) avšak občas sa objavil problém neúplnosti dát. Konkrétne išlo o prípady kedy sa vo vstupnom texte nenachádzali výsledky krvných testov, v takom prípade jediná zmena ktorú systém spraví je, že pri získavaní údajov z krvných výsledkoch preskočí hlavné hľadanie (keďže nemá na to potrebný text) a údaje získava iba pomocou doplnkového hľadania v texte prepúšťacej správy. Občas sa objavili ešte extrémnejší prípad kedy sme pre dané pacienta dostali iba hlavička (\ref{blokA})  a informácia ''chýba správa'' v takomto prípade sa zo získavania dát vykoná iba získavanie osobných údajov pacient a obdobia jeho hospitalizácie (\ref{osobUdaj}) aby bola zachovaná existencia tohto pacienta a logovacieho súboru sa zapisuje informácia o chýbajúcej správe.
 
 \section{Výstupné súbory}   
 
-    
+Výsledkom celého získavania informácie zo vstupných dát je dvojica súborov, ide o súbor vo formáte XLSX ktorý je možné otvoriť v programe Microsoft Excel a obsahuje tabuľku v ktorej jednotlivé riadky sú pacienti a stĺpce sú jednotlivé získavané údaje, druhým súborom je textový logovací súbor obsahujúci pre každého spracovávaného pacienta v tvare zobrazenom na obrázku \ref{obr:log}.
+
+\begin{figure}
+	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
+	%obrazok je v subore images/cervik.png
+	\centerline{\includegraphics[width=1\textwidth]{images/log_subor}}
+	%popis obrazku
+	\caption[Logovací súbor]{Výzor zápisu informácie o chýbajúcich a problémových údajoch v logovacom súbore pre jedného pacienta}
+	%id obrazku, pomocou ktoreho sa budeme na obrazok odvolavat
+	\label{obr:log}
+\end{figure}    
