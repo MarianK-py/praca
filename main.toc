@@ -26,8 +26,12 @@
 \contentsline {section}{\numberline {3.6}Oxygenoterapia}{16}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Lieky}{17}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Choroby pacienta}{18}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Krvné výsledky}{19}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Chýbajúce časti vstupu}{20}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Výstupné súbory}{20}{section.3.11}%
 \contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Modifikácia a vylepšenia}{23}{chapter.5}%
-\contentsline {chapter}{Záver}{25}{chapter*.8}%
-\contentsline {chapter}{Príloha A}{29}{chapter*.10}%
-\contentsline {chapter}{Príloha B}{31}{chapter*.11}%
+\contentsline {chapter}{\numberline {5}Využitie v praxi}{23}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Modifikácia a vylepšenia}{25}{chapter.6}%
+\contentsline {chapter}{Záver}{27}{chapter*.8}%
+\contentsline {chapter}{Príloha A}{31}{chapter*.10}%
+\contentsline {chapter}{Príloha B}{33}{chapter*.11}%
