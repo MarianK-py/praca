@@ -56,16 +56,25 @@ V prípade smrti pacienta sa na koniec epikrízi napíše informácia ''exitus l
 
 Systém kontroluje prítomnosť každej z týchto možností v texte správy a v prípade nájdenie zhody túto informáciu následne čistí rozdelením v prípade ak sa jedná o dve hodnoty oddelené nejakým deličom a následným odstránením všetkých nepodstatných informácii tak aby nakoniec ostali iba číselné informácie pričom však systém si stále pamätá ktorá hodnota prislúcha ktorej informácii (či ide o výšku alebo váhu). Následne je táto číselná hodnota kontrolovaná či je v ''rozumnom'' intervale pričom pre výšku je využívaný interval 20-250 cm a pre váhu je interval 10-300 kg ak sa nájde hodnota ktorá nepatrí do týchto intervalov je to považované za možnú chybu a informácia o tom je zapísaná do logovacieho súboru, takisto za chybu sa považuje aj prípad ak systém nedokázal nájsť niektorú z týchto informácii v texte.
 
-V prípade nájdenia oboch informácii (aj výšky aj váhy) je z týchto hodnôt počítaná hodnota BMI pričom tak ako predchádzajúce hodnoty aj táto je kontrolovaná či sa nachádza v ''rozumnom'' intervale 10-60, vďaka tejto kontrole vieme zachytiť aj chyby s výškou a váhou ktoré nie su evidentné z jednotlivých informácii, medzi takéto prípady patria napríklad chyby ako vymenenie hodnôt výšky a váhy lekárom (z textu správy ''výška/váha: 75cm/150kg'') alebo možná chyba v niektorom údajov (z textu správy ''výška/váha: 103cm/90kg''), samozrejme ani v jednom prípade si nemôžeme byť istý či chyba naozaj nastala a aká konkrétne je a preto v takýchto prípadoch údaje považujeme za priebežne správne a do logovacieho súboru dávame informáciu užívateľovi aby správnosť údajov skontroloval. 
+V prípade nájdenia oboch informácii (aj výšky aj váhy) je z týchto hodnôt počítaná hodnota BMI pričom tak ako predchádzajúce hodnoty aj táto je kontrolovaná či sa nachádza v ''rozumnom'' intervale 10-60, vďaka tejto kontrole vieme zachytiť aj chyby s výškou a váhou ktoré nie su evidentné z jednotlivých informácii, medzi takéto prípady patria napríklad chyby ako vymenenie hodnôt výšky a váhy lekárom (príklad z textu správy ''výška/váha: 75cm/150kg'') alebo možná chyba v niektorom údajov (príklad z textu správy ''výška/váha: 103cm/90kg''), samozrejme ani v jednom prípade si nemôžeme byť istý či chyba naozaj nastala a aká konkrétne je a preto v takýchto prípadoch údaje považujeme za priebežne správne a do logovacieho súboru dávame informáciu užívateľovi aby správnosť údajov skontroloval. 
 
-\section{Saturácia pri prijatí}
+\section{Saturácia krvi kyslíkom pri prijatí}
+\label{saturacia}
 
-TODO
+Jednou z ďalších informácii ktorá nás zaujímala bola saturácia krvi kyslíkom. Táto informácia bola pre nás zaujímavá keďže sa jedná o pacientom s ochorením COVID-19 ktoré sa zväčša prejavuje ako respiračné ochorenie a saturácia krvi kyslíkom je zaujímavý ukazovateľ stavu pacienta. Konkrétne nás zaujímala táto hodnota pri prijatí aby sme mali predstavu v akom stave bol pacient hospitalizovaný. 
+
+Pri hľadaní sme postupovali tak, že sme hľadali kľučové slovo respektíve skratku (konkrétne sa jednalo o slová ''SpO2'' alebo ''SatO2'' a ich varianty) nasledované číselnou hodnotou pričom občas sa stávalo, že medzi hľadaným slovom a hodnotu sa nachádzala ešte informácia ''bez kyslíka'' označujúca, že bola meraná pred podaním oxygenoterapie pacientovi.
+
+V prípade, že systém našiel v texte viackrát zapísanú informáciu o saturácii krvi kyslíkom tak za správnu považoval tú ktorá sa nachádza v texte najskôr keďže sa informácia pri prijatí zväčša píše do časti ''Anamnéza'' (\ref{blokB}) ktorá sa nachádza na začiatku správy.
+
+Občas sa objavila situácia, že hodnota nebolo jedno číslo ale bol to interval (príklad z textu správy ''SatO2: 90-93\%''). V takomto prípade sme sa rozhodli považovať za skutočnú hodnotu dolnú hranicu tohto intervalu.
+
+V prípade nenájdenia žiadnej hodnoty je informácia o tom zapísaná do logovacieho súboru. 
 
 \section{Protilátky proti vírusu SARS-CoV-2}
 \label{protilatky}
 
-V prípade hľadania výsledkov testov na protilátky sa ukázalo, že každý lekár ich zapisuje iným spôsobom pričom aj v správach jedného lekára sa nachádzajú rozdiel medzi jednotlivými zápismi. Niekoľko konkrétnych ukážok je na obrázku \ref{obr:proti}. 
+Keďže náš systém analyzuje prepúšťacie správy pacientov s ochorením COVID-19 tak jednou z pre nás veľmi zaujímavých informácii je výsledok testu na protilátky proti tomuto ochoreniu. Pri hľadania výsledkov testov na protilátky sa ukázalo, že každý lekár ich zapisuje iným spôsobom pričom aj v správach jedného lekára sa nachádzajú rozdiel medzi jednotlivými zápismi. Niekoľko konkrétnych ukážok je na obrázku \ref{obr:proti}. 
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
@@ -89,8 +98,24 @@ Pri hľadaní a následnom získavaní informácie sme využili fakt, že všetk
 	\label{obr:proti_high}
 \end{figure}
 
-TODO...
+Systém najskôr nájde celé úryvky textu obsahujúce testy následne z týchto úryvkov odstráni všetky slová a znaky ktoré sú pre samotný výsledok nepodstatné ako napríklad slová ''slabo'', ''silno'' alebo ''rýchlotest''. Keďže systém nájde iba špecificky testy na protilátky proti SARS-CoV-2 je pre nás v nájdenom úryvku nepodstatná táto informácia. Nakoniec nám ostanú iba názvy protilátok a výsledky pričom sa ukazuje, že vyskytujú v dvoch formách a to dvojice protilátka a výsledok alebo ako spoločný výsledok pre obe protilátky. V testovaných prípadoch sa vždy vyskytol názov protilátky pred výsledkom testu avšak nakoniec sme sa rozhodli spraviť systém všeobecnejší tým, že prípadov keď je výsledok za názvom testu je schopný správne rozlíšiť a spracovať aj prípady keď je poradie opačné. Konkrétne v prípade nájde iba jeden 
+názov protilátky (obrázok \ref{obr:proti_high} druhý príklad) a iba jeden výsledok poradie je jasne určené, v ostatných prípadoch sa rozhoduje podľa tabuľky \ref{tab:proti}.
 
+\begin{table}[]
+	\caption[Rozhodia systému pri testoch]{Rozhodnutia systém pri rôznych poradiach názvov testov a ich výsledkov}
+	\label{tab:proti}
+	\begin{tabular}{|p{8cm}|p{6.7cm}|}
+		\hline
+		\textbf{Poradie častí}                          & \textbf{Rozhodnotie}                                                                                             \\ \hline
+		[protilátka] [výsledok] [protilátka] [výsledok] & názov protilátky pred výsledkom                                                                        \\ \hline
+		[protilátka] [protilátka] [výsledok]            & názov protilátky pred výsledkom                                                                        \\ \hline
+		[výsledok] [protilátka] [výsledok] [protilátka] & názov protilátky za výsledkom                                                                          \\ \hline
+		[výsledok] [protilátka] [protilátka]            & názov protilátky za výsledkom                                                                          \\ \hline
+		[protilátka] [výsledok] [protilátka]            & problém (systém všeobecne považuje za názov protilátky pred výsledkom s chýbajúcim výsledkom)          \\ \hline
+		[výsledok] [protilátka] [výsledok]              & problém (systém všeobecne považuje za názov protilátky pred výsledkom s chýbajúcim názvom protilátky ) \\ \hline
+	\end{tabular}
+\end{table}
+ 
 \section{Oxygenoterapia}
 
 V prípade oxygenoterapie sme zo správy získavali dve informácie a to či bola pacientovi podaná oxygenoterapia a ak bola určiť o aký typ oxygenoterapie išlo. Konkrétne rozlišujeme tri základné typy a low-flow, HFNO (high-flow nasal oxygenotherapy) a UPV (umelú pľúcnu ventiláciu). 

@@ -21,14 +21,14 @@
 \contentsline {section}{\numberline {3.1}Osobné údaje pacienta a obdobie hospitalizácie}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}JIS a smrť}{14}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Výška a váha}{15}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Saturácia pri prijatí}{16}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Saturácia krvi kyslíkom pri prijatí}{16}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Protilátky proti vírusu SARS-CoV-2}{16}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Oxygenoterapia}{16}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Lieky}{17}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Choroby pacienta}{18}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Krvné výsledky}{19}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Chýbajúce časti vstupu}{20}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Výstupné súbory}{20}{section.3.11}%
+\contentsline {section}{\numberline {3.6}Oxygenoterapia}{18}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Lieky}{19}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Choroby pacienta}{19}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Krvné výsledky}{21}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Chýbajúce časti vstupu}{22}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Výstupné súbory}{22}{section.3.11}%
 \contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{23}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Využitie v praxi}{25}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Modifikácia a vylepšenia}{27}{chapter.6}%
