@@ -71,7 +71,7 @@ Občas sa objavila situácia, že hodnota nebolo jedno číslo ale bol to interv
 
 V prípade nenájdenia žiadnej hodnoty je informácia o tom zapísaná do logovacieho súboru. 
 
-\section{Protilátky proti vírusu SARS-CoV-2}
+\section{Protilátky proti vírusu SARS-CoV-2 pri prijatí}
 \label{protilatky}
 
 Keďže náš systém analyzuje prepúšťacie správy pacientov s ochorením COVID-19 tak jednou z pre nás veľmi zaujímavých informácii je výsledok testu na protilátky proti tomuto ochoreniu. Pri hľadania výsledkov testov na protilátky sa ukázalo, že každý lekár ich zapisuje iným spôsobom pričom aj v správach jedného lekára sa nachádzajú rozdiel medzi jednotlivými zápismi. Niekoľko konkrétnych ukážok je na obrázku \ref{obr:proti}. 
@@ -98,7 +98,7 @@ Pri hľadaní a následnom získavaní informácie sme využili fakt, že všetk
 	\label{obr:proti_high}
 \end{figure}
 
-Systém najskôr nájde celé úryvky textu obsahujúce testy následne z týchto úryvkov odstráni všetky slová a znaky ktoré sú pre samotný výsledok nepodstatné ako napríklad slová ''slabo'', ''silno'' alebo ''rýchlotest''. Keďže systém nájde iba špecificky testy na protilátky proti SARS-CoV-2 je pre nás v nájdenom úryvku nepodstatná táto informácia. Nakoniec nám ostanú iba názvy protilátok a výsledky pričom sa ukazuje, že vyskytujú v dvoch formách a to dvojice protilátka a výsledok alebo ako spoločný výsledok pre obe protilátky. V testovaných prípadoch sa vždy vyskytol názov protilátky pred výsledkom testu avšak nakoniec sme sa rozhodli spraviť systém všeobecnejší tým, že prípadov keď je výsledok za názvom testu je schopný správne rozlíšiť a spracovať aj prípady keď je poradie opačné. Konkrétne v prípade nájde iba jeden 
+Systém najskôr nájde celé úryvky textu obsahujúce testy následne z týchto úryvkov odstráni všetky slová a znaky ktoré sú pre samotný výsledok nepodstatné ako napríklad slová ''slabo'', ''silno'' alebo ''rýchlotest''. Keďže systém nájde iba špecificky testy na protilátky proti SARS-CoV-2 je pre nás v nájdenom úryvku nepodstatná táto informácia. Nakoniec nám ostanú iba názvy protilátok a výsledky pričom sa ukazuje, že vyskytujú v dvoch formách a to dvojice protilátka a výsledok alebo ako jeden spoločný výsledok pre obe protilátky. V testovaných prípadoch sa vždy vyskytol názov protilátky pred výsledkom testu avšak nakoniec sme sa rozhodli spraviť systém všeobecnejší tým, že prípadov keď je výsledok za názvom testu je schopný správne rozlíšiť a spracovať aj prípady keď je poradie opačné. Konkrétne v prípade nájde iba jeden 
 názov protilátky (obrázok \ref{obr:proti_high} druhý príklad) a iba jeden výsledok poradie je jasne určené, v ostatných prípadoch sa rozhoduje podľa tabuľky \ref{tab:proti}.
 
 \begin{table}[]
@@ -115,7 +115,9 @@ názov protilátky (obrázok \ref{obr:proti_high} druhý príklad) a iba jeden v
 		[výsledok] [protilátka] [výsledok]              & problém (systém všeobecne považuje za názov protilátky pred výsledkom s chýbajúcim názvom protilátky ) \\ \hline
 	\end{tabular}
 \end{table}
- 
+
+V prípade, že sa v správe nachádza viacero testov na protilátky proti vírusu SARS-CoV-2 zaujíma nás ten najstarší. Pôvodne bola snaha využiť dátumy avšak ukázalo sa, že veľkom počte prípadov informácia o dátume testovania chýba preto sme sa rozhodli tento postup nevyužiť. Ďalším pokusom bola heuristická úvaha, že čím skôr je test v správe tým je starší, táto heuristika však vykazovala príliš vysokú chybovosť preto sme ani ju nevyužili. Nakoniec sme sa po debate s pánom doktorom Sabakom rozhodli využiť heuristickú úvahu, ktorá hovorí, že ak existuje test na určitú protilátky s negatívnym výsledkom tak aj najstarší test bude mať negatívny výsledok a naopak ak test s negatívnym výsledkom neexistuje (a existujú s pozitívnym výsledkom) tak aj najstarší je má pozitívny výsledok. Táto heuristika sa opiera o výsledky štúdie ktorá ukázala, že test na protilátky typu IgM je pozitívny aj po viac ako 60 dňoch od nástupu príznakov a v prípade protilátok typu IgG je to až 90 dní \cite{antibodies}. Keďže bola väčšina pacientov hospitalizovaná výrazne kratšie obdobie ako 60 dní tak nepredpokladáme, že by počas hospitalizácie nastala situácia, že pacientovi vyjde negatívny výsledok testu aj napriek pozitivite predchádzajúceho. Zároveň sa ukazuje, že ak pacientovi vyjde pozitívny test na obe protilátky už ďalší test na protilátky nie je vykonaný keďže ani lekár zväčša nepredpokladá, že by množstvo protilátok v krvi počas hospitalizácie výrazne kleslo.
+
 \section{Oxygenoterapia}
 
 V prípade oxygenoterapie sme zo správy získavali dve informácie a to či bola pacientovi podaná oxygenoterapia a ak bola určiť o aký typ oxygenoterapie išlo. Konkrétne rozlišujeme tri základné typy a low-flow, HFNO (high-flow nasal oxygenotherapy) a UPV (umelú pľúcnu ventiláciu). 
