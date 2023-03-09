@@ -2,3 +2,21 @@
 \chapter{Analýza výsledkov a chýb}
 
 Táto kapitola je zameraná na analýzu presnosti a chybovosti nášho systému.
+
+\section{Validačné dáta}
+
+Z dôvodu malého množstva predspracovaných dát a problémoch s nimi popísaných v časti \ref{predSprac} sme sa rozhodli, že na účely validácia výsledkov nášho systému ručne pracujeme dáta o 100 pacientoch ktorý neboli použitý pri vytváraní regulárnych výrazov.  
+
+Konkrétny postup ktorý sme zvolili bol následovný:
+
+\begin{enumerate}
+	\item Príprava súboru obsahujúceho vstupné informácie o 100 pacientoch
+	\item Ručné spracovanie pacientov
+	\item Spracovanie pacientov využitím nášho systému
+	\item Vytvorenie kópie systémom spracovaných pacientov
+	\item Vylepšenie systémom spracovaných pacientov pomocou logovacieho súboru 
+	\item Porovnanie ručne získaných dát s dátami získanými pomocou nášho systému pôvodnými aj vylepšenými
+	\item Určenie chybovosti nášho systému   
+\end{enumerate}
+
+Keďže naše ''validačné'' dáta boli získavané ručne nemáme istotu, že sú bezchybné, preto sme sa pre účely určenia chybovosti systému rozhodli každý údaj ktorý je totožný s údajom získaným našim systémom považovať za správny a každý údaj ktorý sa líši skontrolujeme aby sme určili či je to chybou nášho systému alebo či ide o ľudskú chybu.

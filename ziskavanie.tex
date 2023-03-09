@@ -1,7 +1,25 @@
 % !TeX spellcheck = sk_SK-Slovak
 \chapter{Získavanie dát}
 
-V tejto kapitole si povieme niečo o jednotlivých získavaných dátach o problémoch ktorý sa pri ich získavaní vyskytli a ako sme tieto problémy riešili.
+V tejto kapitole si povieme niečo o tom ako sme postupovali pri získavaní dát všeobecne a následne si prejdeme k jednotlivým získavaným dátam ich špecifiká a problémy ktoré sa pri ich získavaní vyskytli a ako sme tieto problémy riešili.
+
+\section{Všeobecný postup}
+
+Vo všeobecnosti bol postup pri získavaní jednotlivých údajov následovný:
+
+\begin{enumerate}
+	\item Výber ''trénovacej'' množiny dát 
+	\item Zistenie najbežnejších spôsobov zápisu daného údaju
+	\item Vytvorenie jednoduchých regulárnych výrazov schopných nájsť požadovanú informáciu
+	\item Pokus o získavanie informácie z dát
+	\item Kontrola výsledkov, identifikácia problémových miest 
+	\item Modifikácia regulárnych výrazov, eliminácia chybových výsledkov
+	\item Opakovanie krokov 4 až 6 kým sa v ''trénovacej'' množine dát vyskytujú chyby 
+	\item Výber ''kontrolnej'' množiny dát
+	\item Pokus o získavanie informácie z dát
+	\item Kontrola výsledkov, identifikácia problémových miest
+	\item V prípade, že sa chyby nevyskytnú považujeme, naše regulárne za správne, v opačnom prípade považujeme našu ''kontrolnú'' množina dát za trénovaciu a opakujem potup od kroku 4 
+\end{enumerate}
 
 \section{Osobné údaje pacienta a obdobie hospitalizácie}
 \label{osobUdaj}

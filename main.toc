@@ -17,19 +17,22 @@
 \contentsline {section}{\numberline {2.4}Riešenia problémov s rozdelením dát do blokov}{10}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Homogénny text}{10}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Menej väčších blokov}{10}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Predspracované dáta}{11}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Získavanie dát}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Osobné údaje pacienta a obdobie hospitalizácie}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}JIS a smrť}{14}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Výška a váha}{15}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Saturácia krvi kyslíkom pri prijatí}{16}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{16}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Oxygenoterapia}{19}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Lieky}{19}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Choroby pacienta}{20}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Krvné výsledky}{21}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Chýbajúce časti vstupu}{22}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Výstupné súbory}{22}{section.3.11}%
+\contentsline {section}{\numberline {3.1}Všeobecný postup}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Osobné údaje pacienta a obdobie hospitalizácie}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}JIS a smrť}{15}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Výška a váha}{15}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Saturácia krvi kyslíkom pri prijatí}{16}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{17}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Oxygenoterapia}{19}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Lieky}{20}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Choroby pacienta}{20}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Krvné výsledky}{21}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Chýbajúce časti vstupu}{22}{section.3.11}%
+\contentsline {section}{\numberline {3.12}Výstupné súbory}{23}{section.3.12}%
 \contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Validačné dáta}{25}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Využitie v praxi}{27}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Modifikácia a vylepšenia}{29}{chapter.6}%
 \contentsline {chapter}{Záver}{31}{chapter*.8}%
