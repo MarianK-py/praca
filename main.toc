@@ -33,8 +33,19 @@
 \contentsline {section}{\numberline {3.12}Výstupné súbory}{23}{section.3.12}%
 \contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Validačné dáta}{25}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Využitie v praxi}{27}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Modifikácia a vylepšenia}{29}{chapter.6}%
-\contentsline {chapter}{Záver}{31}{chapter*.8}%
-\contentsline {chapter}{Príloha A}{35}{chapter*.10}%
-\contentsline {chapter}{Príloha B}{37}{chapter*.11}%
+\contentsline {section}{\numberline {4.2}Časová náročnosť}{26}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Chybovosť jednotlivých skupín získavaných}{26}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Osobné údaje pacienta a obdobie hospitalizácie}{26}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}JIS a smrť}{27}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Výška a váha}{27}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Saturácia krvi kyslíkom pri prijatí}{27}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{27}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Oxygenoterapia}{27}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Lieky}{27}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Choroby pacienta}{27}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Krvné výsledky}{27}{subsection.4.3.9}%
+\contentsline {chapter}{\numberline {5}Využitie v praxi}{29}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Modifikácia a vylepšenia}{31}{chapter.6}%
+\contentsline {chapter}{Záver}{33}{chapter*.8}%
+\contentsline {chapter}{Príloha A}{37}{chapter*.10}%
+\contentsline {chapter}{Príloha B}{39}{chapter*.11}%

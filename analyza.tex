@@ -20,3 +20,35 @@ Konkrétny postup ktorý sme zvolili bol následovný:
 \end{enumerate}
 
 Keďže naše ''validačné'' dáta boli získavané ručne nemáme istotu, že sú bezchybné, preto sme sa pre účely určenia chybovosti systému rozhodli každý údaj ktorý je totožný s údajom získaným našim systémom považovať za správny a každý údaj ktorý sa líši skontrolujeme aby sme určili či je to chybou nášho systému alebo či ide o ľudskú chybu.
+
+\section{Časová náročnosť}
+
+Každý so spôsobov spracovania pacientov bol rôzne časovo náročný, v prípade ručného spracovania trvalo spracovanie jedného pacienta približne 5 minút, čiže spracovanie 100 pacientov trvalo okolo 500 minúť čiže viac ako 8 hodín. Náš systém dokázal spracovať 100 pacientov za menej ako minútu konkrétne priemerný čas ktorý na 100 pacientov potreboval bol 40 sekúnd, následné ručné vylepšenie pomocou logovacieho súboru trvalo pri 100 pacientoch približne 30 minút.
+
+\section{Chybovosť jednotlivých skupín získavaných}
+
+Z dôvodu, že náročnosť získavania nie je rovnaká pre všetky získavané dáta ani chybovosť nie je rovnaká preto si najskôr prejdeme chybovosť nášho systému pre jednotlivé skupiny získavaných dát (skupiny sú rovnaké ako v kapitole \ref{zisk}).
+
+\subsection{Osobné údaje pacienta a obdobie hospitalizácie}
+
+V prípade údajov ako je meno a priezvisko pacienta jeho rodné číslo a dátumy prijatia a prepustenia sa neobjavila žiadna chyba. V prípade dĺžky hospitalizácie sa objavili 2 nezrovnalosti avšak ukázalo sa, že išlo o chyby pri ručnom spracovaní a systém vypočítal správne hodnoty. Pri informácii o veku pacienta sa objavilo pomerne veľké množstvo nezrovnalosti konkrétne 22 pričom toto bolo spôsobený tým, že pri ručnom získavaní bola využitá hodnota veku ktorú lekár napísal do správy a v prípade nášho systém bol vek vypočítaný na základe rodného čísla a dátumu prepustenia. Presnejšie išlo o to, že lekár s najväčšou pravdepodobnosťou počítal vek iba na základe roku narodenia a z tohto dôvodu do správy napísal vyšší vek aj napriek tomu, že pacient ešte v danom roku nemal narodeniny.
+
+Kontrola s logovacím súborom nepriniesla žiadne zlepšenie. Pri získavaní týchto informácii vykazuje náš systém nulovú chybovosť.
+
+\subsection{JIS a smrť}
+
+V prípade určenia či bol pacient hospitalizovaný sa jednotke intenzívnej starostlivosti a či počas hospitalizácie umrel sa nevyskytol žiaden prípad kde by sa systém nezhodol s ručne získanou informáciou. Takže v tomto prípade   
+
+\subsection{Výška a váha}
+
+\subsection{Saturácia krvi kyslíkom pri prijatí}
+
+\subsection{Protilátky proti vírusu SARS-CoV-2 pri prijatí}
+
+\subsection{Oxygenoterapia}
+
+\subsection{Lieky}
+
+\subsection{Choroby pacienta}
+
+\subsection{Krvné výsledky}
