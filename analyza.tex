@@ -37,11 +37,23 @@ Kontrola s logovacím súborom nepriniesla žiadne zlepšenie. Pri získavaní t
 
 \subsection{JIS a smrť}
 
-V prípade určenia či bol pacient hospitalizovaný sa jednotke intenzívnej starostlivosti a či počas hospitalizácie umrel sa nevyskytol žiaden prípad kde by sa systém nezhodol s ručne získanou informáciou. Takže v tomto prípade   
+V prípade určenia či bol pacient hospitalizovaný sa jednotke intenzívnej starostlivosti a či počas hospitalizácie umrel sa nevyskytol žiaden prípad kde by sa systém nezhodol s ručne získanou informáciou. Takže v tomto prípade to podľa výsledkov vyzerá takisto na nulovú chybovosť, to zároveň znamená, že ani v tomto prípade úprava použitím logovacieho súboru nijak nezlepšila výsledok. 
 
 \subsection{Výška a váha}
 
+Pri zisťovaní výšky a váhy sa objavilo dohromady 5 chýbajúcich údajov pri troch pacientoch, trikrát išlo o váhu a dvakrát o výšku v jednom prípade išlo o problém keď systém pri váhe prekvapila informácia ''cca'' na ktorú nevedel reagovať, v ďalšom prípade nastal problém, keď bolo príliš veľa medzier medzi hodnotami výšky a váha, čo spôsobilo, že systém to nebol schopný nájsť keďže z bezpečnostných dôvodov (aby nepovažoval informáciu nachádzajúcu sa ďalej za hľadanú). Posledným problémom bola situácia keď hľadané informácie boli v špecifickom tvare konkrétne ''cm[hodnota]/[hodnota]kg'' čo náš systém nebol schopný nájsť.
+
+Všetky tieto problémy boli zapísané v logovacom súbore vďaka čomu pri úpravy výsledkov s jeho použitím boli eliminované všetky chyby.
+
+Takže systém spravil 5 chýb pri 200 hodnotách (2 údaje, 100 pacientov) z čoho vyplýva chybovosť približne 2,5\%, avšak pri použití logovacieho súboru je táto chybovosť nulová.     
+
 \subsection{Saturácia krvi kyslíkom pri prijatí}
+
+Pri hľadaní informácie o saturácie krvi kyslíkom pri prijatí náš systém spravil 3 chyby, v dvoch prípadoch za správnu informáciu považoval tú ktorá hovorili o hodnote saturácie po pripojení na oxygenoterapiu keďže bola v správe zapísaná prioritne a informácia o saturáciu bez prídavného kyslíka bola napísaná až neskôr v správe. Jedna chyba bola zapríčinené neočakávaným slovom ''RZP'' nachádzajúcim sa pred hodnotou saturácie.
+
+Pri vylepšení pomocou logovacieho súboru sa podarilo odstrániť chybu zapríčinenú slovom ''RZP'', avšak hodnoty ovplyvnené oxygenoterapiou sa opraviť nepodarilo. Práve kvôli takýmto prípadom boli úvahy o zmene prístupu pri hľadaní tejto informácie a nevyužívať hodnotu ktorá bola zapísaná ako tá hlavná pri prijatí pacienta ale využiť najnižšiu nájdenú hodnoty, tento spôsob vychádzala z úvahy, že po prijatí by vďaka liečbe nemala saturácia klesnúť (oxygenoterapia by mala byť nastavovaná tak aby takáto situácia nenastala), avšak pri vytváraní systém sa táto úvaha ukázala ako nesprávna a často vykazovala nesprávne hodnoty preto nebola nakoniec využitá.
+
+Výsledná chybovosť systému bola teda pri saturácii 3\% a pri použití logovacieho súboru klesla na 2\%.
 
 \subsection{Protilátky proti vírusu SARS-CoV-2 pri prijatí}
 

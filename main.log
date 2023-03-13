@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  10 MAR 2023 10:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  13 MAR 2023 18:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,15 +598,15 @@ Package pdftex.def Info: images/log_subor.png  used on input line 190.
 
 ]
 Kapitola 4.
-[25]) (prax.tex
+[25] [26]) (prax.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-[27] [28
-
-]
+ [27]
+[28]
 Kapitola 5.
-) (modifikacie.tex [29] [30
+) (modifikacie.tex [29
+
+] [30
 
 ]
 Kapitola 6.
@@ -658,7 +658,7 @@ ajko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C
 /cm/cmr12.pfb><C:/Users/majko/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmr6.pfb><C:/Users/majko/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (52 pages, 914327 bytes).
+Output written on main.pdf (52 pages, 916712 bytes).
 PDF statistics:
  1211 PDF objects out of 1440 (max. 8388607)
  140 named destinations out of 1000 (max. 500000)

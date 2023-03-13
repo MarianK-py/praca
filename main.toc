@@ -36,14 +36,14 @@
 \contentsline {section}{\numberline {4.2}Časová náročnosť}{26}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Chybovosť jednotlivých skupín získavaných}{26}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Osobné údaje pacienta a obdobie hospitalizácie}{26}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}JIS a smrť}{27}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}JIS a smrť}{26}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Výška a váha}{27}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Saturácia krvi kyslíkom pri prijatí}{27}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{27}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Oxygenoterapia}{27}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}Lieky}{27}{subsection.4.3.7}%
-\contentsline {subsection}{\numberline {4.3.8}Choroby pacienta}{27}{subsection.4.3.8}%
-\contentsline {subsection}{\numberline {4.3.9}Krvné výsledky}{27}{subsection.4.3.9}%
+\contentsline {subsection}{\numberline {4.3.5}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{28}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Oxygenoterapia}{28}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Lieky}{28}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Choroby pacienta}{28}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Krvné výsledky}{28}{subsection.4.3.9}%
 \contentsline {chapter}{\numberline {5}Využitie v praxi}{29}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Modifikácia a vylepšenia}{31}{chapter.6}%
 \contentsline {chapter}{Záver}{33}{chapter*.8}%
