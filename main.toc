@@ -26,12 +26,12 @@
 \contentsline {section}{\numberline {3.5}Saturácia krvi kyslíkom pri prijatí}{16}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{17}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Oxygenoterapia}{19}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Lieky}{20}{section.3.8}%
+\contentsline {section}{\numberline {3.8}Lieky}{19}{section.3.8}%
 \contentsline {section}{\numberline {3.9}Choroby pacienta}{20}{section.3.9}%
 \contentsline {section}{\numberline {3.10}Krvné výsledky}{21}{section.3.10}%
 \contentsline {section}{\numberline {3.11}Chýbajúce časti vstupu}{22}{section.3.11}%
 \contentsline {section}{\numberline {3.12}Výstupné súbory}{23}{section.3.12}%
-\contentsline {chapter}{\numberline {4}Analýza výsledkov a chýb}{25}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Chybovosť systému}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Validačné dáta}{25}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Časová náročnosť}{26}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Chybovosť jednotlivých skupín získavaných}{26}{section.4.3}%
@@ -39,7 +39,7 @@
 \contentsline {subsection}{\numberline {4.3.2}JIS a smrť}{26}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Výška a váha}{27}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Saturácia krvi kyslíkom pri prijatí}{27}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{28}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.5}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{27}{subsection.4.3.5}%
 \contentsline {subsection}{\numberline {4.3.6}Oxygenoterapia}{28}{subsection.4.3.6}%
 \contentsline {subsection}{\numberline {4.3.7}Lieky}{28}{subsection.4.3.7}%
 \contentsline {subsection}{\numberline {4.3.8}Choroby pacienta}{28}{subsection.4.3.8}%

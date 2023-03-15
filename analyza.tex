@@ -1,5 +1,5 @@
 % !TeX spellcheck = sk_SK-Slovak
-\chapter{Analýza výsledkov a chýb}
+\chapter{Chybovosť systému}
 
 Táto kapitola je zameraná na analýzu presnosti a chybovosti nášho systému.
 
@@ -57,9 +57,17 @@ Výsledná chybovosť systému bola teda pri saturácii 3\% a pri použití logo
 
 \subsection{Protilátky proti vírusu SARS-CoV-2 pri prijatí}
 
+Získavanie výsledkov testov na protilátky proti vírusu SARS-CoV-2 bolo nesprávne pri štyroch pacientoch vo všetkých štyroch prípadoch išlo o problém keď výsledky testov boli zapísané v časti ''Epikríza'' (\ref{blokE}) pričom v tejto časti správy lekári často nenapísali k testu názov vírusu (daný názov iba vyplýval z kontextu) čo spôsobilo, že systém to nedokázal nájsť. V troch prípadoch to bol jediný test v celej správe čo spôsobilo, že systém nenašiel žiadne výsledky vďaka čomu to ich systém označil za problém a pri oprave pomocou logovacieho súboru sa tieto chyby odstránili. V jednom prípade správa obsahovala niekoľko testov na protilátky ktoré boli pozitívne v oboch protilátkach avšak v epikríze bola informácie o teste s negatívnym výsledok pri protilátky typu IgG čo spôsobilo chybu ktorá nebola do logovacieho súboru zapísaná.
+
+Takže chybovosť systému samotného bola 4\% a chybovosť po vylepšení logacím súborom klesla na 1\%.   
+
 \subsection{Oxygenoterapia}
 
 \subsection{Lieky}
+
+Pri určovaní či pacient užíva vybrané lieky sa objavili 3 chyby. V jednom prípade lekár spravil chybu a napísal ''Dexamentazon'' namiesto ''Dexametazon'' čo bola chyba ktorú systém neočakával. Ďalšie dve chyby vznikli z dôvodu, že lekár do časti ''Anamnéza'' (\ref{blokB}) informácia ''Ivermektín neužíva'', takáto situácia sa počas vytvárania softvéru neobjavila a preto ju systém nebol schopný správne vyhodnotiť.
+
+V tomto prípade logovací súbor nijak nepomohol s opravou chýb preto je chybovosť z pohľadu počtu pacientov s chybou 3\% (3 zo 100) avšak chybovosť z pohľadu počtu nesprávne určených hodnôt je iba 0.5\% (3 zo 600 (6 liekov, 100 pacientov)).
 
 \subsection{Choroby pacienta}
 
