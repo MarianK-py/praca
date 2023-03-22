@@ -9,13 +9,20 @@ Tento proces bolo potrebné opakovať pre každého jedného pacienta čo bolo �
 
 Hlavným účelom tejto práce je vytvorenie softvéru, ktorý pomôže výrazne zrýchliť a zjednodušiť získavanie týchto dát.
 
-Tento softvér na svojom vstupe dostane prepúšťaciu správu pacienta a jeho krvné výsledky v podobe klasického textu a následne z týchto ne-štrukturalizovaných dát získava jednotlivé požadované dáta pričom v prípade, že nejakú informáciu nenájde alebo zistí, že zistená hodnota nie je v očakávaných limitoch alebo, že sa v správe nachádza viacero hodnôt pre jednu informáciu tak užívateľovi oznámi o akú informáciu ide a aký je s ňou problém. 
+Tento softvér na svojom vstupe dostane prepúšťaciu správu pacienta a jeho krvné výsledky v podobe textu ktorý je čiastočne generovaný nemocničným informačným systémom ale z veľkej časti je písaný lekárom a následne z týchto ne-štrukturalizovaných dát získava jednotlivé požadované dáta. Počas získavania dát si zároveň zapamätáva informáciu o dátach ktoré sa buď nájsť nepodarilo alebo sa počas ich získavania objavil nejaký problém ako napríklad viac rôznych hodnôt alebo protirečiace informácie. Výsledkom je asociatívne pole v ktorom sú ako kľúče použité názvy hľadaných informácii a text obsahujúci informáciu o nenájdených a problémových údajoch. 
+
+\begin{figure}
+	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
+	%obrazok je v subore images/cervik.png
+	\centerline{\includegraphics[width=0.6\textwidth]{images/system_jedna_sprava}}
+	%popis obrazku
+	\caption[Fungovanie systému pre jednu správu]{Fungovanie systému pre jednu správu}
+	%id obrazku, pomocou ktoreho sa budeme na obrazok odvolavat
+	\label{obr:systemJedna}
+\end{figure}
+  
 
 Práca je rozdelená do piatich kapitol. V prvá obsahuje informácie o podobných softvéroch. Druhá kapitola sa zameriava na štruktúru prepúšťacej správy a dáta ktoré sa z nej snažíme získať. Tretia kapitola obsahuje problémy ktoré sa objavili pre jednotlivé získavané informácie a aké spôsoby riešenia sme sa rozhodli použiť. V štvrtej je analýza chybovosti softvéru. Posledná kapitola je o modifikáciách softvéru aby bol jednoduchšie použiteľný a modifikovateľný pre iné podobné použitia.
-
-
-\textbf{Na účely domácej úlohy 2 sú určené strany 3 až 11.}
-$p=\min(1, e^{-\frac{\Delta E}{t}})$
 
 %\begin{quote}
 %Úvod je prvou komplexnou informáciou o práci, jej cieli, obsahu a štruktúre. Úvod sa 

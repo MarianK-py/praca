@@ -31,7 +31,7 @@ Z dôvodu, že náročnosť získavania nie je rovnaká pre všetky získavané 
 
 \subsection{Osobné údaje pacienta a obdobie hospitalizácie}
 
-V prípade údajov ako je meno a priezvisko pacienta jeho rodné číslo a dátumy prijatia a prepustenia sa neobjavila žiadna chyba. V prípade dĺžky hospitalizácie sa objavili 2 nezrovnalosti avšak ukázalo sa, že išlo o chyby pri ručnom spracovaní a systém vypočítal správne hodnoty. Pri informácii o veku pacienta sa objavilo pomerne veľké množstvo nezrovnalosti konkrétne 22 pričom toto bolo spôsobený tým, že pri ručnom získavaní bola využitá hodnota veku ktorú lekár napísal do správy a v prípade nášho systém bol vek vypočítaný na základe rodného čísla a dátumu prepustenia. Presnejšie išlo o to, že lekár s najväčšou pravdepodobnosťou počítal vek iba na základe roku narodenia a z tohto dôvodu do správy napísal vyšší vek aj napriek tomu, že pacient ešte v danom roku nemal narodeniny.
+V prípade údajov ako je meno a priezvisko pacienta jeho rodné číslo a dátumy prijatia a prepustenia sa neobjavili žiadne chyb. V prípade dĺžky hospitalizácie sa takisto neobjavili žiadne chyby. Pri informácii o veku pacienta sa objavilo pomerne veľké množstvo nezrovnalosti konkrétne 22 pričom toto bolo spôsobený tým, že pri ručnom získavaní bola využitá hodnota veku ktorú lekár napísal do správy a v prípade nášho systém bol vek vypočítaný na základe rodného čísla a dátumu prepustenia. Presnejšie išlo o to, že lekár s najväčšou pravdepodobnosťou počítal vek iba na základe roku narodenia a z tohto dôvodu do správy napísal vyšší vek aj napriek tomu, že pacient ešte v danom roku nemal narodeniny.
 
 Kontrola s logovacím súborom nepriniesla žiadne zlepšenie. Pri získavaní týchto informácii vykazuje náš systém nulovú chybovosť.
 
@@ -45,7 +45,7 @@ Pri zisťovaní výšky a váhy sa objavilo dohromady 5 chýbajúcich údajov pr
 
 Všetky tieto problémy boli zapísané v logovacom súbore vďaka čomu pri úpravy výsledkov s jeho použitím boli eliminované všetky chyby.
 
-Takže systém spravil 5 chýb pri 200 hodnotách (2 údaje, 100 pacientov) z čoho vyplýva chybovosť približne 2,5\%, avšak pri použití logovacieho súboru je táto chybovosť nulová.     
+Takže náš systém spravil chyby pri troch pacientoch z čoho vyplýva chybovosť 3\%, ale ak sa pozrieme na počet chybných údajov ide o 5 chýb pri 200 hodnotách (2 údaje, 100 pacientov) z čoho vyplýva chybovosť približne 2,5\%, avšak pri použití logovacieho súboru je táto chybovosť nulová.     
 
 \subsection{Saturácia krvi kyslíkom pri prijatí}
 
@@ -59,9 +59,13 @@ Výsledná chybovosť systému bola teda pri saturácii 3\% a pri použití logo
 
 Získavanie výsledkov testov na protilátky proti vírusu SARS-CoV-2 bolo nesprávne pri štyroch pacientoch vo všetkých štyroch prípadoch išlo o problém keď výsledky testov boli zapísané v časti ''Epikríza'' (\ref{blokE}) pričom v tejto časti správy lekári často nenapísali k testu názov vírusu (daný názov iba vyplýval z kontextu) čo spôsobilo, že systém to nedokázal nájsť. V troch prípadoch to bol jediný test v celej správe čo spôsobilo, že systém nenašiel žiadne výsledky vďaka čomu to ich systém označil za problém a pri oprave pomocou logovacieho súboru sa tieto chyby odstránili. V jednom prípade správa obsahovala niekoľko testov na protilátky ktoré boli pozitívne v oboch protilátkach avšak v epikríze bola informácie o teste s negatívnym výsledok pri protilátky typu IgG čo spôsobilo chybu ktorá nebola do logovacieho súboru zapísaná.
 
-Takže chybovosť systému samotného bola 4\% a chybovosť po vylepšení logacím súborom klesla na 1\%.   
+Takže chybovosť systému samotného bola 4\% a chybovosť po vylepšení logovacím súborom klesla na 1\%.   
 
 \subsection{Oxygenoterapia}
+
+Počet chýb pri určovaní typu oxygenoterapie bol nečakane vysoký a konkrétne išlo o 6 chýb z ktorých iba jednu sa podarilo opraviť pomocou logovacieho súboru. Z nezachytených chýb boli 4 prípady kedy bolo rôznymi spôsobmi zapísaná informácia o tom, že oxygenoterapia pacientovi nebola podaná konkrétne išlo o takéto spôsoby zapísania: ''bez potreby oxygenoterapie'', ''bez nutnosti oxygenoterapie'', ''nevyžaduje oxygenoterapiu'' a ''nevyžaduje podpornú oxygenoterapiu''. Počas vytvárania softvéru sa takéto situácie nestávali a preto systém nebol na takéto situácie schopný správne reagovať, o príčine prečo sa to počas vytvárania môžeme iba špekulovať. Jedným z možných dôvodov môže byť obdobie z ktorého sú správy keďže systém bol vytváraný hlavne na základe pacientov z prvého roka pandémie (v tej dobe existovali iba tieto dáta) zatiaľ čo na toto testovanie boli použitý aj pacienti ktorý boli hospitalizovaný neskôr kde vďaka očkovania mohlo dôjsť k zníženiu počtu pacientov ktorý si vyžadovali oxygenoterapiu. Posledná chyba je podobná ako predchádzajúce s rozdielom, že išlo o určenie konkrétneho typu oxygenoterapie konkrétne nastala situácia, ktorá mala byť vyhodnotená ako ''HFNO'' avšak bola vyhodnotená ako ''HFNO/UPV'' z dôvodu, že v správe bola takáto informácia: ''UPV neindikujeme''. Ani s touto situáciou sa sme sa pri vytváraní softvéru nestretli.  
+
+Z toho vyplýva, že chybovosť nášho systému samotného je pri oxygenoterapii 6\% a po oprave pomocou logovacieho súboru klesla na 5\%. 
 
 \subsection{Lieky}
 
@@ -71,4 +75,23 @@ V tomto prípade logovací súbor nijak nepomohol s opravou chýb preto je chybo
 
 \subsection{Choroby pacienta}
 
+Pri určovaní či pacient trpí niektorými s zo vybraných chorôb (konkrétny zoznam v časti \ref{choroby}) sa vyskytlo 5 chýb. Každá chyba bola jedinečná. Objavil sa jeden prípad kedy si systém nebol istý či pacient počas hospitalizácie trpel kolitídou čo bolo však v tomto prípade žiadúce správanie a informácia o tejto neistote bola zapísaná do logovacieho súboru a pri kontrole opravená. Jedna chyba nastala aj v prípade určovania aterosklerózy dolných končatín kde lekár namiesto skratky ''PAOO DK'' zapísal do správy skratku  ''PADO DK'' kvôli čomu nebol schopný nájsť informáciu o tomto ochorení. Ďalšia chyba nastala keď lekár do správy ku konkrétnemu lieku napísal informáciu ''počas sepsy prerušiť liečbu'' čo systém nesprávne interpretoval ako informáciu, že pacient počas liečby sepsou trpel. V jednom prípade systém určil, že pacient trpí artériovou hypertenziou na základe toho, že v správe našiel informáciu o tomto ochorení, avšak ako sa pri kontrole ukázalo tento záver systému bol nesprávny keďže išlo o prípad keď lekár do správy zapísal aj diagnosticky významné ochorenia blízkych rodinných príslušníkov pacienta a konkrétne v tomto prípade išlo o ochorenie ktorým trpí matka nami skúmaného pacienta. V prípade poslednej chyby je otázne či ide o chybu systému alebo lekára, alebo o nedostatok informácie v správe, ide o problém pri určovaní kolitídy kedy lekár do záveru správy napísal, že pacient kolitídou trpí aj napriek tomu, že podľa správy boli vykonané testy na toto ochorenie s negatívnym výsledkom. V prípade týchto štyroch chýb oprava pomocou logovacieho súboru nepriniesla ich odstránenie.
+
+Takže z pohľadu chybovosti percenta pacientov s chybou je chybovosť 5\% pred kontrolou a 4\% po kontrole s logovacím súborom a z pohľadu percenta chybne určených chorôb je chybovosť približne 0,4\% (5 z 1300 (13 chorôb, 100 pacientov)) pred kontrolou a 0,3\% (4 z 1300) po kontrole s logovacím súborom
+
 \subsection{Krvné výsledky}
+
+Keďže krvné výsledky sú generované počítačom a nie písané lekárom (pričom to platí aj pre samostatné krvné výsledky aj výsledky zapísané v prepúšťacej správe) tak ich náš systém vie nachádzať s veľkou presnosťou. Konkrétne sa objavilo 5 prípadov kedy náš systém sa nezhodol s ručne získanými dátami (v skutočnosti tých prípadov bolo výrazne viac, o tom v časti \ref{ludChyba}). Z týchto chýb 3 nastali z dôvodu, že hľadaný výsledok bol v správe zapísaný viackrát v rôznych častiach správy a náš systém si z možných hodnôt nevybral tú ktorú sme považovali za správnu avšak vo všetkých troch prípadoch bol daný výsledok zapísaný v logovacom súbore ako problémový vďaka čomu bolo možné túto chybu opraviť. Zvyšné dve chyby sa objavili v jednej správe a boli spôsobené tým, že v prvom teste nastala hemolýza kvôli ktorej sa výsledky nepovažujú za dôveryhodné a namiesto toho aby boli tieto výsledky zo správy vynechané bol na ich mieste vynechaný priestor ktorý poplietol náš systém a preto sa mu ich nepodarilo nájsť. Avšak keďže sa mu výsledky nepodarilo nájsť vôbec znamenal, že boli zapísané do logovacieho súboru ako nenájdené dáta a pri kontrole sa ich podarilo nájsť.
+
+Ak by sme za chybovosť brali počet pacientov pri ktorých nastala chyba bola by chybovosť nášho systému pri hľadaní výsledkov testov 4\% avšak ak vezmeme do úvahy, že systém hľadal 19 rôznych výsledok je chybovosť iba približne 0,21\% pričom platí, že po kontrole s logovacím súborom je chybovosť nulová.
+
+\section{Celková chybovosť}
+
+Celkovo sa dohromady objavilo 31 chýb, pričom tieto chyby sa vyskytli pri 23 pacientoch. Časť s týchto chýb sa podarilo opraviť pomocou logovacieho súboru a nakoniec ostalo neopravených 19 chýb a s chybou ostalo 15 pacientov.
+
+Z toho vyplývajú chybovosti z pohľadu percenta pacientov s aspoň jednou chybou na 23\% pre vylepšením a 15\% po vylepšení a z pohľadu zle získaných hodnôt (pre každého pacienta sme získavali 54 údajov) na 0,57\% pre vylepšením a 0,35\% po vylepšení.
+
+\section{Ľudská chyba}
+\label{ludChyba}
+
+Pri porovnávaní ručne získaných informácii a tých získaných naším systémom sa ukázalo, že chyby nerobí iba systém ale nezanedbateľný počet chýb sme spravili aj my. Konkrétne sa pri ručnom získavaní objavili chyby pri zapisovaní krvných výsledok kedy sme namiesto hodnoty pre ''ALT'' opísali hodnotu pre ''ALP'' alebo namiesto hodnoty ''8,6'' sme opísali hodnotu ''6,8''. Takisto pri chorobách a liekoch sa vyskytli situácie keď sme si danú chorobu respektíve liek v správe nevšimli. 

@@ -21,6 +21,14 @@ Vo všeobecnosti bol postup pri získavaní jednotlivých údajov následovný:
 	\item V prípade, že sa chyby nevyskytnú považujeme, naše regulárne za správne, v opačnom prípade považujeme našu ''kontrolnú'' množina dát za trénovaciu a opakujem potup od kroku 4 
 \end{enumerate}
 
+\section{Vstupný súbor a jeho čítanie}
+
+Vstupné dáta dostávame ako jeden súbor vo formáte XLSX v ktorom sa každý pacient nachádza v samostatnom hárku.
+
+V hárku boli údaje umiestnené približne tak ako je zobrazené na obrázku \ref{obr:sprava}. Náš systém vždy prečíta jeden hárok spracuje pacienta ktorého údaje sú v hárku zapísané a až následne číta ďalší hárok. Systému vieme povedať či už zoznam alebo interval hárkov ktoré má spracovať. 
+
+Systém číta hárok postupne a text delí do skupín definovaných v časti \ref{spravaLepsie}. Spôsob akým sa systém rozhodne kde končí jedna časť správy a začína ďalšia je následovný, ''Blok A'' hlavička je vždy prvá časť a tvorí vždy presne prvé dva riadky tabuľky, následne začína ''Blok B'' čo je samotný text prepúšťacej správy, za riadok ktorý oddeľuje ''Blok B'' od ''Bloku C'' sa považuje riadok obsahujúci iba text ''Imunologické vyš.:'' čo je riadok ktorý sa samostatne v správe nenachádza ale je vždy prítomný na začiatku časti s výsledkami krvných testov. Následne systém z jednotlivých častí získava požadovanú informáciu.
+
 \section{Osobné údaje pacienta a obdobie hospitalizácie}
 \label{osobUdaj}
 Ako prvé boli získavané dáta nachádzajúce sa v hlavičke dokumentu konkrétne išlo o meno pacienta, jeho rodné číslo dátumy prijatia a prepustenia. Zároveň sa v tejto časti dopočítavali 2 hodnoty a to vek pacienta a dĺžka hospitalizácie.
@@ -159,7 +167,7 @@ Konkrétne hľadanie týchto liekov bolo zisťovanie či sa názov lieku nachád
 Boli aj snahy zistiť okrem samotných liekov aj informáciu o počte dní počas ktorých boli tieto lieky pacient užíval a dávku lieku ktorá mu bola predpísaná avšak sa ukázalo, že vo výraznej väčšine správ buď táto informácia úplne chýba alebo je neúplná a tieto informácie z nej nie je možné získať preto nakoniec padlo rozhodnutie nezískavať tieto informácie.
 
 \section{Choroby pacienta}
-
+\label{choroby}
 Keďže pri ochorení COVID-19 tak ako aj pri iných ochoreniach sa niektoré iné diagnózy považujú za rizikové faktory. Preto aj našou snahou bolo sa pokúsiť získať informáciu či pacient niektorou z diagnóz považovaných za možné rizikové faktory trpí respektíve ju prekonal. Našťastie pre nás sa táto informácia často nachádza v časti ''Anamnéza'' (\ref{blokB}) avšak môže sa objaviť aj iných častiach správy keďže k danému problému môže dôjsť aj počas hospitalizácie.
 
 Konkrétne diagnózy ktorých prítomnosť alebo prekonanie u pacienta sa snažíme určiť sú následovné: cukrovka, artériová hypertenzia, srdcové zlyhanie, infarkt myokardu, fibrilácia predsiení, periférne artériové ochorenie dolných končatín, chronická obštrukčná choroba pľúc, astma, cievna mozgová príhoda, demencia, sepsa a kolitída. Pričom v prípade ochorení sepsa a kolitída nás nezaujíma či ich pacient v minulosti prekonal ale či sa vyskytli pri prijatí alebo počas hospitalizácie.
