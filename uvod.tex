@@ -7,9 +7,7 @@ V nemocničnom informačnom systéme Univerzitnej nemocnice v Bratislave nie je 
 
 Tento proces bolo potrebné opakovať pre každého jedného pacienta čo bolo časovo náročné a vyžadovalo si nezanedbateľné množstvo ľudskej práce.
 
-Hlavným účelom tejto práce je vytvorenie softvéru, ktorý pomôže výrazne zrýchliť a zjednodušiť získavanie týchto dát.
-
-Tento softvér na svojom vstupe dostane prepúšťaciu správu pacienta a jeho krvné výsledky v podobe textu ktorý je čiastočne generovaný nemocničným informačným systémom ale z veľkej časti je písaný lekárom a následne z týchto ne-štrukturalizovaných dát získava jednotlivé požadované dáta. Počas získavania dát si zároveň zapamätáva informáciu o dátach ktoré sa buď nájsť nepodarilo alebo sa počas ich získavania objavil nejaký problém ako napríklad viac rôznych hodnôt alebo protirečiace informácie. Výsledkom je asociatívne pole v ktorom sú ako kľúče použité názvy hľadaných informácii a text obsahujúci informáciu o nenájdených a problémových údajoch. 
+Hlavným účelom tejto práce je vytvorenie softvéru, ktorý pomôže výrazne zrýchliť a zjednodušiť získavanie týchto dát. Tento softvér na svojom vstupe dostane prepúšťaciu správu pacienta a jeho krvné výsledky v podobe textu ktorý je čiastočne generovaný nemocničným informačným systémom ale z veľkej časti je písaný lekárom a následne z týchto ne-štrukturalizovaných dát získava jednotlivé požadované dáta. Počas získavania dát si zároveň zapamätáva informáciu o dátach ktoré sa buď nájsť nepodarilo alebo sa počas ich získavania objavil nejaký problém ako napríklad viac rôznych hodnôt alebo protirečiace informácie. Výsledkom je asociatívne pole v ktorom sú ako kľúče použité názvy hľadaných informácii a text obsahujúci informáciu o nenájdených a problémových údajoch. 
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
@@ -21,6 +19,7 @@ Tento softvér na svojom vstupe dostane prepúšťaciu správu pacienta a jeho k
 	\label{obr:systemJedna}
 \end{figure}
   
+Okrem spracovania jedného pacienta je tento systém schopný spracovať aj väčšiu množinu pacientov pričom v takomto prípade už nie je výsledkom asociatívne pole ale je ním tabuľka v ktorej sú získavané údaje stĺpcami a jednotlivý pacienti riadkami. 
 
 Práca je rozdelená do piatich kapitol. V prvá obsahuje informácie o podobných softvéroch. Druhá kapitola sa zameriava na štruktúru prepúšťacej správy a dáta ktoré sa z nej snažíme získať. Tretia kapitola obsahuje problémy ktoré sa objavili pre jednotlivé získavané informácie a aké spôsoby riešenia sme sa rozhodli použiť. V štvrtej je analýza chybovosti softvéru. Posledná kapitola je o modifikáciách softvéru aby bol jednoduchšie použiteľný a modifikovateľný pre iné podobné použitia.
 
