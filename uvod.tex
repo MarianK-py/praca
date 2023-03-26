@@ -12,14 +12,23 @@ Hlavným účelom tejto práce je vytvorenie softvéru, ktorý pomôže výrazne
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
 	%obrazok je v subore images/cervik.png
-	\centerline{\includegraphics[width=0.6\textwidth]{images/system_jedna_sprava}}
+	\centerline{\includegraphics[width=0.8\textwidth]{images/system_jedna_sprava}}
 	%popis obrazku
 	\caption[Fungovanie systému pre jednu správu]{Fungovanie systému pre jednu správu}
 	%id obrazku, pomocou ktoreho sa budeme na obrazok odvolavat
 	\label{obr:systemJedna}
 \end{figure}
-  
-Okrem spracovania jedného pacienta je tento systém schopný spracovať aj väčšiu množinu pacientov pričom v takomto prípade už nie je výsledkom asociatívne pole ale je ním tabuľka v ktorej sú získavané údaje stĺpcami a jednotlivý pacienti riadkami. 
+\newpage
+Okrem spracovania jedného pacienta je tento systém schopný spracovať aj väčšiu množinu pacientov pričom v takomto prípade už nie je výsledkom asociatívne pole ale je ním tabuľka v ktorej sú získavané údaje stĺpcami a jednotlivý pacienti riadkami. Zároveň informácia o nenájdených a problémových sa zapisuje do logovacieho súboru spolu s informáciou pričom vždy je v súbore zapísané aj o ktorého pacienta ide a ktorom hárku sa nachádza jeho prepúšťacia správa a krvné výsledky.
+\begin{figure}
+	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
+	%obrazok je v subore images/cervik.png
+	\centerline{\includegraphics[width=0.8\textwidth]{images/system_viac_sprav}}
+	%popis obrazku
+	\caption[Fungovanie systému pre množinu správ]{Fungovanie systému pre množinu správ}
+	%id obrazku, pomocou ktoreho sa budeme na obrazok odvolavat
+	\label{obr:systemJedna}
+\end{figure}
 
 Práca je rozdelená do piatich kapitol. V prvá obsahuje informácie o podobných softvéroch. Druhá kapitola sa zameriava na štruktúru prepúšťacej správy a dáta ktoré sa z nej snažíme získať. Tretia kapitola obsahuje problémy ktoré sa objavili pre jednotlivé získavané informácie a aké spôsoby riešenia sme sa rozhodli použiť. V štvrtej je analýza chybovosti softvéru. Posledná kapitola je o modifikáciách softvéru aby bol jednoduchšie použiteľný a modifikovateľný pre iné podobné použitia.
 
