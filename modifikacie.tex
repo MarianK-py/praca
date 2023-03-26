@@ -1,4 +1,12 @@
 % !TeX spellcheck = sk_SK-Slovak
-\chapter{Modifikácia a vylepšenia}
+\chapter{Zovšeobecnenie sofvéru}
 
-Obsahom tejto kapitole sú úpravy a vylepšenia softvéru tak aby bol jednoduchší na používanie pre používateľa a aby ho bolo možné jednoducho modifikovať pre získavanie dát zo správ pacientov s iným ochorením ako je COVID-19 respektíve pre získavanie všeobecných informácii nachádzajúcich sa každej prepúšťacej správe.  
+Obsahom tejto kapitole sú úpravy a vylepšenia softvéru tak aby bol jednoduchší na používanie pre používateľa a aby ho bolo možné jednoducho modifikovať pre získavanie dát zo správ pacientov s iným ochorením ako je COVID-19 respektíve pre iných informácii nachádzajúcich sa každej prepúšťacej správe.  
+
+\section{Oddelenie hľadaných informácii od funkcii na hľadanie}
+
+Náš systém mal pôvodne výzor skriptu napísaného v programovacom jazyku Python ktorý obsahoval všetky informácie o tom aká informácie hľadáme a pre nich špecifické regulárne výrazy a aj funkcie ktoré ich dáta pomocou nich a všeobecnejších regulárnych výrazov získavali. Tento prístup je však neprakticky z pohľadu užívateľa keďže ak by chcel upraviť aké dáta sa získavajú musí pracovať priamo so skriptom. Preto sme sa rozhodli informácia ktoré dáta chceme extrahovať a ako by mali byť zapísané v správe do samostatného súbor. Pre čo najlepšiu čitateľnosť súboru používateľom sme si pre tento účel vybrali formát YAML. Ide o človekom ľahko čitateľný súborový formát určený na serializáciu dát \cite{YAML}, vďaka čomu je perfektný pre naše použitie. 
+
+\section{Obsah YAML súboru}
+
+V súbore ''informations.yml'' môžeme rozdeliť do niekoľko častí. V prvej časti je niekoľko riadkov obsahujúcich názov informácia a boolean (pravda/nepravda) hodnotu ktorými hovoríme nášmu systému či má danú informáciu zo správy získavať konkrétne ide o informácie z hlavičky správy, veku, doby hospitalizácie, výške a váhe, saturácii kyslíka v krvi, oxygenoterapii, hospitalizácii na jednotke intenzívnej starostlivosti a smrti pacienta.

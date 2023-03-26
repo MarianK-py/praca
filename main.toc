@@ -1,7 +1,7 @@
 \babel@toc {slovak}{}\relax 
 \contentsline {chapter}{Úvod}{1}{chapter*.7}%
 \contentsline {chapter}{\numberline {1}Podobné práce}{3}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Štruktúra prepúšťacej správy}{7}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Vstupné dáta a ich štruktúra}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Zdroj dát}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Výzor vstupných dát}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Blok A - Osobné údaje a obdobie hospitalizácie}{7}{subsection.2.2.1}%
@@ -47,8 +47,12 @@
 \contentsline {subsection}{\numberline {4.3.9}Krvné výsledky}{29}{subsection.4.3.9}%
 \contentsline {section}{\numberline {4.4}Celková chybovosť}{30}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Ľudská chyba}{30}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Využitie v praxi}{31}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Modifikácia a vylepšenia}{33}{chapter.6}%
-\contentsline {chapter}{Záver}{35}{chapter*.8}%
-\contentsline {chapter}{Príloha A}{39}{chapter*.10}%
-\contentsline {chapter}{Príloha B}{41}{chapter*.11}%
+\contentsline {section}{\numberline {4.6}Celkové zhodnotenie}{31}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Zlepšenia}{31}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Využitie v praxi}{33}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Zovšeobecnenie sofvéru}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Oddelenie hľadaných informácii od funkcii na hľadanie}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Obsah YAML súboru}{35}{section.6.2}%
+\contentsline {chapter}{Záver}{37}{chapter*.8}%
+\contentsline {chapter}{Príloha A}{41}{chapter*.10}%
+\contentsline {chapter}{Príloha B}{43}{chapter*.11}%
