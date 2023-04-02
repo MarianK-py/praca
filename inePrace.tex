@@ -7,7 +7,7 @@ podobe čistého alebo čiastočne štrukturovaného
 textu z ktorého je ručné získavanie dát časovo náročné.
 Preto sa na to využívajú automatizované systémy
 ktoré zväčša fungujú na jednom z dvoch princípov, 
-respektíve na kombinácii oboch. Tými prístupmi
+respektíve na kombinácii oboch. Týmito prístupmi
 sú regulárne výrazy a metódy strojového učenia
 určené na spracovanie prirodzeného jazyka.
 
@@ -19,7 +19,7 @@ nájdených miest sa následne vyberá získavaná informácia.
 
 Metóda strojového učenia...
 
-Obe tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
+Oba tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
 Výhodou regulárnych výrazov je ich presnosť a 
 transparentnosť čiže možnosť vidieť a upravovať
 vnútorné fungovanie programu, presnejšie možnosť 
@@ -28,8 +28,8 @@ hľadajúce konkrétne informácie. Medzi nevýhody tohto prístupu patrí
 napríklad fakt, že všetky regulárne výrazy ktoré softvér využíva 
 treba ručne vytvárať a vylepšovať
 čo je často náročné, väčšinou sú špecifické pre určitú oblasť
-pre ktorú je softvér vytváraný čo komplikuje využívanie
-regulárnych výrazov ktorých správne fungovanie bolo už 
+pre ktorú je softvér vytváraný, čo komplikuje využívanie
+regulárnych výrazov, ktorých správne fungovanie bolo už 
 otestované v iných softvéroch. 
 Ďalšou nevýhodou je, že v prípade komplikovaných výrazov je aj ich 
 upravovanie a vylepšovanie komplikované. 
@@ -37,29 +37,20 @@ Na druhej strane v prípade použitia niektorej
 z metód strojového učenia je často možné využiť už 
 existujúcu metódu spracúvajúcu prirodzený jazyk a
 modifikovať ju pre konkrétne použitie a natrénovať
-model na predpripravených dátach, avšak aj tento prístup
-má nevýhody ako napríklad, že natrénovaný model
-často nie sú až tak presný ako dobre nastavené
-regulárne výrazy, pre zvýšenie presnosti je často nutné
-zväčšiť množstvo ručne spracovať dát určených na trénovanie 
-modelu a zároveň v prípade nájdenia častej chyby alebo 
-nutnosti modifikácie hľadaných dát (pridanie alebo 
-odobranie získavanej informácie) je nutné model 
-upraviť a celý nanovo pretrénovať a validovať aj už
-skôr validované časti.
+model na predpripravených dátach. Avšak aj tento prístup
+má nevýhody. Natrénovaný model často nie je až tak presný 
+ako dobre nastavené regulárne výrazy. Pre zvýšenie presnosti je často nutné zväčšiť množstvo ručne spracovať dát určených na trénovanie modelu. Zároveň v prípade nájdenia častej chyby alebo nutnosti modifikácie hľadaných dát (pridanie alebo odobranie získavanej informácie) je nutné model upraviť a celý nanovo pretrénovať a validovať aj už skôr validované časti.
 
-Medzi už existujúce systémy využívajúce regulárne
-výrazy patrí napríklad systém HEDEA, \cite{hedea} čiže 
-Healthcare Data Extraction and Analysis ktorého
-autormi sú Anshul Aggarwal, Sunita Garhwal a Ajay Kumar 
+Príkladom systému využívajúceho regulárne výrazy je Healthcare Data Extraction and Analysis (HEDEA) \cite{hedea}, ktorého
+autormi sú Anshul Aggarwal, Sunita Garhwal a Ajay Kumar, 
 a bol vyvinutý na získavanie Indických medicínskych dát.
 Systém využitím regulárnych výrazov hľadá každú jednu
 získavanú informáciu tak, že hľadá v texte kľúčové slovo
 označujúce požadovanú informáciu, následne ak by mala 
 k danej informácií existovať aj konkrétna hodnota
 (či už číselná alebo slovná) tak hľadá túto hodnotu v okolí
-kľúčového slova a následne túto informáciu aj 
-s jej hodnotou zapíše do databázy k konkrétnemu 
+kľúčového slova a nakoniec túto informáciu aj 
+s jej hodnotou zapíše do databázy ku konkrétnemu 
 pacientovi na základe jeho identifikačného
 čísla ktoré sa na každom spracovávanom texte musí nachádzať. 
 Podobne ako v našom prípade je hlavnou úlohou tohto 
@@ -95,7 +86,7 @@ prepojiť nájdené slová a viacslovné pomenovania s databázou
 odborných pojmov tak, že v prípade jednoznačného prepojenie 
 považuje danú informáciu za klasifikovanú a v
 prípade nejednoznačného prepojenia (dané slovo môže byť časťou
-rôznych informácii napríklad v prípade číselnej hodnoty nevieme
+rôznych informácií napríklad v prípade číselnej hodnoty nevieme
 bez ďalšej informácie určiť k čomu patrí) hľadá v okolí označeného 
 slova iné označené slovo s jednoznačným prepojením ktoré bližšie 
 určí prepojenie nejednoznačného slova. Okrem samotného spôsobu

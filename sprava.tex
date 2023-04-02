@@ -7,13 +7,13 @@ Táto kapitola sa zameriava na pochopenie vstupných dát a približnú lokaliz�
 
 \section{Zdroj dát}
 
-Prepúšťacie správy a krvné výsledky ktoré náš systém spracováva sú správami pacientov ktorý boli v období od marca roku 2020 do decembra roku 2021 hospitalizovaný na klinike infektológie a geografickej medicíny univerzitnej nemocnice v Bratislave.
+Prepúšťacie správy a krvné výsledky ktoré náš systém spracováva sú správami pacientov ktorí boli v období od marca roku 2020 do decembra roku 2021 hospitalizovaní na klinike infektológie a geografickej medicíny univerzitnej nemocnice v Bratislave.
 
 \section{Výzor vstupných dát}
 
-Dáta z ktorých sa snažíme získať informácie o pacientovi softvér dostáva v tvare textu obsahujúceho prepúšťaciu správu a krvné výsledky. Väčšina textu v prepúšťacej správe nie je generovaná automaticky nemocničným informačným systémom ale je písaná lekárom čo spôsobuje, že každá správa je do určitej miery originálna.
+Vstupné dáta z ktorých sa náš systém snažíme získať informácie o pacientovi sú v tvare textu obsahujúceho prepúšťaciu správu a krvné výsledky. Väčšina textu v prepúšťacej správe nie je generovaná automaticky nemocničným informačným systémom ale je písaná lekárom čo spôsobuje, že každá správa je do určitej miery originálna.
 
-Napriek tomu existuje základná štruktúra ktorú majú spoločnú takmer všetky prepúšťacie správy vďaka ktorej je možné túto správu rozdeliť do blokov (viď obrázok \ref{obr:sprava}) ktoré obsahujú určitý informácie. Teraz si prejdeme, čo obsahujú jednotlivé bloky a čo z nich sa mi snažíme získať.
+Napriek tomu existuje základná štruktúra ktorú majú spoločnú takmer všetky prepúšťacie správy vďaka ktorej je možné túto správu rozdeliť do blokov (viď obrázok \ref{obr:sprava}) ktoré obsahujú určitý informácie. Teraz si prejdeme, čo obsahujú jednotlivé bloky a čo z nich sa my snažíme získať.
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
@@ -41,7 +41,7 @@ Zároveň sa tu nachádzajú aj výsledky krvných testov avšak tie sa tu nemus
 
 \subsection{Blok D - Terapia}
 \label{blokD}
-V tomto bloku sú informácie o terapii odtiaľto získavame informáciu o liekoch ktoré boli pacientovi podané počas hospitalizácie a o tom či pacient potreboval aj oxygenoterapia a v prípade, že áno aj o aký typ oxygenoterapie išlo.
+V tomto bloku sú informácie o terapii, čiže o liečbe ktorá bola pacientovi počas hospitalizácie podaná, odtiaľto získavame informáciu o liekoch ktoré pacient počas hospitalizácie užíval a o tom či bola pacientovi podaná oxygenoterapia a v prípade, že áno aj o aký typ oxygenoterapie išlo.
 
 \subsection{Blok E - Epikríza}
 \label{blokE}
@@ -92,7 +92,7 @@ Tento prístup využíva rozdelenie do blokov ale namiesto pôvodných 7 blokov 
 
 Výzor nového rozdelenia môžeme vidieť na obrázku \ref{obr:sprava_uprava}. Vidíme, že jediná zmena ktorá nastala je taká, že sme bloky B až F spojili do jedného bloku s názvom B a pôvodný blok G sme premenovali na blok C. 
 
-Toto rozdelenie rieši všetky vyššie spomenuté problémy vďaka tomu, že o bloku A vieme, že vždy bude mať tvar dvojriadkovej hlavičky s pri skúšaní sme nenašli žiadnu výnimku, podobne pôvodný blok G čiže nový blok C nie je súčasťou samotnej prepúšťacej správy ale sú to krvné výsledky pacienta ktoré sú v našom vstupe vždy až za správou a majú tvar dvojíc testovaná veličina a výsledok testu (pozitivita alebo hodnota) vďaka čomu je jednoduché ich oddeliť od textu správy. Samotný text správy sa problematické pre ďalšie delenie preto ho nechávame pokope v bloku B.
+Toto rozdelenie rieši všetky vyššie spomenuté problémy vďaka tomu, že o bloku A vieme, že vždy bude mať tvar dvojriadkovej hlavičky s pri vytváraní a testovaní systému sme nenašli žiadnu výnimku, podobne pôvodný blok G čiže nový blok C nie je súčasťou samotnej prepúšťacej správy ale sú to krvné výsledky pacienta ktoré sú v našom vstupe vždy až za správou a majú tvar dvojíc testovaná veličina a výsledok testu (pozitivita alebo hodnota) vďaka čomu je jednoduché ich oddeliť od textu správy. V prípade samotného textu správy sa ukazuje, že jeho delenie vytvára vyššie spomenuté problémy preto ho nechávame pokope v bloku B.
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
