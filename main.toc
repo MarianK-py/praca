@@ -55,8 +55,8 @@
 \contentsline {section}{\numberline {6.2}Obsah YAML súboru}{35}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Spôsob modifikácie používateľom}{37}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Možnosti ďalšieho vylepšenia}{37}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Určenie problémov}{37}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Problém znalosti spôsobu zápisu informácie a regulárnych výrazov}{37}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.1}Určenie problémov}{38}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Problém znalosti spôsobu zápisu informácie a regulárnych výrazov}{38}{subsection.6.4.2}%
 \contentsline {subsection}{\numberline {6.4.3}Problém znalosti YAML formátu}{38}{subsection.6.4.3}%
 \contentsline {chapter}{Záver}{39}{chapter*.8}%
 \contentsline {chapter}{Príloha A}{43}{chapter*.10}%

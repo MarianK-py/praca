@@ -8,6 +8,7 @@ Obsahom tejto kapitole sú úpravy a vylepšenia softvéru tak aby bol jednoduch
 Náš systém mal pôvodne výzor skriptu napísaného v programovacom jazyku Python ktorý obsahoval všetky informácie o tom aká informácie hľadáme a pre nich špecifické regulárne výrazy a aj funkcie ktoré ich dáta pomocou nich a všeobecnejších regulárnych výrazov získavali. Tento prístup je však neprakticky z pohľadu užívateľa keďže ak by chcel upraviť aké dáta sa získavajú musí pracovať priamo so skriptom. Preto sme sa rozhodli informácia ktoré dáta chceme extrahovať a ako by mali byť zapísané v správe do samostatného súbor. Pre čo najlepšiu čitateľnosť súboru používateľom sme si pre tento účel vybrali formát YAML. Ide o človekom ľahko čitateľný súborový formát určený na serializáciu dát \cite{YAML}, vďaka čomu je perfektný pre naše použitie. 
 
 \section{Obsah YAML súboru}
+\label{obsahYAML}
 
 Obsah súboru ''informations.yml'' môžeme rozdeliť do niekoľko častí. Prvou časťou je čast ''vyberove'' v tejto časti je niekoľko riadkov obsahujúcich názov informácia a boolean (pravda/nepravda) hodnotu ktorými hovoríme nášmu systému či má danú informáciu zo správy získavať konkrétne ide o informácie z hlavičky správy, veku, doby hospitalizácie, výške a váhe, saturácii kyslíka v krvi, oxygenoterapii, hospitalizácii na jednotke intenzívnej starostlivosti a smrti pacienta. Takmer všetky tieto hodnoty sú vzájomne nezávislé avšak výnimkou sú vek pacienta a doba hospitalizácie ktoré je možné získavať iba ak je získavaná informácia z hlavičky preto v prípade hodnoty false pre hlavičku sa tieto informácie nebudú získavať bez ohľadu na ich hodnotu.
 Druhá časť s názvom ''lieky'' obsahuje lieky o ktorých chceme vedieť či ich pacient užíval. Jednotlivé lieky sú v zaznamenávané následovne, ako prvé jeden názov stĺpca do ktorého sa bude zapisovať informácia či pacient užíval daný liek (väčšinou je to názov samotného lieku) následne je napísaná dvojbodka za ktorú sa nachádza zoznam najbežnejších názvov lieku (zoznam je ohraničený hranatými zátvorkami, jednotlivé názvy sú v apostrofoch a sú oddelené čiarkami) pričom všetky písmená v týchto názvoch musia byť malé keďže náš systém získava túto informáciu z textu ktorý si upravuje tak aby aby boli všetky písmená malé. Na obrázku \ref{obr:lieky_yaml} vidíme ukážku pre liek kolchicín. 
@@ -47,6 +48,15 @@ Posledná a asi najkomplikovanejšia časť má názov ''protilatky'' táto čas
 
 \section{Spôsob modifikácie používateľom}
 
+V prípade, že sa používateľ rozhodne zmeniť množinu získavaných údajov je postup následovný:
+\begin{enumerate}
+	\item Otvorenie konfiguračného súboru ''informations.yml''
+	\item Zmena boolean hodnôt (true na false alebo naopak) v časti ''vyberove'' pre pridanie alebo odobratia získavania danej informácie
+	\item Odstránenie riadkov určených na získavanie informácie ktorú získavať už nechceme z častí ''lieky'', ''choroby'' a ''protilátky''
+	\item Pridanie nových riadkov do týchto častí vo formáte definovanom v podkapitole \ref{obsahYAML}
+	\item Uloženie upraveného konfiguračného súboru
+	\item Spustenie systému na získavanie dát 
+\end{enumerate}
 
 \section{Možnosti ďalšieho vylepšenia}
 
