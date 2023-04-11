@@ -1,6 +1,8 @@
 \babel@toc {slovak}{}\relax 
 \contentsline {chapter}{Úvod}{1}{chapter*.7}%
-\contentsline {chapter}{\numberline {1}Podobné práce}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Metódy získavania dát a podobné systémy}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Metódy získavania dát z textu}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Podobné systémy}{4}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Vstupné dáta a ich štruktúra}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Zdroj dát}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Výzor vstupných dát}{7}{section.2.2}%

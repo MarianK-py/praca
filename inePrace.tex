@@ -1,23 +1,29 @@
 % !TeX spellcheck = sk_SK-Slovak
-\chapter{Podobné práce}
+\chapter{Metódy získavania dát a podobné systémy}
 
 Aj napriek moderným nemocničným informačným
 systémom je stále veľké množstvo nemocničných záznamov v
 podobe čistého alebo čiastočne štrukturovaného 
 textu z ktorého je ručné získavanie dát časovo náročné.
-Preto sa na to využívajú automatizované systémy
-ktoré zväčša fungujú na jednom z dvoch princípov, 
+Preto sa na to využívajú automatizované systémy ktoré z týchto textov dokážu získať potrebnú informáciu. 
+
+Táto kapitola sa zameriava na zoznámenie sa s dvomi najčastejšími prístupmi na takéto získavanie dát. Zároveň táto kapitola obsahuje na príklady systémov ktoré tieto prístupy využívajú na získavanie medicínskych dát a ich rozdiely oproti nášmu systému.
+
+\section{Metódy získavania dát z textu}
+
+
+Väčšina systémov určených na získavanie dát z textu funguje na jednom z dvoch princípov, 
 respektíve na kombinácii oboch. Týmito prístupmi
 sú regulárne výrazy a metódy strojového učenia
 určené na spracovanie prirodzeného jazyka.
 
 % pridat kratke vysvetlenie fungovania danych metod
 Metóda regulárnych výrazov využíva na hľadanie informácii v texte
-špeciálne kódované reťazce znakov ktoré slúžia ako vzor. 
-V texte sa hľadajú miesta, ktoré sa zhodujú so vzorom a z 
-nájdených miest sa následne vyberá získavaná informácia.
+špeciálne kódované reťazce znakov, takzvané regulárne výrazy, ktoré slúžia ako vzor. 
+Systém hľadá v texte úseky ktoré sa zhodujú so vzorom a z 
+nájdených úsekov sa následne získava konkrétna hľadaná informácia.
 
-Metóda strojového učenia...
+Metóda strojového učenia využíva algoritmy učenia umelej inteligencie s učiteľom. Systém dostane trénovacie dáta, čiže množinu textov z ktorých má získavať informácie a množiny správne získaných informácii, a pomocou nich sa snaží naučiť sa tieto informácie v textoch hľadať. 
 
 Oba tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
 Výhodou regulárnych výrazov je ich presnosť a 
@@ -41,6 +47,12 @@ model na predpripravených dátach. Avšak aj tento prístup
 má nevýhody. Natrénovaný model často nie je až tak presný 
 ako dobre nastavené regulárne výrazy. Pre zvýšenie presnosti je často nutné zväčšiť množstvo ručne spracovať dát určených na trénovanie modelu. Zároveň v prípade nájdenia častej chyby alebo nutnosti modifikácie hľadaných dát (pridanie alebo odobranie získavanej informácie) je nutné model upraviť a celý nanovo pretrénovať a validovať aj už skôr validované časti.
 
+Pre náš systém sme si vybrali metódu regulárnych výrazov. Hlavným dôvodom tohto výberu bolo malé množstvo dát použiteľných na trénovanie modelu strojového učenia. 
+
+\section{Podobné systémy}
+
+Teraz sa pozrieme na 3 príklady systémov určených na získavanie medicínskych dát z textu. Pričom každý z týchto systémov funguje na inom princípe.
+
 Príkladom systému využívajúceho regulárne výrazy je Healthcare Data Extraction and Analysis (HEDEA) \cite{hedea}, ktorého
 autormi sú Anshul Aggarwal, Sunita Garhwal a Ajay Kumar, 
 a bol vyvinutý na získavanie Indických medicínskych dát.
@@ -58,7 +70,7 @@ softvéru získavať medicínske dáta z čiastočne štrukturalizovaných
 vstupných dát čiže lekárskych správ a výsledkov testov.
 Hlavné rozdiely oproti nášmu systému sú, že systém HEDEA
 sa snaží získavať iba základné dáta o pacientovi ako sú osobné
-údaje, výška, váha, tlak, základné krvné výsledky a 
+údaje, výška, váha, krvný tlak, základné krvné výsledky a 
 prekonané ochorenia inými slovami jeho účelom je vytvoriť
 databázu obsahujúcu anamnézy jednotlivých pacientov
 ktorú môže využiť lekár pri diagnostike daného pacienta
@@ -117,7 +129,7 @@ podmienka \cite{conHeu}. Výhodou tohto prístupu oproti
 bežným metódam strojového učenia je, 
 že na konci trénovania má užívateľ množinu
 regulárnych výrazov ktoré môže ďalej upravovať
-a nie "čiernu skrinku" ako v prípade bežnej metódy strojového
+a nie ''čiernu skrinku'' ako v prípade bežnej metódy strojového
 učenia, ktorej vnútornému fungovaniu je pre človeka
 nepochopiteľné. Oproti len použitiu regulárnych výrazov
 má výhodu, že nie je nutné regulárne výrazy vymýšľať
