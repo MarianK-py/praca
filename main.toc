@@ -52,7 +52,7 @@
 \contentsline {subsection}{\numberline {4.2.4}Ľudská chyba}{30}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}Zhodnotenie výsledkov}{31}{subsection.4.2.5}%
 \contentsline {section}{\numberline {4.3}Využitie v praxi}{31}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Zlepšenia}{31}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Možné zlepšenia}{32}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Zovšeobecnenie sofvéru}{33}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Oddelenie hľadaných informácii od funkcii na hľadanie}{33}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Obsah YAML súboru}{33}{section.5.2}%

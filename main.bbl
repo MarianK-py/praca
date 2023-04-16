@@ -1,6 +1,6 @@
 \newcommand{\noopsort}[1]{} \newcommand{\printfirst}[2]{#1}
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{nlpAndRegex}
 Roni Romano, Lior Rokach, and Oded Maimon.
@@ -51,6 +51,14 @@ Bc~Matej Min{\'a}rik~(2016).
 \newblock Extrakcia inform{\'a}ci{\'i} zo slabo {\v{s}}trukt{\'u}rovan{\'e}ho
   textu.
 \newblock {\em Diplomová práca, Vysoké učení technické v Brně}.
+
+\bibitem{sabaka}
+J{\'a}n Jurenka, Anna Nagyov{\'a}, Mohammad Dababseh, Peter Mihalov, Igor
+  Stankovi{\v{c}}, Vladim{\'\i}r Bo{\v{z}}a, Mari{\'a}n Kravec, Michal
+  Palkovi{\v{c}}, Martin {\v{C}}aprnda, and Peter Sabaka.
+\newblock Anti-sars-cov-2 antibody status at the time of hospital admission and
+  the prognosis of patients with covid-19: A prospective observational study.
+\newblock {\em Infectious Disease Reports}, 14(6):1004--1016, 2022.
 
 \bibitem{YAML}
 {Wikipedia contributors}.
