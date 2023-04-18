@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  16 APR 2023 12:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  18 APR 2023 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -648,11 +648,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34]
 [35 <./images/lieky_yaml.png> <./images/choroby_yaml.png> <./images/protilatky_
-yaml.png>]) (zaver.tex [36]) [37
+yaml.png>]) (zaver.tex [36] [37
 
-] [38
-
-] (main.bbl
+]) [38] (main.bbl
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
 9.
 
@@ -671,6 +669,7 @@ ve % 20heuristic &
  []
 
 [39
+
 
 
 ]) (appendixA.tex [40]) (appendixB.tex [41
@@ -704,7 +703,7 @@ eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\majko\AppData\Loca
 l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\majko\AppDat
 a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2074.pk> <C:\Users\majko\
 AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk>
-Output written on main.pdf (56 pages, 1087231 bytes).
+Output written on main.pdf (56 pages, 1087728 bytes).
 PDF statistics:
  1319 PDF objects out of 1440 (max. 8388607)
  173 named destinations out of 1000 (max. 500000)
