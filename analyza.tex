@@ -79,13 +79,13 @@ Z toho vyplýva, že chybovosť nášho systému samotného je pri oxygenoterapi
 
 Pri určovaní či pacient užíva vybrané lieky sa objavili 3 chyby. V jednom prípade lekár spravil chybu a napísal ''Dexamentazon'' namiesto ''Dexametazon'' čo bola chyba ktorú systém neočakával. Ďalšie dve chyby vznikli z dôvodu, že lekár do časti ''Anamnéza'' (\ref{blokB}) informácia ''Ivermektín neužíva'', takáto situácia sa počas vytvárania softvéru neobjavila a preto ju systém nebol schopný správne vyhodnotiť.
 
-V tomto prípade logovací súbor nijak nepomohol s opravou chýb preto je chybovosť z pohľadu počtu pacientov s chybou 3\% (3 zo 100) avšak chybovosť z pohľadu počtu nesprávne určených hodnôt je iba 0.5\% (3 zo 600 (6 liekov, 100 pacientov)).
+V tomto prípade logovací súbor nijak nepomohol s opravou chýb preto je chybovosť z pohľadu počtu pacientov s chybou 3\% (3 zo 100) avšak chybovosť z pohľadu počtu nesprávne určených hodnôt je iba 0,5\% (3 zo 600 (6 liekov, 100 pacientov)).
 
 \subsubsection{Choroby pacienta}
 
 Pri určovaní či pacient trpí niektorými s zo vybraných chorôb (konkrétny zoznam v časti \ref{choroby}) sa vyskytlo 5 chýb. Každá chyba bola jedinečná. Objavil sa jeden prípad kedy si systém nebol istý či pacient počas hospitalizácie trpel kolitídou čo bolo však v tomto prípade žiadúce správanie a informácia o tejto neistote bola zapísaná do logovacieho súboru a pri kontrole opravená. Jedna chyba nastala aj v prípade určovania aterosklerózy dolných končatín kde lekár namiesto skratky ''PAOO DK'' zapísal do správy skratku  ''PADO DK'' kvôli čomu nebol schopný nájsť informáciu o tomto ochorení. Ďalšia chyba nastala keď lekár do správy ku konkrétnemu lieku napísal informáciu ''počas sepsy prerušiť liečbu'' čo systém nesprávne interpretoval ako informáciu, že pacient počas liečby sepsou trpel. V jednom prípade systém určil, že pacient trpí artériovou hypertenziou na základe toho, že v správe našiel informáciu o tomto ochorení, avšak ako sa pri kontrole ukázalo tento záver systému bol nesprávny keďže išlo o prípad keď lekár do správy zapísal aj diagnosticky významné ochorenia blízkych rodinných príslušníkov pacienta a konkrétne v tomto prípade išlo o ochorenie ktorým trpí matka nami skúmaného pacienta. V prípade poslednej chyby je otázne či ide o chybu systému alebo lekára, alebo o nedostatok informácie v správe, ide o problém pri určovaní kolitídy kedy lekár do záveru správy napísal, že pacient kolitídou trpí aj napriek tomu, že podľa správy boli vykonané testy na toto ochorenie s negatívnym výsledkom. V prípade týchto štyroch chýb oprava pomocou logovacieho súboru nepriniesla ich odstránenie.
 
-Takže z pohľadu chybovosti percenta pacientov s chybou je chybovosť 5\% pred kontrolou a 4\% po kontrole s logovacím súborom a z pohľadu percenta chybne určených chorôb je chybovosť približne 0,4\% (5 z 1300 (13 chorôb, 100 pacientov)) pred kontrolou a 0,3\% (4 z 1300) po kontrole s logovacím súborom
+Takže z pohľadu chybovosti percenta pacientov s chybou je chybovosť 5\% pred kontrolou a 4\% po kontrole s logovacím súborom a z pohľadu percenta chybne určených chorôb je chybovosť približne 0,38\% (5 z 1300 (13 chorôb, 100 pacientov)) pred kontrolou a 0,31\% (4 z 1300) po kontrole s logovacím súborom
 
 \subsubsection{Krvné výsledky}
 
@@ -93,11 +93,125 @@ Keďže krvné výsledky sú generované počítačom a nie písané lekárom (p
 
 Ak by sme za chybovosť brali počet pacientov pri ktorých nastala chyba bola by chybovosť nášho systému pri hľadaní výsledkov testov 4\% avšak ak vezmeme do úvahy, že systém hľadal 19 rôznych výsledok je chybovosť iba približne 0,21\% pričom platí, že po kontrole s logovacím súborom je chybovosť nulová.
 
+
+\begin{table}[h!]
+	\catcode`\-=12
+	\caption[Chybovosť jednotlivých skupín]{Chybovosť jednotlivých skupín získavaných dát}
+	\label{tab:chyby}
+	%\begin{tabular}{|p{2.4cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|}
+	
+	
+	\begin{tabular}{|p{2.3cm}|llp{1.9cm}|llp{1.9cm}|}
+		\hline
+		\multirow{2}{*}{\footnotesize{\textbf{Skupina}}} & 
+		\multicolumn{3}{p{6.05cm}|}{\footnotesize{\textbf{Chybovosť systému pred kontrolou}}} & 
+		\multicolumn{3}{p{5.3cm}|}{\footnotesize{\textbf{Chybovosť systém po kontrole}}}                                                      
+		\\ \cline{2-7} 
+		& \multicolumn{1}{p{1.4cm}|}{\footnotesize{\textbf{Počet}}} & 
+		\multicolumn{1}{p{1.8cm}|}{\footnotesize{\textbf{Percento údajov}}} & 
+		\footnotesize{\textbf{Percento pacientov}} & 
+		\multicolumn{1}{p{1.4cm}|}{\footnotesize{\textbf{Počet}}} & 
+		\multicolumn{1}{p{1.8cm}|}{\footnotesize{\textbf{Percento údajov}}} & 
+		\footnotesize{\textbf{Percento pacientov}} 
+		\\ \hline
+		
+		\footnotesize{Osob. údaje a obdobie hosp.}   &
+		\multicolumn{1}{l|}{0} &
+		\multicolumn{1}{l|}{0} &
+		                    0  & 
+		\multicolumn{1}{l|}{0} &
+		\multicolumn{1}{l|}{0} & 
+		                    0                           
+		\\ \hline
+		
+		\footnotesize{JIS a smrť}   &
+		\multicolumn{1}{l|}{0} &
+		\multicolumn{1}{l|}{0} &
+		0  & 
+		\multicolumn{1}{l|}{0} &
+		\multicolumn{1}{l|}{0} & 
+		0                           
+		\\ \hline
+		
+		\footnotesize{Výška a váha}   &
+		\multicolumn{1}{l|}{5} &
+		\multicolumn{1}{l|}{2,5} &
+		3  & 
+		\multicolumn{1}{l|}{0} &
+		\multicolumn{1}{l|}{0} & 
+		0                           
+		\\ \hline
+		
+		\footnotesize{Saturácia}   &
+		\multicolumn{1}{l|}{3} &
+		\multicolumn{1}{l|}{3} &
+		3  & 
+		\multicolumn{1}{l|}{2} &
+		\multicolumn{1}{l|}{2} & 
+		2                           
+		\\ \hline
+		
+		\footnotesize{Protilátky}   &
+		\multicolumn{1}{l|}{4} &
+		\multicolumn{1}{l|}{4} &
+		4  & 
+		\multicolumn{1}{l|}{1} &
+		\multicolumn{1}{l|}{1} & 
+		1                           
+		\\ \hline
+		
+		\footnotesize{Oxygenoterapia}   &
+		\multicolumn{1}{l|}{6} &
+		\multicolumn{1}{l|}{6} &
+		6  & 
+		\multicolumn{1}{l|}{5} &
+		\multicolumn{1}{l|}{5} & 
+		5                           
+		\\ \hline
+		
+		\footnotesize{Lieky}   &
+		\multicolumn{1}{l|}{3} &
+		\multicolumn{1}{l|}{0,5} &
+		3  & 
+		\multicolumn{1}{l|}{3} &
+		\multicolumn{1}{l|}{0,5} & 
+		3                          
+		\\ \hline
+		
+		\footnotesize{Choroby}   &
+		\multicolumn{1}{l|}{5} &
+		\multicolumn{1}{l|}{0,38} &
+		5  & 
+		\multicolumn{1}{l|}{4} &
+		\multicolumn{1}{l|}{0,31} & 
+		4                           
+		\\ \hline
+		
+		\footnotesize{Krvné výsl.}   &
+		\multicolumn{1}{l|}{5} &
+		\multicolumn{1}{l|}{0,21} &
+		4  & 
+		\multicolumn{1}{l|}{0} &
+		\multicolumn{1}{l|}{0} & 
+		0                           
+		\\ \hline
+		
+		\footnotesize{\textbf{Celkom}}   &
+		\multicolumn{1}{l|}{\textbf{31}} &
+		\multicolumn{1}{l|}{\textbf{0,57}} &
+		\textbf{23}  & 
+		\multicolumn{1}{l|}{\textbf{15}} &
+		\multicolumn{1}{l|}{\textbf{0,28}} & 
+		\textbf{12}                           
+		\\ \hline
+	\end{tabular}
+\end{table}
+
 \subsection{Celková chybovosť}
 
-Celkovo sa dohromady objavilo 31 chýb, pričom tieto chyby sa vyskytli pri 23 pacientoch. Časť s týchto chýb sa podarilo opraviť pomocou logovacieho súboru a nakoniec ostalo neopravených 19 chýb a s chybou ostalo 15 pacientov.
+Celkovo sa dohromady objavilo 31 chýb, pričom tieto chyby sa vyskytli pri 23 pacientoch. Časť s týchto chýb sa podarilo opraviť pomocou logovacieho súboru a nakoniec ostalo neopravených 15 chýb a s chybou ostalo 12 pacientov.
 
-Z toho vyplývajú chybovosti z pohľadu percenta pacientov s aspoň jednou chybou na 23\% pre vylepšením a 15\% po vylepšení a z pohľadu zle získaných hodnôt (pre každého pacienta sme získavali 54 údajov) na 0,57\% pre vylepšením a 0,35\% po vylepšení.
+Z toho vyplývajú chybovosti z pohľadu percenta pacientov s aspoň jednou chybou na 23\% pre vylepšením a 12\% po vylepšení a z pohľadu zle získaných hodnôt (pre každého pacienta sme získavali 54 údajov) na 0,57\% pre vylepšením a 0,28\% po vylepšení.
 
 \subsection{Ľudská chyba}
 \label{ludChyba}
