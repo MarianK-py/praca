@@ -18,22 +18,22 @@
 \contentsline {subsection}{\numberline {2.3.2}Problém nesprávne umiestnených dát}{10}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}Riešenia problémov s rozdelením dát do blokov}{10}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Homogénny text}{10}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Menej väčších blokov}{10}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Predspracované dáta}{11}{section.2.5}%
+\contentsline {subsection}{\numberline {2.4.2}Menej väčších blokov}{11}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Predspracované dáta}{12}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Získavanie dát}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Všeobecný postup}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Vstupný súbor a jeho čítanie}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.1}Vstupný súbor a jeho čítanie}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Všeobecný postup}{14}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Osobné údaje pacienta a obdobie hospitalizácie}{14}{section.3.3}%
 \contentsline {section}{\numberline {3.4}JIS a smrť}{15}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Výška a váha}{16}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Saturácia krvi kyslíkom pri prijatí}{17}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{17}{section.3.7}%
+\contentsline {section}{\numberline {3.7}Protilátky proti vírusu SARS-CoV-2 pri prijatí}{18}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Oxygenoterapia}{20}{section.3.8}%
 \contentsline {section}{\numberline {3.9}Lieky}{20}{section.3.9}%
 \contentsline {section}{\numberline {3.10}Choroby pacienta}{21}{section.3.10}%
 \contentsline {section}{\numberline {3.11}Krvné výsledky}{22}{section.3.11}%
 \contentsline {section}{\numberline {3.12}Chýbajúce časti vstupu}{23}{section.3.12}%
-\contentsline {section}{\numberline {3.13}Výstupné súbory}{23}{section.3.13}%
+\contentsline {section}{\numberline {3.13}Výstupné súbory}{24}{section.3.13}%
 \contentsline {chapter}{\numberline {4}Výsledky systému}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Časová náročnosť}{25}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Chybovosť systému}{26}{section.4.2}%
@@ -63,4 +63,3 @@
 \contentsline {subsection}{\numberline {5.4.3}Problém znalosti YAML formátu}{36}{subsection.5.4.3}%
 \contentsline {chapter}{Záver}{37}{chapter*.17}%
 \contentsline {chapter}{Príloha A}{41}{chapter*.19}%
-\contentsline {chapter}{Príloha B}{43}{chapter*.20}%

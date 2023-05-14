@@ -7,7 +7,7 @@ podobe čistého alebo čiastočne štrukturovaného
 textu z ktorého je ručné získavanie dát časovo náročné.
 Preto sa na to využívajú automatizované systémy ktoré z týchto textov dokážu získať potrebnú informáciu. 
 
-Táto kapitola sa zameriava na zoznámenie sa s dvomi najčastejšími prístupmi na takéto získavanie dát. Zároveň táto kapitola obsahuje na príklady systémov ktoré tieto prístupy využívajú na získavanie medicínskych dát a ich rozdiely oproti nášmu systému.
+Táto kapitola sa zameriava na zoznámenie sa s dvomi najčastejšími prístupmi na takéto získavanie dát. Zároveň táto kapitola obsahuje tri príklady systémov ktoré tieto prístupy využívajú na získavanie medicínskych dát a ich rozdiely oproti nášmu systému.
 
 \section{Metódy získavania dát z textu}
 
@@ -20,10 +20,10 @@ určené na spracovanie prirodzeného jazyka.
 % pridat kratke vysvetlenie fungovania danych metod
 Metóda regulárnych výrazov využíva na hľadanie informácii v texte
 špeciálne kódované reťazce znakov, takzvané regulárne výrazy, ktoré slúžia ako vzor. 
-Systém hľadá v texte úseky ktoré sa zhodujú so vzorom a z 
-nájdených úsekov sa následne získava konkrétna hľadaná informácia.
+Systém hľadá v texte časti ktoré sa zhodujú so vzorom a z 
+nájdených častí sa následne získava konkrétna hľadaná informácia.
 
-Metóda strojového učenia využíva algoritmy učenia umelej inteligencie s učiteľom. Systém dostane trénovacie dáta, čiže množinu textov z ktorých má získavať informácie a množiny správne získaných informácii, a pomocou nich sa snaží naučiť sa tieto informácie v textoch hľadať. 
+Metóda strojového učenia využíva algoritmy učenia umelej inteligencie s učiteľom. Systém dostane trénovacie dáta, čiže množinu textov z ktorých má získavať informácie a množiny správne získaných informácii, a pomocou týchto dát sa učí hľadať požadované informácie v textoch. 
 
 Oba tieto prístupy majú svoje výhody a nevýhody \cite{nlpAndRegex}. 
 Výhodou regulárnych výrazov je ich presnosť a 
@@ -33,19 +33,17 @@ upravovať jednotlivé regulárne výrazy
 hľadajúce konkrétne informácie. Medzi nevýhody tohto prístupu patrí
 napríklad fakt, že všetky regulárne výrazy ktoré softvér využíva 
 treba ručne vytvárať a vylepšovať
-čo je často náročné, väčšinou sú špecifické pre určitú oblasť
-pre ktorú je softvér vytváraný, čo komplikuje využívanie
+čo je často komplikované. Zároveň sú tieto regulárne výrazy väčšinou špecifické pre určitú doménu
+pre ktorú je softvér vytváraný, čo často znemožňuje využívanie
 regulárnych výrazov, ktorých správne fungovanie bolo už 
-otestované v iných softvéroch. 
-Ďalšou nevýhodou je, že v prípade komplikovaných výrazov je aj ich 
-upravovanie a vylepšovanie komplikované. 
+otestované v softvéroch z inej domény.  
 Na druhej strane v prípade použitia niektorej
-z metód strojového učenia je často možné využiť už 
-existujúcu metódu spracúvajúcu prirodzený jazyk a
-modifikovať ju pre konkrétne použitie a natrénovať
+z metód strojového učenia je výhodou to, že je často možné využiť už 
+existujúcu metódu na spracovanie prirodzeného jazyka a iba ju
+modifikovať pre konkrétne použitie a natrénovať
 model na predpripravených dátach. Avšak aj tento prístup
 má nevýhody. Natrénovaný model často nie je až tak presný 
-ako dobre nastavené regulárne výrazy. Pre zvýšenie presnosti je často nutné zväčšiť množstvo ručne spracovať dát určených na trénovanie modelu. Zároveň v prípade nájdenia častej chyby alebo nutnosti modifikácie hľadaných dát (pridanie alebo odobranie získavanej informácie) je nutné model upraviť a celý nanovo pretrénovať a validovať aj už skôr validované časti.
+ako dobre nastavené regulárne výrazy. Pre zvýšenie presnosti je často nutné zväčšiť množstvo ručne spracovať dát určených na trénovanie modelu čo môže byť časovo náročné. Zároveň v prípade nájdenia častej chyby alebo nutnosti modifikácie hľadaných dát (pridanie alebo odobranie získavanej informácie) je nutné model upraviť a celý nanovo pretrénovať a validovať aj už skôr validované časti.
 
 Pre náš systém sme si vybrali metódu regulárnych výrazov. Hlavným dôvodom tohto výberu bolo malé množstvo dát použiteľných na trénovanie modelu strojového učenia. 
 
@@ -71,15 +69,15 @@ vstupných dát čiže lekárskych správ a výsledkov testov.
 Hlavné rozdiely oproti nášmu systému sú, že systém HEDEA
 sa snaží získavať iba základné dáta o pacientovi ako sú osobné
 údaje, výška, váha, krvný tlak, základné krvné výsledky a 
-prekonané ochorenia inými slovami jeho účelom je vytvoriť
+prekonané ochorenia. Inými slovami jeho účelom je vytvoriť
 databázu obsahujúcu anamnézy jednotlivých pacientov
-ktorú môže využiť lekár pri diagnostike daného pacienta
+ktorú môže využiť lekár pri diagnostike,
 zatiaľ čo my získavame okrem týchto dát aj dáta 
 špecifické pre pacientov s ochorením COVID-19 ako
 napríklad typ oxygenoterapie alebo výsledky testov
 na protilátky proti vírusu SARS-CoV-2 a našou snahou je 
-vytvoriť tabuľku s dátami o ochorení COVID-19 ktorá
-sa dá využiť na analýzu rizikových faktorov a liečby
+vytvoriť tabuľku s dátami o pacientoch ktorý trpeli ochorením COVID-19 ktorá
+sa dá využiť na analýzu rizikových faktorov a účinnosti liečby
 tohto ochorenia, zároveň systém HEDEA určený na 
 spracovávanie Indických dát
 takže je vytvorený pre dáta písané v oficiálnom jazyku
@@ -91,26 +89,26 @@ spracovávanie prirodzeného jazyka je napríklad
 systém ktorý vytvorili Fette a kol. na Univerzite
 vo Würzburgu \cite{infExtGer} ktorý využívajúci metódu učenia s 
 učiteľom s názvom Conditional random field ktorej úlohou
-je označiť jednotlivé slová respektíve viacslovné
-pomenovania \cite{CRF} a následne pomocou metódy 
+je označiť jednotlivé slová, respektíve viacslovné
+pomenovania \cite{CRF} pričom tieto slová a viacslovné pomenovania sú následne pomocou metódy 
 Keyword Matching with Terminology based disambiguation
-prepojiť nájdené slová a viacslovné pomenovania s databázou
-odborných pojmov tak, že v prípade jednoznačného prepojenie 
-považuje danú informáciu za klasifikovanú a v
+hľadané v databáze
+odborných pojmov tak, že v prípade jednoznačnej zhody 
+považuje systém danú informáciu za klasifikovanú a v
 prípade nejednoznačného prepojenia (dané slovo môže byť časťou
 rôznych informácií napríklad v prípade číselnej hodnoty nevieme
 bez ďalšej informácie určiť k čomu patrí) hľadá v okolí označeného 
-slova iné označené slovo s jednoznačným prepojením ktoré bližšie 
-určí prepojenie nejednoznačného slova. Okrem samotného spôsobu
+slova iné označené slovo s jednoznačnou zhodou ktoré bližšie 
+určí význam nejednoznačného slova. Okrem samotného spôsobu
 získavanie dát je v porovnaní s našim systémom rozdiel 
 aj v prioritách pri získavaní dát keďže náš systém 
 je vytvorený na čo najväčšiu presnosť pri získavaní
-dát špecificky z prepúšťacích správ zatiaľ čo ich 
+dát špecificky z prepúšťacích správ zatiaľ čo tento 
 systém je vytvorený tak aby ho bolo možné byť natrénovaný na 
 získavanie dát z rôznych typov medicínskych dokumentov či už
 lekárskych správ, výsledkov testov alebo klinických 
 štúdii pričom jedinou podmienkou je aby sa všetky získavané údaje 
-nachádzali v databáze odborných pojmov a takisto platí, 
+nachádzali v databáze odborných pojmov. Ďalším rozdielom je, 
 že celý systém je vytvorený 
 pre iný jazyk ako náš systém v tomto prípade ide o 
 nemčinu. 
@@ -118,8 +116,8 @@ nemčinu.
 Prístup ktorý kombinuje metódu strojového učenia 
 s regulárnymi výrazmi využili v svojom systéme
 Cui a kol. \cite{CHA} ktorý využili metódu s názvom 
-Constructive heuristic ktorej úlohou nebolo
-priamo hľadanie získavaných informácii v texte ale
+Constructive heuristic ktorej úlohou nie je
+priame hľadanie získavaných informácii v texte ale
 generovanie čo najlepších regulárnych výrazov
 na to určených. Tento algoritmus začína s
 prázdnou množinou regulárnych výrazov a 
@@ -131,7 +129,7 @@ bežným metódam strojového učenia je,
 regulárnych výrazov ktoré môže ďalej upravovať
 a nie ''čiernu skrinku'' ako v prípade bežnej metódy strojového
 učenia, ktorej vnútornému fungovaniu je pre človeka
-nepochopiteľné. Oproti len použitiu regulárnych výrazov
+nepochopiteľné. Oproti použitiu len regulárnych výrazov
 má výhodu, že nie je nutné regulárne výrazy vymýšľať
 od začiatku ale stačí iba výstup mierne upraviť.
 Nevýhodou je, že pochopenie a upravenie regulárnych

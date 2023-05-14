@@ -1,39 +1,37 @@
 % !TeX spellcheck = sk_SK-Slovak
 \chapter{Získavanie dát}
 \label{zisk}
-V tejto kapitole si povieme niečo o tom ako sme postupovali pri získavaní dát všeobecne a následne si prejdeme k jednotlivým získavaným dátam ich špecifiká a problémy ktoré sa pri ich získavaní vyskytli a ako sme tieto problémy riešili. Keďže však viaceré dáta majú veľmi podobný až totožný spôsob získavania rozhodli sme sa ich utriediť do skupín dát ktoré majú spolu súvis a majú rovnaký spôsob získavania.
+Táto kapitola hovorí o tom ako sme postupovali pri získavaní dát všeobecne, ale aj konkrétne pre jednotlivé získavané dáta pričom sa zameriava na špecifiká pri ich získavaní, problémy ktoré sa pri ich získavaní vyskytli a ako sme tieto problémy riešili. Keďže však viaceré dáta majú veľmi podobný až totožný spôsob získavania rozhodli sme sa ich utriediť do skupín dát ktoré majú spolu súvis a majú rovnaký spôsob získavania.
+
+\section{Vstupný súbor a jeho čítanie}
+
+Vstupné dáta dostávame ako jeden súbor vo formáte XLSX v ktorom sa každý pacient nachádza v samostatnom hárku. V hárku boli údaje umiestnené približne tak ako je zobrazené na obrázku \ref{obr:sprava}. S výnimkou hlavičky sa text vždy nachádza v prvom stĺpci tabuľky pričom jeden riadok tabuľky je ekvivalentný jednému odstavcu v prepúštacej správe, respektíve jednému parametru v krvných výsledkoch. Náš systém vždy prečíta jeden hárok, spracuje pacienta ktorého údaje sú v hárku zapísané a až následne číta ďalší hárok. Systému vieme povedať či už zoznam alebo interval hárkov ktoré má spracovať. 
+
+Systém číta hárok postupne a text delí do skupín definovaných v časti \ref{spravaLepsie}. Spôsob akým sa systém rozhodne kde končí jedna časť správy a začína ďalšia je následovný, ''Blok A'', čiže hlavička je vždy prvá časť a tvorí vždy presne prvé dva riadky tabuľky, následne začína ''Blok B'' čo je samotný text prepúšťacej správy. Za riadok ktorý oddeľuje ''Blok B'' od ''Bloku C'' považujeme riadok obsahujúci iba text ''Imunologické vyš.:'' čo je riadok ktorý sa v texte správy nenachádza ale je vždy prítomný na začiatku časti s výsledkami krvných testov. V prípade absencii tohto riadky vstupné dáta pre daného pacienta neobsahujú výsledky krvných testov. Riešenie tohto problému je v časti \ref{chybCast}. Následne systém z jednotlivých častí získava požadovanú informáciu.
 
 \section{Všeobecný postup}
 
 Vo všeobecnosti bol postup pri získavaní jednotlivých údajov následovný:
 
 \begin{enumerate}
-	\item Výber ''trénovacej'' množiny dát 
-	\item Zistenie najbežnejších spôsobov zápisu daného údaju
-	\item Vytvorenie jednoduchých regulárnych výrazov schopných nájsť požadovanú informáciu
-	\item Pokus o získavanie informácie z dát
-	\item Kontrola výsledkov, identifikácia problémových miest 
-	\item Modifikácia regulárnych výrazov, eliminácia chybových výsledkov
+	\item Výber ''trénovacej'' množiny dát - podmnožina z predspracovaných dát (\ref{predSprac})
+	\item Zistenie najbežnejších spôsobov zápisu daného údaju - nájdenie hľadanej informácie v texte správy a pochopenie štruktúry jej zápisu
+	\item Vytvorenie jednoduchých regulárnych výrazov schopných nájsť požadovanú informáciu - základné výrazne väčšinou hľadajúce kľúčové slovo
+	\item Pokus o získavanie informácie z dát - spustenie systému na ''trénovacej množine''
+	\item Kontrola výsledkov, identifikácia problémových miest - porovnanie získanej informácie s kontrolným výsledkom a pochopenie vzniknutých rozdielov
+	\item Modifikácia regulárnych výrazov, eliminácia chybových výsledkov - vylepšenie výrazov aby boli schopné riešiť vzniknuté chyby
 	\item Opakovanie krokov 4 až 6 kým sa v ''trénovacej'' množine dát vyskytujú chyby 
-	\item Výber ''kontrolnej'' množiny dát
-	\item Pokus o získavanie informácie z dát
-	\item Kontrola výsledkov, identifikácia problémových miest
+	\item Výber ''kontrolnej'' množiny dát - iná podmnožina z predspracovaných dát
+	\item Pokus o získavanie informácie z dát - spustenie systému na ''kontrolnej'' množine
+	\item Kontrola výsledkov, identifikácia problémových miest - porovnanie získanej informácie s kontrolným výsledkom a pochopenie vzniknutých rozdielov
 	\item V prípade, že sa chyby nevyskytnú považujeme, naše regulárne výrazy za správne, v opačnom prípade považujeme našu ''kontrolnú'' množina dát za trénovaciu a opakujem potup od kroku 4 
 \end{enumerate}
 
-\section{Vstupný súbor a jeho čítanie}
-
-Vstupné dáta dostávame ako jeden súbor vo formáte XLSX v ktorom sa každý pacient nachádza v samostatnom hárku.
-
-V hárku boli údaje umiestnené približne tak ako je zobrazené na obrázku \ref{obr:sprava}. Náš systém vždy prečíta jeden hárok spracuje pacienta ktorého údaje sú v hárku zapísané a až následne číta ďalší hárok. Systému vieme povedať či už zoznam alebo interval hárkov ktoré má spracovať. 
-
-Systém číta hárok postupne a text delí do skupín definovaných v časti \ref{spravaLepsie}. Spôsob akým sa systém rozhodne kde končí jedna časť správy a začína ďalšia je následovný, ''Blok A'' hlavička je vždy prvá časť a tvorí vždy presne prvé dva riadky tabuľky, následne začína ''Blok B'' čo je samotný text prepúšťacej správy, za riadok ktorý oddeľuje ''Blok B'' od ''Bloku C'' sa považuje riadok obsahujúci iba text ''Imunologické vyš.:'' čo je riadok ktorý sa samostatne v správe nenachádza ale je vždy prítomný na začiatku časti s výsledkami krvných testov. Následne systém z jednotlivých častí získava požadovanú informáciu.
-
 \section{Osobné údaje pacienta a obdobie hospitalizácie}
 \label{osobUdaj}
-Ako prvé boli získavané dáta nachádzajúce sa v hlavičke dokumentu konkrétne išlo o meno pacienta, jeho rodné číslo dátumy prijatia a prepustenia. Zároveň sa v tejto časti dopočítavali 2 hodnoty a to vek pacienta a dĺžka hospitalizácie.
+Ako prvé boli získavané dáta nachádzajúce sa v hlavičke dokumentu, konkrétne išlo o celé meno pacienta, jeho rodné číslo, dátum prijatia a dátum prepustenia. Zároveň sa v tejto časti dopočítavali 2 hodnoty a to vek pacienta na základe dátumu prijatia a rodného čísla, a dĺžka hospitalizácie na základe dátumov prijatia a prepustenia.
 
-Hlavička má výzor tabuľky s dvomi riadkami a štyrmi alebo piatimi stĺpcami v závislosti od toho či bol pacient počas hospitalizácie preložený z infekčného oddelenia na jednotku intenzívnej starostlivosti (JIS) respektíve na iného oddelenie alebo nie. Konkrétne v prípade ak pacient nebol preložený na iné oddelenie počas hospitalizácie hlavička vyzerá ako na obrázku \ref{obr:hlav_a} a v prípade, že preložený bol tak vyzerá takto ako na obrázku \ref{obr:hlav_b}.  
+Hlavička má výzor tabuľky s dvomi riadkami a štyrmi alebo piatimi stĺpcami v závislosti od toho či bol pacient počas hospitalizácie preložený z infekčného oddelenia na jednotku intenzívnej starostlivosti (JIS), respektíve na iné oddelenie alebo nie. Konkrétne v prípade ak pacient nebol preložený na iné oddelenie počas hospitalizácie hlavička vyzerá ako na obrázku \ref{obr:hlav_a} a v prípade, že preložený bol tak vyzerá takto ako na obrázku \ref{obr:hlav_b}.  
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
@@ -57,43 +55,46 @@ Hlavička má výzor tabuľky s dvomi riadkami a štyrmi alebo piatimi stĺpcami
 
 Softvér z tejto tabuľky vyberie hodnoty z druhého riadka pričom v prípade, že v štvrtom stĺpci nájde informáciu o preklade na iné oddelenie tak dátum v tomto stĺpci ignoruje a za dátum prepustenia považuje dátum v piatom stĺpci.
 
-Dátumy prijatia a prepustenia sú následne pre-typované do podoby časovej značky čím sa zároveň skontroluje platnosť dátumu (či taký dátum môže existovať) v prípade, že pri niektorom z dátumov vyskytne problém je táto informácia zapísaná do logovacieho súboru. V prípade, že sú obe dátumy v poriadku je následne spravený ich rozdiel čím sa vypočíta dĺžka hospitalizácie, čiže počet dní medzi prijatím a prepustením pričom tento výsledok nám dáva ďalšiu kontrolu dátumov keďže očakávame, že dĺžka hospitalizácie je kladné číslo avšak nepredpokladáme, že to číslo bude veľmi veľké, konkrétne pri testovaní sa ukázalo, že priemerná dĺžka hospitalizácie je približne 12 dní pričom štandardná odchýlka je približne 9 dní avšak občas sa objavia aj prípady ktorých dĺžka hospitalizácie je cez 50 dní pričom nenastal žiaden preklep pri zapisovaní dátumom preto sme sa rozhodli použiť ako hornú hranicu hodnotu 100 ktorá pokrývala všetky naše doterajšie prípady.
+Dátumy prijatia a prepustenia sú následne pre-typované do podoby časovej značky čím sa zároveň skontroluje platnosť dátumu (či taký dátum môže existovať). V prípade, že sú obe dátumy v poriadku je následne spravený ich rozdiel čím sa vypočíta dĺžka hospitalizácie, čiže počet dní medzi prijatím a prepustením pričom tento výsledok nám dáva ďalšiu kontrolu dátumov keďže očakávame, že dĺžka hospitalizácie je kladné číslo avšak nepredpokladáme, že to číslo bude veľmi veľké, konkrétne pri testovaní sa ukázalo, že priemerná dĺžka hospitalizácie je približne 12 dní pričom štandardná odchýlka je približne 9 dní avšak občas sa objavia aj prípady ktorých dĺžka hospitalizácie je cez 50 dní pričom nenastal žiaden preklep pri zapisovaní dátumom preto sme sa rozhodli použiť ako hornú hranicu hodnotu 100 ktorá pokrývala všetky naše doterajšie prípady.
 
-Nakoniec v prípade, že dátum prijatia je v poriadku tak softvér určí z rodného čísla dátum narodenia a pomocou dátumu narodenia a dátumu prijatia vypočíta vek pacienta pri prijatí. Tento vek následne kontroluje či je v intervale 0 až 120, v prípade, že do tohto intervalu nepatrí indikuje to chyba buď v dátume prijatia alebo v rodnom čísle pacienta.
+Nakoniec v prípade, že dátum prijatia je v poriadku tak softvér určí z rodného čísla dátum narodenia a pomocou dátumu narodenia a dátumu prijatia vypočíta vek pacienta pri prijatí. Tento vek následne kontroluje či je v intervale 0 až 120, v prípade, že do tohto intervalu nepatrí indikuje to chybu buď v dátume prijatia alebo v rodnom čísle pacienta.
+
+V prípade výskytu akejkoľvek chyby či už nekorektnosť dátumu alebo vypočítaná hodnota mimo očakávaného rozsahu je táto informácia zapísaná do logovacieho súboru.  
 
 \section{JIS a smrť}
 
-Keďže naše dáta sú prepúšťacie správy iba z infekčného oddelenia tak nevieme čo sa s pacientom dialo po opustení oddelenia avšak to čo nás zaujíma je, že dôvod opustenia oddelenia konkrétne to čo nás zaujíma je, že či sa mu stav zhoršil na toľko, že musel byť preložený na jednotku intenzívnej starostlivosti respektíve či dôvodom na opustenie oddelenia nebolo úmrtie pacienta.
+Okrem dátumu prepustenia nás zaujíma aj dôvod prepustenia, tu rozlišujeme tri spôsoby a to prepustenie do domácej starostlivosti v prípade zlepšenie stavu pacienta, preloženie na jednotku intenzívnej starostlivosti (JIS) v prípade zhoršenia stavu pacienta a smrť pacienta počas hospitalizácie. To čo sa konkrétne snažíme zo správy získať je informácia či bol preložený na JIS a či zomrel. 
 
-V prípade preloženia na JIS je táto informácia v časti ''Epikríza'' (\ref{blokE}) pričom je väčšinou zapísaná ako ''prekladáme na JIS'' respektíve ''prekladnáme na jednotku intenzívnej starostlivosti'' pričom avšak keďže sa táto informácia do epikrízi píše iba v prípade, že preklad uskutočnil tak sa ukázalo, že je vhodnejšie v nej hľadať iba informáciu ''JIS'' respektíve ''jednotka intenzívnej starostlivosti'' keďže pri hľadaní aj informácie ''prekladáme na'' sa vyskytlo viac prípadov keď mal systém problém túto informáciu odhaliť z dôvodu rôzneho skloňovania a gramatických chýb.
+V prípade preloženia na JIS je táto informácia v časti ''Epikríza'' (\ref{blokE}) pričom je väčšinou zapísaná ako ''prekladáme na JIS'', alebo ako ''prekladnáme na jednotku intenzívnej starostlivosti''. Keďže sa táto informácia do epikrízi píše iba v prípade, že sa preklad uskutočnil tak sa ukázalo, že je vhodnejšie v nej hľadať iba informáciu ''JIS'', respektíve ''jednotka intenzívnej starostlivosti'' keďže pri hľadaní aj informácie ''prekladáme na'' sa vyskytlo viac prípadov keď mal systém problém túto informáciu odhaliť z dôvodu rôzneho skloňovania a gramatických chýb.
 
-V prípade smrti pacienta sa na koniec epikrízi napíše informácia ''exitus lethalis''. Avšak ukázalo sa, že nie vždy sa táto informácia v správe nachádza aj napriek tomu, že smrť nastal čo je spôsobené tým, že smrť nastala na jednotke intenzívnej starostlivosti alebo sa na ňu z nejakého dôvodu zabudlo preto sa po komunikácii s pánom doktorom Sabakom rozhodlo, že v prípade, že bol pacient preložený na jednotku intenzívnej starostlivosti alebo bol pripojený na umelú pľúcnu ventiláciu a v správe sa nenachádza informácia o smrti tak sa táto situácia zaznamená do logovacieho súboru aby to mohol užívateľ správnosti informácie skontrolovať.
+V prípade, že pacient zomrel by sa na konci epikrízi mala nachádzať informácia ''exitus lethalis''. Avšak ukázalo sa, že nie vždy sa táto informácia v správe nachádza aj napriek tomu, že smrť nastal. To je spôsobené tým, že buď smrť nastala na jednotke intenzívnej starostlivosti alebo lekár z nejakého dôvodu zabudol túto informáciu do epikrízi zapísať. Po komunikácii s pánom doktorom Sabakom sa rozhodlo, že v prípade, že bol pacient preložený na jednotku intenzívnej starostlivosti alebo bol pripojený na umelú pľúcnu ventiláciu a v správe sa nenachádza informácia o smrti tak sa táto situácia zaznamená do logovacieho súboru aby to mohol používateľ správnosť informácie skontrolovať.
 
 \section{Výška a váha}
 
-Ďalšie informácie ktoré sa o pacientovi získavali boli jeho výška a váha, pričom následne bola z týchto hodnôt ešte počítaná hodnota BMI. Ukazuje sa, že existuje viacero spôsobov akými lekári zapisujú túto informáciu do správy pričom našou snahou je aby náš systém zvládal nachádzať túto informáciu pri všetkých možnostiach zápisu. Tieto spôsoby sú následovné:
+Ďalšie informácie ktoré sa o pacientovi získavali boli jeho výška a váha, pričom následne bola z týchto hodnôt ešte počítaná hodnota BMI. Ukazuje sa, že existuje viacero spôsobov akými lekári zapisujú túto informáciu do správy. Našou snahou je aby náš systém zvládal nachádzať túto informáciu pri všetkých možnostiach zápisu. Tieto spôsoby sú následovné:
 
 \begin{itemize}
 	\item {[výška/váha/hmotnosť]} {[hodnota]}{[cm/kg]} (názov a hodnota)
 	\item {[hodnota]}{[cm/kg]},{[hodnota]}{[cm/kg]} (hodnoty oddelene čiarkou)
-	\item {[hodnota]}{[cm/kg]}/{[hodnota]}{[cm/kg]} (hodnoty oddelene medzerou)
-	\item {[hodnota]}{[cm/kg]} {[hodnota]}{[cm/kg]} (hodnoty oddelene lomkou)
+	\item {[hodnota]}{[cm/kg]}/{[hodnota]}{[cm/kg]} (hodnoty oddelene lomkou)
+	\item {[hodnota]}{[cm/kg]} {[hodnota]}{[cm/kg]} (hodnoty oddelene medzerou)
+	\item {[hodnota]}/{[hodnota]} {[cm/kg]}/{[cm/kg]} (hodnoty oddelene lomkou, jednotky až za nimi)
 \end{itemize}   
 
 Systém kontroluje prítomnosť každej z týchto možností v texte správy a v prípade nájdenie zhody túto informáciu následne čistí rozdelením v prípade ak sa jedná o dve hodnoty oddelené nejakým deličom a následným odstránením všetkých nepodstatných informácii tak aby nakoniec ostali iba číselné informácie pričom však systém si stále pamätá ktorá hodnota prislúcha ktorej informácii (či ide o výšku alebo váhu). Následne je táto číselná hodnota kontrolovaná či je v ''rozumnom'' intervale pričom pre výšku je využívaný interval 20-250 cm a pre váhu je interval 10-300 kg ak sa nájde hodnota ktorá nepatrí do týchto intervalov je to považované za možnú chybu a informácia o tom je zapísaná do logovacieho súboru, takisto za chybu sa považuje aj prípad ak systém nedokázal nájsť niektorú z týchto informácii v texte.
 
-V prípade nájdenia oboch informácii (aj výšky aj váhy) je z týchto hodnôt počítaná hodnota BMI pričom tak ako predchádzajúce hodnoty aj táto je kontrolovaná či sa nachádza v ''rozumnom'' intervale 10-60, vďaka tejto kontrole vieme zachytiť aj chyby s výškou a váhou ktoré nie su evidentné z jednotlivých informácii, medzi takéto prípady patria napríklad chyby ako vymenenie hodnôt výšky a váhy lekárom (príklad z textu správy ''výška/váha: 75cm/150kg'') alebo možná chyba v niektorom údajov (príklad z textu správy ''výška/váha: 103cm/90kg''), samozrejme ani v jednom prípade si nemôžeme byť istý či chyba naozaj nastala a aká konkrétne je a preto v takýchto prípadoch údaje považujeme za priebežne správne a do logovacieho súboru dávame informáciu užívateľovi aby správnosť údajov skontroloval. 
+V prípade nájdenia oboch informácii (aj výšky aj váhy) je z týchto hodnôt počítaná hodnota BMI pričom tak ako predchádzajúce hodnoty aj táto je kontrolovaná či sa nachádza v ''rozumnom'' intervale 10-60, vďaka tejto kontrole vieme zachytiť aj chyby s výškou a váhou ktoré nie su evidentné z jednotlivých informácii, medzi takéto prípady patria napríklad chyby ako vymenenie hodnôt výšky a váhy lekárom (príklad z textu správy: ''výška/váha: 75cm/150kg'') alebo možná chyba v niektorom údajov (príklad z textu správy: ''výška/váha: 103cm/90kg''), samozrejme ani v jednom prípade si nemôžeme byť istý či chyba naozaj nastala a aká konkrétne je a preto v takýchto prípadoch údaje považujeme za správnu ale do logovacieho súboru dávame informáciu používateľovi aby správnosť údajov skontroloval. 
 
 \section{Saturácia krvi kyslíkom pri prijatí}
 \label{saturacia}
 
-Jednou z ďalších informácii ktorá nás zaujímala bola saturácia krvi kyslíkom. Táto informácia bola pre nás zaujímavá keďže sa jedná o pacientom s ochorením COVID-19 ktoré sa zväčša prejavuje ako respiračné ochorenie a saturácia krvi kyslíkom je zaujímavý ukazovateľ stavu pacienta. Konkrétne nás zaujímala táto hodnota pri prijatí aby sme mali predstavu v akom stave bol pacient hospitalizovaný. 
+Jednou z ďalších informácii ktorá nás zaujímala bola saturácia krvi kyslíkom. Táto informácia bola pre nás zaujímavá keďže sa jedná o pacientom s ochorením COVID-19 ktoré sa zväčša prejavuje ako respiračné ochorenie a saturácia krvi kyslíkom je zaujímavý ukazovateľ stavu pacienta. Konkrétne nás zaujímala táto hodnota pri prijatí aby sme mali predstavu v akom stave bol pacient prijatý. 
 
-Pri hľadaní sme postupovali tak, že sme hľadali kľučové slovo respektíve skratku (konkrétne sa jednalo o slová ''SpO2'' alebo ''SatO2'' a ich varianty) nasledované číselnou hodnotou pričom občas sa stávalo, že medzi hľadaným slovom a hodnotu sa nachádzala ešte informácia ''bez kyslíka'' označujúca, že bola meraná pred podaním oxygenoterapie pacientovi.
+Pri hľadaní sme postupovali tak, že sme hľadali kľučové slovo, respektíve skratku (konkrétne sa jednalo o slová ''SpO2'' alebo ''SatO2'' a ich varianty) nasledované číselnou hodnotou pričom občas sa stávalo, že medzi hľadaným slovom a hodnotu sa nachádzala ešte informácia ''bez kyslíka'' označujúca, že bola meraná pred podaním oxygenoterapie.
 
 V prípade, že systém našiel v texte viackrát zapísanú informáciu o saturácii krvi kyslíkom tak za správnu považoval tú ktorá sa nachádza v texte najskôr keďže sa informácia pri prijatí zväčša píše do časti ''Anamnéza'' (\ref{blokB}) ktorá sa nachádza na začiatku správy.
 
-Občas sa objavila situácia, že hodnota nebolo jedno číslo ale bol to interval (príklad z textu správy ''SatO2: 90-93\%''). V takomto prípade sme sa rozhodli považovať za skutočnú hodnotu dolnú hranicu tohto intervalu.
+Občas sa objavila situácia, že hodnota nebolo jedno číslo ale bol to interval (príklad z textu správy: ''SatO2: 90-93\%''). V takomto prípade sme sa rozhodli považovať za skutočnú hodnotu dolnú hranicu tohto intervalu.
 
 V prípade nenájdenia žiadnej hodnoty je informácia o tom zapísaná do logovacieho súboru. 
 
@@ -112,7 +113,7 @@ Keďže náš systém analyzuje prepúšťacie správy pacientov s ochorením CO
 	\label{obr:proti}
 \end{figure}
 
-Pri hľadaní a následnom získavaní informácie sme využili fakt, že všetky spôsoby zápisu týchto testov obsahujú rovnaké respektíve podobné kľúčové slová a pre nás dôležitú informáciu v rovnakom poradí konkrétne vždy prvým kľúčovým slovom je názov vírusu alebo názov choroby v našom prípade je to vírus SARS-CoV-2 respektíve v niektorých prípadoch ochorenie COVID-19, následne ide kombinácia typov protilátok, konkrétne IgG a IgM, a samotných výsledkov testov. Ukážka zvýraznenia hľadaných slov je na obrázku \ref{obr:proti_high}.
+Pri hľadaní a následnom získavaní informácie sme využili fakt, že všetky spôsoby zápisu týchto testov obsahujú rovnaké, respektíve podobné kľúčové slová a pre nás dôležitú informáciu v rovnakom poradí, konkrétne vždy prvým kľúčovým slovom je názov vírusu alebo názov choroby v našom prípade je to vírus SARS-CoV-2, respektíve v niektorých prípadoch ochorenie COVID-19, následne ide kombinácia typov protilátok IgG a IgM, a samotných výsledkov testov. Ukážka zvýraznenia hľadaných slov je na obrázku \ref{obr:proti_high}.
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
@@ -124,8 +125,7 @@ Pri hľadaní a následnom získavaní informácie sme využili fakt, že všetk
 	\label{obr:proti_high}
 \end{figure}
 
-Systém najskôr nájde celé úryvky textu obsahujúce testy následne z týchto úryvkov odstráni všetky slová a znaky ktoré sú pre samotný výsledok nepodstatné ako napríklad slová ''slabo'', ''silno'' alebo ''rýchlotest''. Keďže systém nájde iba špecificky testy na protilátky proti SARS-CoV-2 je pre nás v nájdenom úryvku nepodstatná táto informácia. Nakoniec nám ostanú iba názvy protilátok a výsledky pričom sa ukazuje, že vyskytujú v dvoch formách a to dvojice protilátka a výsledok alebo ako jeden spoločný výsledok pre obe protilátky. V testovaných prípadoch sa vždy vyskytol názov protilátky pred výsledkom testu avšak nakoniec sme sa rozhodli spraviť systém všeobecnejší tým, že prípadov keď je výsledok za názvom testu je schopný správne rozlíšiť a spracovať aj prípady keď je poradie opačné. Konkrétne v prípade nájde iba jeden 
-názov protilátky (obrázok \ref{obr:proti_high} druhý príklad) a iba jeden výsledok poradie je jasne určené, v ostatných prípadoch sa rozhoduje podľa tabuľky \ref{tab:proti}.
+Systém najskôr nájde celé úryvky textu obsahujúce testy, následne z týchto úryvkov odstráni všetky slová a znaky ktoré sú pre samotný výsledok nepodstatné ako napríklad slová ''slabo'', ''silno'' alebo ''rýchlotest''. Keďže systém nájde iba špecificky testy na protilátky proti SARS-CoV-2 je pre nás v nájdenom úryvku nepodstatná táto informácia (názov vírusu). Nakoniec nám ostanú iba názvy protilátok a výsledky pričom sa ukazuje, že sa vyskytujú v dvoch formách a to dvojice protilátka a výsledok alebo ako jeden spoločný výsledok pre obe protilátky. V testovaných prípadoch sa vždy vyskytol názov protilátky pred výsledkom testu avšak nakoniec sme sa rozhodli spraviť systém všeobecnejší tým, že okrem prípadov keď je výsledok za názvom testu je schopný správne rozlíšiť a spracovať aj prípady keď je poradie opačné. Spôsob akým systém určuje poradie testov a výsledkov je následovný, v prípade ak nájde iba jeden názov protilátky (obrázok \ref{obr:proti_high} druhý príklad) a iba jeden výsledok je poradie jasne určené, v ostatných prípadoch sa rozhoduje podľa tabuľky \ref{tab:proti}.
 
 \begin{table}[]
 	\caption[Rozhodia systému pri testoch]{Rozhodnutia systém pri rôznych poradiach názvov testov a ich výsledkov}
@@ -142,7 +142,7 @@ názov protilátky (obrázok \ref{obr:proti_high} druhý príklad) a iba jeden v
 	\end{tabular}
 \end{table}
 
-V prípade, že sa v správe nachádza viacero testov na protilátky proti vírusu SARS-CoV-2 zaujíma nás ten najstarší. Pôvodne bola snaha využiť dátumy avšak ukázalo sa, že veľkom počte prípadov informácia o dátume testovania chýba preto sme sa rozhodli tento postup nevyužiť. Ďalším pokusom bola heuristická úvaha, že čím skôr je test v správe tým je starší, táto heuristika však vykazovala príliš vysokú chybovosť preto sme ani ju nevyužili. Nakoniec sme sa po debate s pánom doktorom Sabakom rozhodli využiť heuristickú úvahu, ktorá hovorí, že ak existuje test na určitú protilátky s negatívnym výsledkom tak aj najstarší test bude mať negatívny výsledok a naopak ak test s negatívnym výsledkom neexistuje (a existujú s pozitívnym výsledkom) tak aj najstarší je má pozitívny výsledok. Táto heuristika sa opiera o výsledky štúdie ktorá ukázala, že test na protilátky typu IgM je pozitívny aj po viac ako 60 dňoch od nástupu príznakov a v prípade protilátok typu IgG je to až 90 dní \cite{antibodies}. Keďže bola väčšina pacientov hospitalizovaná výrazne kratšie obdobie ako 60 dní tak nepredpokladáme, že by počas hospitalizácie nastala situácia, že pacientovi vyjde negatívny výsledok testu aj napriek pozitivite predchádzajúceho. Zároveň sa ukazuje, že ak pacientovi vyjde pozitívny test na obe protilátky už ďalší test na protilátky nie je vykonaný keďže ani lekár zväčša nepredpokladá, že by množstvo protilátok v krvi počas hospitalizácie výrazne kleslo.
+V prípade, že sa v správe nachádza viacero testov na protilátky proti vírusu SARS-CoV-2 zaujíma nás ten najstarší. Pôvodne bola snaha využiť dátumy nachádzajúce sa často pri testoch, avšak ukázalo sa, že vo veľkom počte prípadov informácia o dátume testovania chýba preto sme sa rozhodli tento postup nevyužiť. Ďalším pokusom bola heuristická úvaha, že čím skôr je test v správe tým je starší, táto heuristika však vykazovala príliš vysokú chybovosť preto sme ani ju nevyužili. Nakoniec sme sa po debate s pánom doktorom Sabakom rozhodli využiť heuristickú úvahu, ktorá hovorí, že ak existuje test na určitú protilátky s negatívnym výsledkom tak aj najstarší test bude mať negatívny výsledok a naopak ak test s negatívnym výsledkom neexistuje (a existujú s pozitívnym výsledkom) tak aj najstarší je má pozitívny výsledok. Táto heuristika sa opiera o výsledky štúdie ktorá ukázala, že test na protilátky typu IgM je pozitívny aj po viac ako 60 dňoch od nástupu príznakov a v prípade protilátok typu IgG je to až 90 dní \cite{antibodies}. Keďže bola väčšina pacientov hospitalizovaná výrazne kratšie obdobie ako 60 dní tak nepredpokladáme, že by počas hospitalizácie nastala situácia, že by pacient mal negatívny výsledok testu aj napriek pozitivite predchádzajúceho. Zároveň sa ukazuje, že ak pacientovi vyjde pozitívny test na obe protilátky už ďalší test na protilátky nie je vykonaný keďže ani lekár zväčša nepredpokladá, že by množstvo protilátok v krvi počas hospitalizácie výrazne kleslo.
 
 \section{Oxygenoterapia}
 
@@ -162,17 +162,17 @@ V prípade, ak sa v texte nachádza informácie aj o low-flow aj o HFNO alebo UP
 
 Získavanie informácie sa ukázalo ako veľmi priamočiare keďže našou snahou nebolo získať množinu liekov ktorú pacient dostával ale mali sme množinu liekov a zisťovali sme ktoré z nich pacient dostával. Dôvodom pre tento prístup bol fakt, že pacienti často dostávali lieky a vitamíny určené na liečby iných problémov ktorými títo pacienti trpeli a pre nás bola dôležitá len množina liekov ktoré mohli byť použité na liečbu ochorenia COVID-19. Konkrétne išlo o tieto lieky: Dexametazon, Remdesivir, Olumiant, Favipiravir, Ivermectin a Colchicin.
 
-Konkrétne hľadanie týchto liekov bolo zisťovanie či sa názov lieku nachádza v správe, zo začiatku sme skúšali hľadanie iba v časti ''Terapia'' (\ref{blokD}) avšak nakoniec sme sa rozhodli hľadať v celej správe aby sme predišli prípadom keď v správe je informácia o danej liečbe ale táto informácia sa už nedostala do terapie a takisto sme chceli zachytiť prípady kedy išlo o samoliečbu pacienta respektíve lieky predpísané obvodným lekárom ktoré už ale po hospitalizácii neužíval (hlavne v prípade lieku Ivermectin). Keďže sa nenašli prípady kedy by lekár do správy zapísal informáciu o lieku ktorý pacient neužíval tak sa tento spôsob hľadania informácie o týchto liekoch ukázal ako najspoľahlivejší.
+Konkrétne hľadanie týchto liekov bolo zisťovanie či sa názov lieku nachádza v správe, zo začiatku sme skúšali hľadanie iba v časti ''Terapia'' (\ref{blokD}) avšak nakoniec sme sa rozhodli hľadať v celej správe aby sme predišli prípadom keď v správe je informácia o danej liečbe ale táto informácia sa už nedostala do terapie a takisto sme chceli zachytiť prípady kedy išlo o samoliečbu pacienta, respektíve lieky predpísané obvodným lekárom ktoré už ale po hospitalizácii neužíval (hlavne v prípade lieku Ivermectin). Keďže sa nenašli prípady kedy by lekár do správy zapísal informáciu o lieku ktorý pacient neužíval tak sa tento spôsob hľadania informácie o týchto liekoch ukázal ako najspoľahlivejší.
  
 Boli aj snahy zistiť okrem samotných liekov aj informáciu o počte dní počas ktorých boli tieto lieky pacient užíval a dávku lieku ktorá mu bola predpísaná avšak sa ukázalo, že vo výraznej väčšine správ buď táto informácia úplne chýba alebo je neúplná a tieto informácie z nej nie je možné získať preto nakoniec padlo rozhodnutie nezískavať tieto informácie.
 
 \section{Choroby pacienta}
 \label{choroby}
-Keďže pri ochorení COVID-19 tak ako aj pri iných ochoreniach sa niektoré iné diagnózy považujú za rizikové faktory. Preto aj našou snahou bolo sa pokúsiť získať informáciu či pacient niektorou z diagnóz považovaných za možné rizikové faktory trpí respektíve ju prekonal. Našťastie pre nás sa táto informácia často nachádza v časti ''Anamnéza'' (\ref{blokB}) avšak môže sa objaviť aj iných častiach správy keďže k danému problému môže dôjsť aj počas hospitalizácie.
+Keďže pri ochorení COVID-19 tak ako aj pri iných ochoreniach sa niektoré iné diagnózy považujú za rizikové faktory. Preto aj našou snahou bolo sa pokúsiť získať informáciu či pacient niektorou z diagnóz považovaných za možné rizikové faktory trpí, respektíve ju prekonal. Našťastie pre nás sa táto informácia často nachádza v časti ''Anamnéza'' (\ref{blokB}) avšak môže sa objaviť aj iných častiach správy keďže k danému problému môže dôjsť aj počas hospitalizácie.
 
 Konkrétne diagnózy ktorých prítomnosť alebo prekonanie u pacienta sa snažíme určiť sú následovné: cukrovka, artériová hypertenzia, srdcové zlyhanie, infarkt myokardu, fibrilácia predsiení, periférne artériové ochorenie dolných končatín, chronická obštrukčná choroba pľúc, astma, cievna mozgová príhoda, demencia, sepsa a kolitída. Pričom v prípade ochorení sepsa a kolitída nás nezaujíma či ich pacient v minulosti prekonal ale či sa vyskytli pri prijatí alebo počas hospitalizácie.
 
-V prípade väčšiny týchto chorôb je ich získavanie priamočiare, konkrétne sa jedná o zisťovanie či sa v texte správy nachádza informácia o tejto chorobe u pacienta či už vo forme celého názvu (pri niektorých chorobách niektorého z viacerých používaných názvov napríklad cukrovka a diabetes alebo periférne artériové ochorenie dolných končatín a ateroskleróza) alebo vo forme skratky (napríklad CHOCHP pre chronická obštrukčná choroba pľúc alebo IM pre infarkt myokardu). Tento postup sa ukázal ako vhodný aj pre sepsu keďže prekonanie tejto choroby sa nezapisuje do anamnézy a v anamnéze respektíve v správe sa vyskytuje iba v prípade ak ňou pacient trpí pri alebo počas hospitalizácie.
+V prípade väčšiny týchto chorôb je ich získavanie priamočiare, konkrétne sa jedná o zisťovanie či sa v texte správy nachádza informácia o tejto chorobe u pacienta či už vo forme celého názvu (pri niektorých chorobách niektorého z viacerých používaných názvov napríklad cukrovka a diabetes alebo periférne artériové ochorenie dolných končatín a ateroskleróza) alebo vo forme skratky (napríklad CHOCHP pre chronická obštrukčná choroba pľúc alebo IM pre infarkt myokardu). Tento postup sa ukázal ako vhodný aj pre sepsu keďže prekonanie tejto choroby sa nezapisuje do anamnézy a v anamnéze, respektíve v správe sa vyskytuje iba v prípade ak ňou pacient trpí pri alebo počas hospitalizácie.
 
 Špecifické bolo určovanie kolitídy pri alebo počas hospitalizácie. V tomto prípade sa ukázal problém, že veľmi často informácia, že sa v správe nachádza názov tohto ochorenia neznamená automaticky prítomnosť tohto ochorenia u pacienta ale môže isť o negatívny výsledok testu na toto ochorenie alebo prípad, že toto ochorenia bolo pacientom prekonané v minulosti. Konkrétny prístup ktorý sme sa rozhodli použiť pre čo najlepšie určenia prítomnosti tohto ochorenia u pacienta je tvorený dvomi časťami. Najskôr prebehne kontrola či sa v správe nachádza hocijaká informácie o tomto ochorení čiže či sa tam nachádza názov (kolitída alebo clostridium difficile) alebo skratka (CDI) tejto choroby, v prípade ak sa v správe nenachádza žiadna informácia tak to systém považuje za prípad keď pacient na kolitídu počas hospitalizácie netrpel. Ak sa nejaká informácia o tomto ochorení v správe nachádza nasleduje druhá časť hľadanie kedy hľadáme informáciu o teste na toto ochorenie, konkrétny spôsob hľadania a vyhodnocovania testov na toto ochorenie je podobný ako zisťovanie výsledkov testov na protilátky proti vírusu SARS-CoV-2 (\ref{protilatky}) s rozdielom, že namiesto SARS-CoV-2 hľadáme clostridium difficile a keďže ide o test na prítomnosť protilátok ale baktérie nás netrápi typ (pri SARS-CoV-2 sme rozlišovali IgG a IgM protilátky). V prípade ak sa nájde pozitívny test tak tvrdíme, že pacient počas hospitalizácie na toto ochorenie trpel, naopak v prípade, že všetky nájdené testy sú negatívne tak tvrdíme, že pacient netrpel na toto ochorenie počas hospitalizácie, špeciálny prípad je ak systém nenájde žiaden test na toto ochorenie v takom prípade systém nevie určiť správny výsledok a preto zapíše informáciu o tomto probléme do logovacieho súboru aby to mohol užívateľ skontrolovať.
 
@@ -185,7 +185,7 @@ Hľadanie týchto výsledkov by sa dalo rozdeliť na dve časti a to hlavné hľ
 V prípade, že ani hlavné, ani doplnkové hľadanie nenájde nejaké výsledky testov je informácie o ich nenájdený zapísaná do logovacieho súboru avšak keďže táto informácia sa nemusí nutne v správe nachádzať nie je táto informácia zapísaná medzi chyby ktoré sa pri získavaní informácii objavili ale je samostatne označená ako nenájdené výsledky testov. V prípade, že sa pri doplnkovom hľadaní zistí, že sa výsledok testu objavuje v správe viackrát pričom sú pri ňom odlišné hodnoty je to považované za chybu a informácia o tejto chybe je zapísaná do logovacieho súboru.
 
 \section{Chýbajúce časti vstupu}
-
+\label{chybCast}
 Vo väčšine prípadov je výzor našich presne taký ako je popísaný v kapitole ''Štruktúra prepúšťacej správy'' (\ref{kap:strukSpravy}) avšak občas sa objavil problém neúplnosti dát. Konkrétne išlo o prípady kedy sa vo vstupnom texte nenachádzali výsledky krvných testov, v takom prípade jediná zmena ktorú systém spraví je, že pri získavaní údajov z krvných výsledkoch preskočí hlavné hľadanie (keďže nemá na to potrebný text) a údaje získava iba pomocou doplnkového hľadania v texte prepúšťacej správy. Občas sa objavili ešte extrémnejší prípad kedy sme pre dané pacienta dostali iba hlavička (\ref{blokA})  a informácia ''chýba správa'' v takomto prípade sa zo získavania dát vykoná iba získavanie osobných údajov pacient a obdobia jeho hospitalizácie (\ref{osobUdaj}) aby bola zachovaná existencia tohto pacienta a logovacieho súboru sa zapisuje informácia o chýbajúcej správe.
 
 \section{Výstupné súbory}   

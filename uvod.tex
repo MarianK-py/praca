@@ -3,11 +3,11 @@
 \addcontentsline{toc}{chapter}{Úvod} % rucne pridanie do obsahu
 \markboth{Úvod}{Úvod} % vyriesenie hlaviciek
 
-V nemocničnom informačnom systéme Univerzitnej nemocnice v Bratislave nie je možnosť jednoducho získať tabuľku obsahujúcu dáta jedného pacienta respektíve skupiny pacientov, tieto dát sa získavali ručne buď postupným kopírovaním jednotlivých dát nachádzajúcich sa v rôznych častiach informačného systému alebo ich hľadaním a následným prepisovaním z prepúšťacej správy.
+V nemocničnom informačnom systéme Univerzitnej nemocnice v Bratislave nie je možnosť jednoducho získať tabuľku obsahujúcu dáta jedného pacienta respektíve skupiny pacientov, tieto dáta sa získavali ručne buď postupným kopírovaním jednotlivých dát nachádzajúcich sa v rôznych častiach informačného systému alebo ich hľadaním a následným kopírovaním z prepúšťacej správy.
 
 Tento proces bolo potrebné opakovať pre každého jedného pacienta čo bolo časovo náročné a vyžadovalo si nezanedbateľné množstvo ľudskej práce.
 
-Hlavným účelom tejto práce je vytvorenie softvéru, ktorý pomôže výrazne zrýchliť a zjednodušiť získavanie týchto dát. Tento softvér na svojom vstupe dostane prepúšťaciu správu pacienta a jeho krvné výsledky v podobe textu ktorý je čiastočne generovaný nemocničným informačným systémom ale z veľkej časti je písaný lekárom a následne z týchto ne-štrukturalizovaných dát získava jednotlivé požadované dáta. Počas získavania dát si zároveň zapamätáva informáciu o dátach ktoré sa buď nájsť nepodarilo alebo sa počas ich získavania objavil nejaký problém ako napríklad viac rôznych hodnôt alebo protirečiace informácie. Výsledkom je asociatívne pole v ktorom sú ako kľúče použité názvy hľadaných informácii a text obsahujúci informáciu o nenájdených a problémových údajoch. 
+Hlavným účelom tejto práce je vytvorenie softvéru, ktorý pomôže výrazne zrýchliť a zjednodušiť získavanie týchto dát. Tento softvér na svojom vstupe dostane prepúšťaciu správu pacienta a jeho krvné výsledky v podobe textu ktorý je čiastočne generovaný nemocničným informačným systémom ale z veľkej časti je písaný lekárom a následne z týchto čiastočne štrukturalizovaných dát získava jednotlivé požadované informácie. Počas ich získavania si zároveň zapamätáva informáciu o prípadných problémoch ktoré sa pri získavaní vyskytli ako napríklad viac rôznych hodnôt pre danú informáciu, protirečiace informácie alebo úplne chýbajúca informácia. Výsledkom je asociatívne pole v ktorom sú ako kľúče použité názvy hľadaných informácii a text obsahujúci informáciu o nenájdených a problémových údajoch. 
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
@@ -19,7 +19,7 @@ Hlavným účelom tejto práce je vytvorenie softvéru, ktorý pomôže výrazne
 	\label{obr:systemJedna}
 \end{figure}
 \newpage
-Okrem spracovania jedného pacienta je tento systém schopný spracovať aj väčšiu množinu pacientov pričom v takomto prípade už nie je výsledkom asociatívne pole ale je ním tabuľka v ktorej sú získavané údaje stĺpcami a jednotlivý pacienti riadkami. Zároveň informácia o nenájdených a problémových sa zapisuje do logovacieho súboru spolu s informáciou pričom vždy je v súbore zapísané aj o ktorého pacienta ide a ktorom hárku sa nachádza jeho prepúšťacia správa a krvné výsledky.
+Okrem spracovania jedného pacienta je tento systém schopný spracovať aj väčšiu množinu pacientov pričom v takomto prípade už nie je výsledkom asociatívne pole ale je ním tabuľka v ktorej sú získavané údaje stĺpcami a jednotlivý pacienti riadkami. Zároveň je výstupom aj logovací súbor ktorý pre každého spracovaného pacienta obsahuje informácia o ktorého pacienta ide a pri ktorých informáciách nastal počas získavania problém a ktoré sa nájsť nepodarilo.
 
 \begin{figure}
 	%vlozenie samotneho obrazku vycentrovaneho a vhodnej velkosti
@@ -31,9 +31,9 @@ Okrem spracovania jedného pacienta je tento systém schopný spracovať aj vä�
 	\label{obr:systemJedna}
 \end{figure}
 
-Náš systém je určený na získavanie základných informácii pacientovi a jeho hospitalizácii ako sú jeho osobné údaje, výška, váha, liečba, krvné výsledky a tak ďalej. Avšak okrem týchto dát náš systém získava aj dáta špecifické pre pacientov s ochorením COVID-19 ako sú oxygenoterapia alebo výsledky testov na protilátky proti SARS-CoV-2.
+Systém je konkrétne určený na získavanie základných informácii o pacientovi a jeho hospitalizácii ako sú jeho osobné údaje, výška, váha, liečba, krvné výsledky a tak ďalej. Zároveň však získava aj dáta špecifické pre pacientov s ochorením COVID-19 ako sú oxygenoterapia alebo výsledky testov na protilátky proti vírusu SARS-CoV-2.
 
-Práca je rozdelená do šiestich kapitol. V prvá obsahuje opis a  porovnanie dvoch najbežnejších metód získavanie informácie z textu, príklady už existujúcich softvéroch využívajúcich tieto metódy na získavanie medicínskych dát a ich rozdiely oproti nášmu systému. Druhá kapitola sa zameriava na štruktúru vstupných dát, čiže prepúšťacej správy a krvných výsledkov, a na informácie ktoré sa z nej snažíme získať. Tretia kapitola obsahuje spôsoby získavania jednotlivých informácii respektíve skupín informácii, problémy ktoré sa pri tomto získavaní objavili a aké spôsoby riešenia sme sa rozhodli použiť. V štvrtej kapitole sa snažíme určiť chybovosť nášho softvéru.  Posledná kapitola je o modifikáciách softvéru aby bol jednoduchšie použiteľný a modifikovateľný pre iné podobné použitia.
+Z hľadiska obsahu samotnej bakalárskej práce je jej text rozdelený do piatich kapitol. Prvá obsahuje opis a porovnanie dvoch najbežnejších metód získavanie informácie z textu, príklady už existujúcich softvéroch využívajúcich tieto metódy na získavanie medicínskych dát a ich rozdiely oproti nášmu systému. Druhá kapitola sa zameriava na štruktúru vstupných dát, čiže prepúšťacej správy a krvných výsledkov, a na informácie ktoré tieto dáta obsahuje a ktoré z nich sa snažíme získať. Tretia kapitola obsahuje spôsoby získavania jednotlivých informácii, respektíve skupín informácii, problémy ktoré sa pri tomto získavaní objavili a aké spôsoby riešenia sme sa rozhodli použiť. V štvrtej kapitole sa snažíme určiť chybovosť nášho softvéru.  Posledná kapitola je o modifikáciách softvéru aby bol jednoduchšie použiteľný a bol modifikovateľný pre iné podobné použitia.
 
 %\begin{quote}
 %Úvod je prvou komplexnou informáciou o práci, jej cieli, obsahu a štruktúre. Úvod sa 
