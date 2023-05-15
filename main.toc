@@ -57,9 +57,9 @@
 \contentsline {section}{\numberline {5.1}Oddelenie hľadaných informácii od funkcii na hľadanie}{35}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Obsah YAML súboru}{35}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Spôsob modifikácie používateľom}{37}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Možnosti ďalšieho vylepšenia}{37}{section.5.4}%
+\contentsline {section}{\numberline {5.4}Možnosti ďalšieho vylepšenia}{38}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Určenie problémov}{38}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Problém znalosti spôsobu zápisu informácie a regulárnych výrazov}{38}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Problém znalosti YAML formátu}{38}{subsection.5.4.3}%
-\contentsline {chapter}{Záver}{39}{chapter*.17}%
-\contentsline {chapter}{Príloha A}{43}{chapter*.19}%
+\contentsline {subsection}{\numberline {5.4.3}Problém znalosti YAML formátu a skriptu v jazyku Python}{39}{subsection.5.4.3}%
+\contentsline {chapter}{Záver}{41}{chapter*.17}%
+\contentsline {chapter}{Príloha A}{45}{chapter*.19}%

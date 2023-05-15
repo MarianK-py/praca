@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  15 MAY 2023 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  15 MAY 2023 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -553,16 +553,16 @@ Package pdftex.def Info: images/system_viac_sprav.png  used on input line 27.
 Kapitola 1.
 [3
 
-] [4]) (sprava.tex [5] [6]
+] [4]) (sprava.tex [5] [6
+
+]
 Kapitola 2.
 <images/vyzor_spravy.jpg, id=447, 398.48875pt x 563.60562pt>
 File: images/vyzor_spravy.jpg Graphic file (type jpg)
 <use images/vyzor_spravy.jpg>
 Package pdftex.def Info: images/vyzor_spravy.jpg  used on input line 21.
 (pdftex.def)             Requested size: 176.40439pt x 249.50082pt.
-[7
-
-] [8 <./images/vyzor_spravy.jpg>] [9] [10]
+[7] [8 <./images/vyzor_spravy.jpg>] [9] [10]
 <images/vyzor_spravy_vylepsena.png, id=468, 597.73312pt x 845.40843pt>
 File: images/vyzor_spravy_vylepsena.png Graphic file (type png)
 <use images/vyzor_spravy_vylepsena.png>
@@ -674,30 +674,26 @@ Overfull \hbox (2.02539pt too wide) in paragraph at lines 6--6
 []\T1/cmr/bx/n/17.28 Oddelenie h©a-da-ných in-for-má-cii od fun-kcii na h©a-
  []
 
-[35]
-<images/lieky_yaml.png, id=650, 222.33063pt x 17.56563pt>
+[35] [36]
+<images/lieky_yaml.png, id=655, 222.33063pt x 17.56563pt>
 File: images/lieky_yaml.png Graphic file (type png)
 <use images/lieky_yaml.png>
-Package pdftex.def Info: images/lieky_yaml.png  used on input line 22.
+Package pdftex.def Info: images/lieky_yaml.png  used on input line 26.
 (pdftex.def)             Requested size: 220.50887pt x 17.42163pt.
-<images/choroby_yaml.png, id=651, 551.05875pt x 15.55812pt>
+<images/choroby_yaml.png, id=656, 551.05875pt x 15.55812pt>
 File: images/choroby_yaml.png Graphic file (type png)
 <use images/choroby_yaml.png>
-Package pdftex.def Info: images/choroby_yaml.png  used on input line 32.
+Package pdftex.def Info: images/choroby_yaml.png  used on input line 36.
 (pdftex.def)             Requested size: 463.06996pt x 13.07442pt.
-<images/protilatky_yaml.png, id=652, 361.35pt x 61.73062pt>
+<images/protilatky_yaml.png, id=657, 361.35pt x 61.73062pt>
 File: images/protilatky_yaml.png Graphic file (type png)
 <use images/protilatky_yaml.png>
-Package pdftex.def Info: images/protilatky_yaml.png  used on input line 42.
+Package pdftex.def Info: images/protilatky_yaml.png  used on input line 46.
 (pdftex.def)             Requested size: 374.86775pt x 64.04007pt.
+ [37 <./images/lieky_yaml.png> <./images/choroby_yaml.png> <./images/protilatky
+_yaml.png>] [38]) (zaver.tex [39] [40
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-[37 <./images/lieky_yaml.png> <./images/choroby_yaml.png> <./images/protilatky_
-yaml.png>]) (zaver.tex [38] [39
-
-]) [40] (main.bbl
+] [41]) [42] (main.bbl
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
 9.
 
@@ -715,22 +711,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--42
 ve % 20heuristic &
  []
 
-[41
+[43
 
 
 
-]) (appendixA.tex [42]) [43
+]) (appendixA.tex [44]) [45
 
 ] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1E6A17F7F3881E86165063D7A035C3B5;10245.
+(rerunfilecheck)             Checksum: 4C98245A7217475D95AFE8A5D804838C;10390.
  ) 
 Here is how much of TeX's memory you used:
- 13324 strings out of 476404
- 213618 string characters out of 2789524
+ 13326 strings out of 476404
+ 213632 string characters out of 2789524
  1873324 words of memory out of 3000000
  33284 multiletter control sequences out of 15000+600000
  526919 words of font info for 58 fonts, out of 8000000 for 9000
@@ -751,9 +747,9 @@ AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\
 majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2074.pk> <C:\
 Users\majko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk
 >
-Output written on main.pdf (56 pages, 1115411 bytes).
+Output written on main.pdf (58 pages, 1118002 bytes).
 PDF statistics:
- 1390 PDF objects out of 1440 (max. 8388607)
- 173 named destinations out of 1000 (max. 500000)
+ 1399 PDF objects out of 1440 (max. 8388607)
+ 175 named destinations out of 1000 (max. 500000)
  521 words of extra memory for PDF output out of 10000 (max. 10000000)
 
