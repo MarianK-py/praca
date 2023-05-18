@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  16 MAY 2023 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.22)  17 MAY 2023 21:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,58 +477,95 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <images/zadanie-zp_172972.pdf, id=248, 597.50731pt x 845.04607pt>
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf>
-Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 151.
+Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 150.
 (pdftex.def)             Requested size: 597.50584pt x 845.044pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf>
-Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 151.
+Package pdftex.def Info: images/zadanie-zp_172972.pdf  used on input line 150.
 (pdftex.def)             Requested size: 597.50584pt x 845.044pt.
 <images/zadanie-zp_172972.pdf, id=251, page=1, 597.50731pt x 845.04607pt>
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 151.
+e 150.
 (pdftex.def)             Requested size: 597.50584pt x 845.044pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 151.
+e 150.
 (pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 151.
+e 150.
 (pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
 File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
 <use images/zadanie-zp_172972.pdf, page 1>
 Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 151.
+e 150.
 (pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
+File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
+<use images/zadanie-zp_172972.pdf, page 1>
+Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
+e 150.
+(pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
+ [5 <./images/zadanie-zp_172972.pdf>]
+<images/document.pdf, id=289, 597.50829pt x 845.0471pt>
+File: images/document.pdf Graphic file (type pdf)
+<use images/document.pdf>
+Package pdftex.def Info: images/document.pdf  used on input line 153.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: images/document.pdf Graphic file (type pdf)
+<use images/document.pdf>
+Package pdftex.def Info: images/document.pdf  used on input line 153.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+<images/document.pdf, id=292, page=1, 597.50829pt x 845.0471pt>
+File: images/document.pdf Graphic file (type pdf)
+<use images/document.pdf, page 1>
+Package pdftex.def Info: images/document.pdf , page1 used on input line 153.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: images/document.pdf Graphic file (type pdf)
+<use images/document.pdf, page 1>
+Package pdftex.def Info: images/document.pdf , page1 used on input line 153.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: images/document.pdf Graphic file (type pdf)
+<use images/document.pdf, page 1>
+Package pdftex.def Info: images/document.pdf , page1 used on input line 153.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: images/document.pdf Graphic file (type pdf)
+<use images/document.pdf, page 1>
+Package pdftex.def Info: images/document.pdf , page1 used on input line 153.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.151 \includepdf{images/zadanie-zp_172972.pdf}
-                                               
-File: images/zadanie-zp_172972.pdf Graphic file (type pdf)
-<use images/zadanie-zp_172972.pdf, page 1>
-Package pdftex.def Info: images/zadanie-zp_172972.pdf , page1 used on input lin
-e 151.
-(pdftex.def)             Requested size: 597.53319pt x 845.08269pt.
- [2 <./images/zadanie-zp_172972.pdf>]
+l.153 \includepdf{images/document.pdf}
+                                      
+File: images/document.pdf Graphic file (type pdf)
+<use images/document.pdf, page 1>
+Package pdftex.def Info: images/document.pdf , page1 used on input line 153.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [2 <./images/document.pdf>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.171 \newpage
+l.173 \newpage
                [3]
 pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.184 \newpage
-               [4] [5] [6
+l.186 \newpage
+               [4]
+pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.216 \newpage
+               [5] [6
 
 ] (main.toc [7])
 \tf@toc=\write4
@@ -543,7 +580,7 @@ l.184 \newpage
 ] [10
 
 ] (uvod.tex
-<images/system_jedna_sprava.png, id=408, 1104.125pt x 451.6875pt>
+<images/system_jedna_sprava.png, id=416, 1104.125pt x 451.6875pt>
 File: images/system_jedna_sprava.png Graphic file (type png)
 <use images/system_jedna_sprava.png>
 Package pdftex.def Info: images/system_jedna_sprava.png  used on input line 15.
@@ -553,7 +590,7 @@ Package pdftex.def Info: images/system_jedna_sprava.png  used on input line 15.
 [1
 
  <./images/system_jedna_sprava.png>]
-<images/system_viac_sprav.png, id=415, 1104.125pt x 451.6875pt>
+<images/system_viac_sprav.png, id=423, 1104.125pt x 451.6875pt>
 File: images/system_viac_sprav.png Graphic file (type png)
 <use images/system_viac_sprav.png>
 Package pdftex.def Info: images/system_viac_sprav.png  used on input line 27.
@@ -566,13 +603,13 @@ Kapitola 1.
 
 ]
 Kapitola 2.
-<images/vyzor_spravy.jpg, id=452, 398.48875pt x 563.60562pt>
+<images/vyzor_spravy.jpg, id=460, 398.48875pt x 563.60562pt>
 File: images/vyzor_spravy.jpg Graphic file (type jpg)
 <use images/vyzor_spravy.jpg>
 Package pdftex.def Info: images/vyzor_spravy.jpg  used on input line 21.
 (pdftex.def)             Requested size: 176.40439pt x 249.50082pt.
 [7] [8 <./images/vyzor_spravy.jpg>] [9] [10]
-<images/vyzor_spravy_vylepsena.png, id=473, 597.73312pt x 845.40843pt>
+<images/vyzor_spravy_vylepsena.png, id=481, 597.73312pt x 845.40843pt>
 File: images/vyzor_spravy_vylepsena.png Graphic file (type png)
 <use images/vyzor_spravy_vylepsena.png>
 Package pdftex.def Info: images/vyzor_spravy_vylepsena.png  used on input line 
@@ -589,24 +626,24 @@ Underfull \vbox (badness 6691) has occurred while \output is active []
  [13
 
 ]
-<images/hlavicka_a.png, id=494, 642.90187pt x 76.78688pt>
+<images/hlavicka_a.png, id=502, 642.90187pt x 76.78688pt>
 File: images/hlavicka_a.png Graphic file (type png)
 <use images/hlavicka_a.png>
 Package pdftex.def Info: images/hlavicka_a.png  used on input line 39.
 (pdftex.def)             Requested size: 396.91325pt x 47.40817pt.
-<images/hlavicka_b.png, id=495, 738.76pt x 71.76813pt>
+<images/hlavicka_b.png, id=503, 738.76pt x 71.76813pt>
 File: images/hlavicka_b.png Graphic file (type png)
 <use images/hlavicka_b.png>
 Package pdftex.def Info: images/hlavicka_b.png  used on input line 49.
 (pdftex.def)             Requested size: 441.01773pt x 42.84326pt.
 
 [14] [15 <./images/hlavicka_a.png> <./images/hlavicka_b.png>] [16] [17]
-<images/protilatky.png, id=527, 830.10126pt x 335.75438pt>
+<images/protilatky.png, id=536, 830.10126pt x 335.75438pt>
 File: images/protilatky.png Graphic file (type png)
 <use images/protilatky.png>
 Package pdftex.def Info: images/protilatky.png  used on input line 109.
 (pdftex.def)             Requested size: 441.01773pt x 178.37932pt.
-<images/protilatky_highlight.png, id=529, 830.10126pt x 335.75438pt>
+<images/protilatky_highlight.png, id=538, 830.10126pt x 335.75438pt>
 File: images/protilatky_highlight.png Graphic file (type png)
 <use images/protilatky_highlight.png>
 Package pdftex.def Info: images/protilatky_highlight.png  used on input line 12
@@ -630,7 +667,7 @@ Underfull \vbox (badness 1552) has occurred while \output is active []
 Underfull \vbox (badness 5592) has occurred while \output is active []
 
  [23]
-<images/log_subor.png, id=569, 809.52437pt x 79.79813pt>
+<images/log_subor.png, id=578, 809.52437pt x 79.79813pt>
 File: images/log_subor.png Graphic file (type png)
 <use images/log_subor.png>
 Package pdftex.def Info: images/log_subor.png  used on input line 198.
@@ -684,17 +721,17 @@ Overfull \hbox (2.02539pt too wide) in paragraph at lines 6--6
  []
 
 [35] [36]
-<images/lieky_yaml.png, id=660, 222.33063pt x 17.56563pt>
+<images/lieky_yaml.png, id=668, 222.33063pt x 17.56563pt>
 File: images/lieky_yaml.png Graphic file (type png)
 <use images/lieky_yaml.png>
 Package pdftex.def Info: images/lieky_yaml.png  used on input line 26.
 (pdftex.def)             Requested size: 220.50887pt x 17.42163pt.
-<images/choroby_yaml.png, id=661, 551.05875pt x 15.55812pt>
+<images/choroby_yaml.png, id=669, 551.05875pt x 15.55812pt>
 File: images/choroby_yaml.png Graphic file (type png)
 <use images/choroby_yaml.png>
 Package pdftex.def Info: images/choroby_yaml.png  used on input line 36.
 (pdftex.def)             Requested size: 463.06996pt x 13.07442pt.
-<images/protilatky_yaml.png, id=662, 361.35pt x 61.73062pt>
+<images/protilatky_yaml.png, id=670, 361.35pt x 61.73062pt>
 File: images/protilatky_yaml.png Graphic file (type png)
 <use images/protilatky_yaml.png>
 Package pdftex.def Info: images/protilatky_yaml.png  used on input line 46.
@@ -734,10 +771,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4C98245A7217475D95AFE8A5D804838C;10390.
  ) 
 Here is how much of TeX's memory you used:
- 13412 strings out of 476404
- 215170 string characters out of 2789524
+ 13424 strings out of 476404
+ 215522 string characters out of 2789524
  1873324 words of memory out of 3000000
- 33332 multiletter control sequences out of 15000+600000
+ 33343 multiletter control sequences out of 15000+600000
  526919 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,76p,2035b,578s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -757,9 +794,9 @@ frm1200.pfb><C:/Users/majko/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm
 -super/sfsl1200.pfb><C:/Users/majko/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/cm-super/sfti1200.pfb><C:/Users/majko/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (58 pages, 1173615 bytes).
+Output written on main.pdf (59 pages, 1174669 bytes).
 PDF statistics:
- 801 PDF objects out of 1000 (max. 8388607)
+ 809 PDF objects out of 1000 (max. 8388607)
  175 named destinations out of 1000 (max. 500000)
- 541 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 561 words of extra memory for PDF output out of 10000 (max. 10000000)
 
